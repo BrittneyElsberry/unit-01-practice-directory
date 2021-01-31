@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Accomplishments from './components/Accomplishments'
 import JobListing from './components/JobListing'
+import axios from 'axios'
 
 
 function App() {
