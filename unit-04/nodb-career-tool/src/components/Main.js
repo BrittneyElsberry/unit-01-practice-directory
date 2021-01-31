@@ -17,7 +17,7 @@ render(){
 
 return(
 
-<div><h1>This is the main Component</h1></div>
+<div className="mainContainer"><h1>This is the main Component</h1></div>
 
 )
 

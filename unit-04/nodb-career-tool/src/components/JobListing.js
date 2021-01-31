@@ -5,7 +5,7 @@ import Main from './Main'
 const JobListing = ()=> {
 
     return (
-        <div>
+        <div className="jobListingContainer">
             <h1>Job Listing</h1>
         </div>
     )

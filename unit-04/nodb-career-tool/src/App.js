@@ -13,8 +13,9 @@ function App() {
     <div className="App">
       <Header />
       <Main />
-      <Accomplishments />
       <JobListing />
+      <Accomplishments />
+
     </div>
   );
 }
