@@ -21,8 +21,9 @@ code {
 
 .mainContainer{
   background-color: aqua;
-  width: 50px;
-  height: 50px;
+  width: 500px;
+  height: 100vh;
+  text-align: left;
 }
 
 .headerContainer{
@@ -36,9 +37,10 @@ code {
 }
 
 .jobListingContainer{
-width: 50vw;
-height: 50vh;
+width: 100%;
+height: 100%;
 background-color: #FFF1E6;
+color: black;
 }
 
 .AccompContainer {

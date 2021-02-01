@@ -1,6 +1,11 @@
 //let myRole = ''
 
-let careerSkills = [{id: 0, skills: []}]
+const job = require('./jobListing.json')
+
+let careerSkills = [{id: 0, skills: ''}]
+let id = 1;
+
+
 
 //let goals = [{id:0, goal: '', startDate: '', endDate: '', complete: false}]
 
@@ -11,7 +16,7 @@ getSkills: (req, res)=> {
 },
 
 addSkills: (req, res)=> {
-    const {skill} = req.body
+    const {skills} = req.body
     const newSkill = {id, skills}
     careerSkills.push(newSkill)
     id++
@@ -26,6 +31,10 @@ editSkills: (req, res)=>{
 deleteSkills: (req, res)=> {
 
     res.status(200).send(deleteSkills)
+},
+
+getJobListing: (req, res)=> {
+    res.status(200).send(job)
 }
 
 

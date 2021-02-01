@@ -3,12 +3,14 @@ import Main from './Main'
 import axios from 'axios'
 
 
+
 class Accomplishments extends Component{
 constructor(){
     super()
     this.state = {
         id: 0,
-        skills: []
+        skills: '',
+        accomplishments: []
 
     }
 }
@@ -19,10 +21,10 @@ componentDidMount(){
 
 
 getSkills=()=>{
-    axios.get('/api/careerSkills') //because of the proxy, i don't have to write the http://....
+    axios.get('/api/careerSkills')
     .then(res => {
         this.setState({
-            skills: res.data
+            accomplishments: res.data
         })
     }).catch(err => console.log(err))
     
@@ -30,20 +32,25 @@ getSkills=()=>{
     }
 
 
-    postSkills=(skill)=>{
-        axios.post('/api/careerSkills', {skill}) 
+    postSkills=(skills)=>{
+        axios.post('/api/careerSkills', {skills}) 
         .then(res => {
+            console.log(res.data)
             this.setState({
-                skills: res.data
+                accomplishments: res.data
             })
         }).catch(err => console.log(err))
         
         
         }
 
-handleSubmit=()=>{
 
-}
+
+ handleChange= e =>{
+    this.setState({skills: e})
+ }  
+        
+
 
 
 handleEdit=()=>{
@@ -55,12 +62,21 @@ handleDelete=()=>{
 }
 
 render(){
+
+    //map over array
     return(
         <div className="AccompContainer"> 
             <h1>Accomplishments</h1>
-            <input className="AccompInput" type="text" placeholder="write out examples of when you specifically met their qualification"></input>
+            
+            <input className="AccompInput" 
+                    type="text" 
+                    value={this.state.skills}
+                    placeholder="what skills do you have that match the job listing?" 
+                   onChange={(e)=>this.handleChange(e.target.value)}></input>
+
+            
             <div className="AccompList">
-            <button onClick={()=>this.handleSubmit()}>Submit</button>
+            <button onClick={()=>this.postSkills(this.state.skills)}>Submit</button>
             <button onClick={()=>this.handleEdit()}>Edit</button>
             <button onClick={()=>this.handleDelete()}>Delete</button>
 
@@ -69,8 +85,6 @@ render(){
         </div>
     )
 }
-
-
 }
 
 export default Accomplishments

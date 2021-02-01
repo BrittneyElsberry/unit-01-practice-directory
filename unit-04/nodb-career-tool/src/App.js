@@ -8,12 +8,12 @@ import JobListing from './components/JobListing'
 import axios from 'axios'
 
 
+
 function App() {
   return (
     <div className="App">
       <Header />
       <Main />
-      <JobListing />
       <Accomplishments />
 
     </div>
