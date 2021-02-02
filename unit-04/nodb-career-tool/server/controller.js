@@ -1,4 +1,4 @@
-//let myRole = ''
+let myRole = ''
 
 const job = require('./jobListing.json')
 
@@ -29,12 +29,19 @@ editSkills: (req, res)=>{
 },
 
 deleteSkills: (req, res)=> {
+    const {param} = req.params.id
 
+    const findId = careerSkills.findIndex(skill => skill.id === +param)
+    careerSkills.splice(findId, 1)
     res.status(200).send(deleteSkills)
 },
 
 getJobListing: (req, res)=> {
     res.status(200).send(job)
+},
+
+getMyRole: (req, res)=> {
+    res.status(200).send(myRole)
 }
 
 

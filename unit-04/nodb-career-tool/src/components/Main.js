@@ -10,7 +10,8 @@ constructor(){
     this.state = {
       goals: [{goalName: '', startDate: '', endDate: '', goalID: 0, complete: false}],
       careerS: [{careerSId: 0, careerSName: ''}],
-      jobListing: {}   
+      jobListing: {},
+      myNextRole: ''   
 
     }
 }
@@ -18,6 +19,7 @@ constructor(){
 
 componentDidMount(){
   this.getJobListing()
+  
 }
 
 
@@ -29,9 +31,41 @@ getJobListing=()=>{
           jobListing: res.data
       })
   }).catch(err => console.log(err))
-  
-  
   }
+
+
+  getMyRole=()=>{
+    axios.get('/api/myRole') 
+    .then(res => {
+      console.log(res.data)
+        this.setState({
+            myNextRole: res.data
+        })
+    }).catch(err => console.log(err))
+    }
+
+
+    postmyRole=(roleTitle)=>{
+      axios.post('/api/myRole', {roleTitle}) 
+      .then(res => {
+          console.log(res.data)
+          this.setState({
+              myNextRole: res.data
+          })
+      }).catch(err => console.log(err))
+      
+      
+      }
+
+      displayRole=(userInput)=>{
+        return <h1>{userInput}</h1>
+
+      }
+
+      handleRoleChange=(e)=>{
+        this.setState({myNextRole: e})
+      }
+
 
 render(){
 
@@ -40,16 +74,14 @@ render(){
 return(
 
 <div className="mainContainer">
-  
-      <h1>This is the main Component</h1>
+      <Header myNextRole={this.state.myNextRole} displayRole={this.state.displayRole} handleRoleChange={this.state.handleRoleChange}/>
       <JobListing jobListing={this.state.jobListing} />
+     
 
 </div>
 
 )
-
 }
-
 }
 
 export default Main

@@ -7,23 +7,39 @@ console.log(props)
   
     return (
         <div className="jobListingContainer">
-            <h1>Job Listing</h1>
+            <h1 className="descrip">Job Listing</h1>
+            <br></br>
             <br></br>
 
 
-            <h2>Company: {props.jobListing.company}</h2>
-            <span>Job Title: {props.jobListing.jobtitle}</span>
-            <p>About: {props.jobListing.about}</p>
+            <h2>Company: {props.jobListing.company}</h2> 
             <br></br>
-            <p>Responsibilities: {props.jobListing.responsibilities}</p>
+            <p className="descrip">Job Title:</p> {props.jobListing.jobtitle}
             <br></br>
-            <p>Skill Requirements: {props.jobListing.skillrequirements}</p>
             <br></br>
-            <p>Technical Knowledge Requirements: {props.jobListing.technicalknowledgerequirements}</p>
+            <p className="descrip" >About: </p> {props.jobListing.about}
             <br></br>
-            <p>Employement Type: {props.jobListing.employmenttype}</p>
             <br></br>
-            <p>Seniority Level: {props.jobListing.senioritylevel}</p>
+            <br></br>
+            <p className="descrip">Responsibilities: </p> {props.jobListing.responsibilities}
+            <br></br>
+            <br></br>
+            <p className="descrip"> Skill Requirements:</p> 
+            <br></br>
+            {/* <ul><li>{props.jobListing.skillrequirements[0]}</li>
+            <li>{props.jobListing.skillrequirements[1]}</li>
+            <li>{props.jobListing.skillrequirements[2]}</li>
+            <li>{props.jobListing.skillrequirements[3]}</li>
+
+            </ul> */}
+            <br></br>
+            <p className="descrip">Technical Knowledge Requirements: </p>{props.jobListing.technicalknowledgerequirements}
+            <br></br>
+            <br></br>
+            <p className="descrip">Employement Type:</p> {props.jobListing.employmenttype}
+            <br></br>
+            <br></br>
+            <p className="descrip">Seniority Level: </p>{props.jobListing.senioritylevel}
             <br></br>
         </div>
     )

@@ -12,7 +12,6 @@ import axios from 'axios'
 function App() {
   return (
     <div className="App">
-      <Header />
       <Main />
       <Accomplishments />
 
