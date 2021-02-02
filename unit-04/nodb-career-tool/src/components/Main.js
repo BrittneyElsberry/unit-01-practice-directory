@@ -76,8 +76,6 @@ return(
 <div className="mainContainer">
       <Header myNextRole={this.state.myNextRole} displayRole={this.state.displayRole} handleRoleChange={this.state.handleRoleChange}/>
       <JobListing jobListing={this.state.jobListing} />
-     
-
 </div>
 
 )

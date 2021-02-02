@@ -64,6 +64,8 @@ render(){
 
     return(
         <div className="AccompContainer"> 
+            <br></br>
+            <br></br>
             <h1>Accomplishments</h1>
             <br></br>
             
