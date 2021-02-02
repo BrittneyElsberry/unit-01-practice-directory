@@ -10,6 +10,8 @@ render(){
     
     <div className="goalsContainer">
     <h1>Goals</h1>
+    <input />
+    <button>Submit</button>
 
 
     </div>)

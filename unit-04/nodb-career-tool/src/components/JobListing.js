@@ -7,17 +7,15 @@ console.log(props)
   
     return (
         <div className="jobListingContainer">
-            <h1 className="descrip">Job Listing</h1>
+            <h1 className="jlheader ">Job Listing</h1>
+            <br></br>
+            <p>Company: </p> {props.jobListing.company}
             <br></br>
             <br></br>
-
-
-            <h2>Company: {props.jobListing.company}</h2> 
-            <br></br>
-            <p className="descrip">Job Title:</p> {props.jobListing.jobtitle}
+            <p className="descrip">Job Title:</p> <span className="jobContent">{props.jobListing.jobtitle}</span>
             <br></br>
             <br></br>
-            <p className="descrip" >About: </p> {props.jobListing.about}
+            <p className="descrip" >About: </p> <span className="jobContent">{props.jobListing.about}</span>
             <br></br>
             <br></br>
             <br></br>
