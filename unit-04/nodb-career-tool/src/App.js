@@ -15,8 +15,7 @@ function App() {
     <div className="App">
       <Main />
       <div className="goalAccompContainer">
-      <Goals />
-      <Accomplishments />
+    
       </div>
      
 

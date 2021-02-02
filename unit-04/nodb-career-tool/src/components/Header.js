@@ -5,10 +5,10 @@ const Header = (props)=>{
 return <div className="headerContainer">
 
    <h1 className="roleHeader">My Next Role: </h1> 
-   <input className="jobTitleInput" onChange={(e)=>props.handleRoleChange(e.target.value)}/> 
+   <input className="jobTitleInput" onChange={(e)=>props.handleRoleChange(e)}/> 
    
    <button onClick={()=>props.displayRole(props.myNextRole)}>Save</button>
-    <p>{props.myNextRole}</p>
+    {/* <p>{props.myNextRole}</p> */}
     </div>
 
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Main from './Main'
 import axios from 'axios'
-
+import Edit from './Edit'
 
 
 class Accomplishments extends Component{
@@ -10,7 +10,8 @@ constructor(){
     this.state = {
         id: 0,
         skills: '',
-        accomplishments: []
+        accomplishments: [],
+        editing: false
 
     }
 }
@@ -40,6 +41,17 @@ getSkills=()=>{
         }).catch(err => console.log(err))
         }
 
+        updateSkills=(skills)=>{
+            axios.put('/api/careerSkills', {skills}) 
+            .then(res => {
+                console.log(res.data)
+                this.setState({
+                    accomplishments: res.data
+                })
+            }).catch(err => console.log(err))
+            }
+    
+
 
   deleteSkills = id =>{
       axios.delete(`/api/careerSkills/${id}`)
@@ -56,9 +68,12 @@ getSkills=()=>{
  }  
         
 
-// handleEdit=()=>{
+handleEdit=()=>{
+ 
+this.setState({editing: true})
 
-// }
+ 
+}
 
 render(){
 
@@ -82,12 +97,10 @@ render(){
             <br></br>
 
             {this.state.accomplishments.map(accomp => {
-             return <ul key={accomp.id}>{accomp.skills}<button onClick={()=>this.deleteSkills(this.state.accomplishments.id)}>X</button> </ul> })}
-
+             return <Edit accomp={accomp} deleteSkills={this.deleteSkills}/> })}
+             {/* return <ul key={accomp.id}>{accomp.skills}<button onClick={()=>this.deleteSkills(this.state.accomplishments.id)}>X</button><button onClick={(e)=>this.handleEdit(e)}>Edit</button></ul> })} */}
             
-            {/* <button onClick={()=>this.handleEdit()}>Edit</button> */}
-         
-
+  
             </div>
 
         </div>

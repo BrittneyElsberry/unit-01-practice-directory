@@ -3,6 +3,7 @@ import axios from 'axios'
 import Header from './Header'
 import Accomplishments from './Accomplishments'
 import JobListing from './JobListing'
+import Goals from './/Goals'
 
 class Main extends Component {
 constructor(){
@@ -63,7 +64,7 @@ getJobListing=()=>{
       }
 
       handleRoleChange=(e)=>{
-        this.setState({myNextRole: e})
+        this.setState({myNextRole: e.target.value})
       }
 
 
@@ -73,11 +74,17 @@ render(){
 
 return(
 
-<div className="mainContainer">
-      <Header myNextRole={this.state.myNextRole} displayRole={this.state.displayRole} handleRoleChange={this.state.handleRoleChange}/>
-      <JobListing jobListing={this.state.jobListing} />
-</div>
+<div>
 
+<Header myNextRole={this.state.myNextRole} displayRole={this.displayRole} handleRoleChange={this.handleRoleChange}/>
+      <div className="mainContainer">
+      <JobListing jobListing={this.state.jobListing} />
+    
+      <Goals />
+    
+</div>
+<Accomplishments />
+</div>
 )
 }
 }

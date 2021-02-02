@@ -24,10 +24,14 @@ code {
 }
 
 .mainContainer{
-  width: 500px;
+  display: flex;
+  box-sizing: border-box;
+  width: 1000px;
   height: 150vh;
   text-align: left;
   justify-content: center;
+ 
+
   
 
 
@@ -63,11 +67,9 @@ font-size: 1.25;
 
 .jobListingContainer{
 width: 100%;
-height: 80%;
+height: 100%;
 background-color: #f2e9e4;
 padding: 50px;
-
-
 }
 
 .jobTitleInput{
@@ -77,14 +79,10 @@ padding: 50px;
 .jobContent{
   font-size: 1.0em;
 }
-
-.goalAccompContainer{
-  height: 100vh;
-  width: 200vw;
-  flex-direction: column;
-  margin: 10%;
-  margin-top: 10%;
+li{
+  list-style: circle;
 }
+
 
 .AccompContainer {
 
@@ -98,9 +96,9 @@ background-color: #f2e9e4;
 
 .goalsContainer {
   background: #f2e9e4;
-  width: 500px;
-  height: 70vh;
+  width: 80%;
   margin: 20px;
+  height: 70vh;
   margin-top: 4%;
 }
 
@@ -108,11 +106,6 @@ background-color: #f2e9e4;
 font-weight: bold;
 font-size: 1.0em;
 }
-
-/* ul {
-  list-style-type: circle;
-} */
-
 
 
 /*

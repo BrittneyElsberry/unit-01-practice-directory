@@ -8,9 +8,9 @@ app.use(express.json())
 //End points
 
 app.get('/api/careerSkills', ctrl.getSkills) //test in postman was successful!!
-app.post('/api/careerSkills', ctrl.addSkills) //test in postman unsuccessful
-app.put('/api/careerSkills', ctrl.editSkills)
-app.delete('/api/careerSkills', ctrl.deleteSkills)
+app.post('/api/careerSkills', ctrl.addSkills) //test in postman successful
+app.put('/api/careerSkills/:id', ctrl.editSkills)
+app.delete('/api/careerSkills/:id', ctrl.deleteSkills)
 app.get('/api/jobListing', ctrl.getJobListing)
 app.get('/api/myRole', ctrl.getMyRole)
 

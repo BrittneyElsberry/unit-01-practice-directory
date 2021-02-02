@@ -2,7 +2,7 @@ let myRole = ''
 
 const job = require('./jobListing.json')
 
-let careerSkills = [{id: 0, skills: ''}]
+let careerSkills = []
 let id = 1;
 
 
@@ -24,16 +24,18 @@ addSkills: (req, res)=> {
 },
 
 editSkills: (req, res)=>{
-
-    res.status(200).send(deleteSkills)
+    const {skills} = req.body
+    const {id} = req.params
+    const findId = careerSkills.findIndex(skill => skill.id === +id)
+    careerSkills[findId] = {...careerSkills[findId], skills: skills}
+    res.status(200).send(careerSkills)
 },
 
 deleteSkills: (req, res)=> {
-    const {param} = req.params.id
-
-    const findId = careerSkills.findIndex(skill => skill.id === +param)
+    const {id} = req.params
+    const findId = careerSkills.findIndex(skill => skill.id === +id)
     careerSkills.splice(findId, 1)
-    res.status(200).send(deleteSkills)
+    res.status(200).send(careerSkills)
 },
 
 getJobListing: (req, res)=> {
