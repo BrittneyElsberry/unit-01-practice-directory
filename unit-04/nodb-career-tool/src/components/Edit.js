@@ -32,7 +32,6 @@ return(
         <li><input className="editInput" 
                     value={this.state.userInput}
                     type="text" 
-                    placeholder="what would you like to change?"
                     onChange={(e)=>this.handleEditChange(e)}/>
 
        <button className="editSavebtn" onClick={()=> 
@@ -43,6 +42,7 @@ return(
     ): (
         <li className="accompListEditXbtns">
               {accomp.skills}
+             
              <button className="editXbtn" onClick={()=>deleteSkills(accomp.id)}>X</button>
              <button className="editbtn" onClick={(e)=>this.toggleEditMode(e)}>Edit</button>
         </li>
