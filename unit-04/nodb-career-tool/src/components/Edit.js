@@ -35,16 +35,16 @@ return(
                     placeholder="what would you like to change?"
                     onChange={(e)=>this.handleEditChange(e)}/>
 
-       <button onClick={()=> 
+       <button className="editSavebtn" onClick={()=> 
        {
            updateSkills(accomp.id, this.state.userInput)
            this.setState({editing: false})
         }}>Save</button></div>
     ): (
-        <div>
+        <div className="accompListEditXbtns">
              <ul key={accomp.id}>{accomp.skills}
-             <button onClick={()=>deleteSkills(accomp.id)}>X</button>
-             <button onClick={(e)=>this.toggleEditMode(e)}>Edit</button></ul>
+             <button className="editXbtn" onClick={()=>deleteSkills(accomp.id)}>X</button>
+             <button className="editbtn" onClick={(e)=>this.toggleEditMode(e)}>Edit</button></ul>
         </div>
     ) }
     </div>

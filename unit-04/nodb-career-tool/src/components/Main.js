@@ -61,8 +61,6 @@ getJobListing=()=>{
       
       }
 
-     
-
       handleRoleChange=(e)=>{
         this.setState({myNextRole: e.target.value})
       }
@@ -79,11 +77,11 @@ return(
 <Header myNextRole={this.state.myNextRole} displayRole={this.displayRole} handleRoleChange={this.handleRoleChange} postMyRole={this.postmyRole} savedRole={this.state.savedRole}/>
       <div className="mainContainer">
       <JobListing jobListing={this.state.jobListing} />
-    
+    <div className="goalsAndAccompContainer">
       <Goals />
-    
+      <Accomplishments />
+      </div>
 </div>
-<Accomplishments />
 </div>
 )
 }

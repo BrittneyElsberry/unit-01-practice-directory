@@ -9,7 +9,7 @@ console.log(props)
         <div className="jobListingContainer">
             <h1 className="jlheader ">Job Listing</h1>
             <br></br>
-            <p>Company: </p> {props.jobListing.company}
+            <p className="descrip">Company: </p> {props.jobListing.company}
             <br></br>
             <br></br>
             <p className="descrip">Job Title:</p> <span className="jobContent">{props.jobListing.jobtitle}</span>

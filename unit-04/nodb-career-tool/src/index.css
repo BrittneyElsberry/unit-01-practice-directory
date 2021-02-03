@@ -16,115 +16,151 @@ code {
   display: flex;
   box-sizing: border-box;
   flex-direction: row;
-  /* flex-wrap: wrap; */
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #fdfffc;
+  /* background-color: #fdfffc; */
   /*background-image: url("Hawaii.jpeg");*/
-  height: 300vh;
-  width: 100vw;
+  height: 500vh;
+  background-color: #eaeaea;
 }
 
 .mainContainer{
   display: flex;
   box-sizing: border-box;
-  width: 1000px;
-  height: 150vh;
+  /* width: 1000px;
+  height: 500vh; */
+  height: 500vh;
   text-align: left;
-  justify-content: center;
-  padding-left: 5%;
-
-  
-
-
+  padding-left: 32px;
+  margin-left: 16px;
 }
 
 .headerContainer{
   display: flex;
-  justify-content: center;
-  background-color: #9a8c98;
-  width: 100vw;
-  padding: 50px;
-  align-items: center;
+  /* background-color: #9a8c98; */
+  padding: 20px;
   background-image: linear-gradient(#0081A7 , #00afb9);
-
+  width: 100vw;
+  height: 100px;
 }
 
-.roleHeader{
+#jobTitleDisplayed {
+  /* padding: 40px; */
+  color:  #22223B;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.App, .mainContainer, .headerContainer {
+  width: 100%;
+}
+
+/* #roleHeader{
   text-align: center;
   font-weight: bold;
   color: #22223B;
-}
+} */
 
-.myRoleButton, .submitButton{
-  background-color: #9a8c98;
-  color: #22223B;
+.myRoleButton, .submitButton, .goalsSubmitbtn, .editSavebtn, .editXbtn, .editbtn, .startDatebtn, .endDatebtn{
+  background-color:  #dd6e42;
+  /* color: #22223B; */
+  color: #fdfffc;
   font-weight: bold;
-  border-radius: 2%;
-  box-shadow: 2px, 2px, 2px, #22223B ;
+  border-radius: 10%;
+  /* box-shadow: 2px, 2px, 2px, #22223B ; */
+  /* box-shadow: 2px, 2px, 2px, #fdfffc;  */
 }
 
-.AccompInput {
+.endDatebtn, .startDatebtn, .myRoleButton, .submitButton {
+ margin-left: 2px;
+}
+
+.accompListEditXbtns {
+  flex-wrap: wrap;
+}
+
+.goalsInput, .AccompInput {
   width: 300px;
 
 }
+/* .AccompInput {
+  width: 200px;
+} */
 
-.jlheader, .goalsHeader{
+.sdinput, .edinput{
+  width: 100px;
+}
+
+
+.jlheader, .goalsHeader, .accompHeader, #roleHeader{
 font-size: 1.25;
 text-align: center;
+color:#fdfffc;
+font-weight: bold;
 }
 
 .jobListingContainer, .AccompContainer, .goalsContainer {
-  border-radius: 10%;
+  /* border-radius: 10%; */
+  margin-top: 20px;
+  box-shadow: 4px 4px 4px #dd6e42;
 }
 
 .jobListingContainer{
-width: 150%;
-height: 160%;
+width: 400px;
+height: 1200px;
 padding: 40px;
 background-color: #00afb9;
 /*background-color: #f2e9e4;*/
-margin-top: 20px;
 
 }
 
-.jobTitleInput{
+#jobTitleInput, .goalsInput, .AccompInput, .sdinput, .edinput{
  justify-content: center;
+ background-color: #eaeaea;
+ border: white;
 }
 
 .jobContent{
   font-size: 1.0em;
 }
-li{
+li, .AccompList{
   list-style: circle;
 }
 
 
 .AccompContainer {
-
-margin-left: 50%;
-margin-top: 5%;
-width: 500px;
-height: 90vh;
-/*background-color: #f2e9e4;*/
+margin-top: 20px;
+height: 700px;
+/* width: 400px;
+height: 500px;
+background-color: #f2e9e4;
 background-color: #00afb9;
 margin-bottom: 150%;
+margin-left: 4%; */
+}
+
+.goalsContainer, .AccompContainer {
+  background: #00afb9;
+  width: 400px;
+  margin-left: 32px;
+  padding: 20px;
+  text-align: left;
+  margin-top: 20px;
+  padding: 40px;
 }
 
 .goalsContainer {
-  background: #00afb9;
-  width: 90%;
-  margin: 20px;
-  height: 70vh;
-  margin-left: 4%;
-  margin-top: 20px;
-  padding: 20px;
-  text-align: center;
+  height: 400px;
+}
 
+.goalsAndAccompContainer{
+  flex-direction: column;
 }
 
 .descrip{
 font-weight: bold;
 font-size: 1.0em;
+
 }
 
 

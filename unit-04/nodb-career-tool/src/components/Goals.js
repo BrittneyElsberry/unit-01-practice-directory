@@ -11,8 +11,11 @@ render(){
     <div className="goalsContainer">
     <h1 className="goalsHeader">Goals</h1>
     <br></br>
-    <input />
-    <button>Submit</button>
+    <input className="goalsInput"/>
+    <button className="goalsSubmitbtn">Submit</button>
+    <br></br>
+    <input className="sdinput"/><button className="startDatebtn">Start Date</button>
+    <input className="edinput"/><button className="endDatebtn">End Date</button>
 
 
     </div>)
