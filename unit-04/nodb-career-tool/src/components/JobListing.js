@@ -15,11 +15,11 @@ console.log(props)
             <p className="descrip">Job Title:</p> <span className="jobContent">{props.jobListing.jobtitle}</span>
             <br></br>
             <br></br>
-            <p className="descrip" >About: </p> <span className="jobContent">{props.jobListing.about}</span>
+            <p className="descrip" >About: </p> <span className="jobContent"> <br></br>{props.jobListing.about}</span>
             <br></br>
             <br></br>
             <br></br>
-            <p className="descrip">Responsibilities: </p> {props.jobListing.responsibilities}
+            <p className="descrip">Responsibilities: </p><br></br> {props.jobListing.responsibilities}
             <br></br>
             <br></br>
             <p className="descrip"> Skill Requirements:</p> 
@@ -53,7 +53,7 @@ console.log(props)
             
             <br></br>
             <br></br>
-            <p className="descrip">Employement Type:</p> {props.jobListing.employmenttype}
+            <p className="descrip">Employement Type:</p>{props.jobListing.employmenttype}
             <br></br>
             <br></br>
             <p className="descrip">Seniority Level: </p>{props.jobListing.senioritylevel}

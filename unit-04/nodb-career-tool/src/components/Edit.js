@@ -26,10 +26,10 @@ render(){
     
 return(
 
-    <div>
+    <>
     {this.state.editing ? (
 
-        <div><input className="editInput" 
+        <li><input className="editInput" 
                     value={this.state.userInput}
                     type="text" 
                     placeholder="what would you like to change?"
@@ -39,15 +39,15 @@ return(
        {
            updateSkills(accomp.id, this.state.userInput)
            this.setState({editing: false})
-        }}>Save</button></div>
+        }}>Save</button></li>
     ): (
-        <div className="accompListEditXbtns">
-             <ul key={accomp.id}>{accomp.skills}
+        <li className="accompListEditXbtns">
+              {accomp.skills}
              <button className="editXbtn" onClick={()=>deleteSkills(accomp.id)}>X</button>
-             <button className="editbtn" onClick={(e)=>this.toggleEditMode(e)}>Edit</button></ul>
-        </div>
+             <button className="editbtn" onClick={(e)=>this.toggleEditMode(e)}>Edit</button>
+        </li>
     ) }
-    </div>
+    </>
             )
 
 

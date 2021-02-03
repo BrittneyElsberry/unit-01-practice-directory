@@ -17,41 +17,48 @@ code {
   box-sizing: border-box;
   flex-direction: row;
   font-family: Arial, Helvetica, sans-serif;
-  /* background-color: #fdfffc; */
-  /*background-image: url("Hawaii.jpeg");*/
   height: 500vh;
   background-color: #eaeaea;
+  width: 700px;
 }
 
 .mainContainer{
   display: flex;
   box-sizing: border-box;
-  /* width: 1000px;
-  height: 500vh; */
   height: 500vh;
   text-align: left;
   padding-left: 32px;
   margin-left: 16px;
+  width: 100vw;
 }
 
 .headerContainer{
   display: flex;
-  /* background-color: #9a8c98; */
-  padding: 20px;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 40px 40px 40px 0px;
   background-image: linear-gradient(#0081A7 , #00afb9);
   width: 100vw;
-  height: 100px;
+  align-items: center;
+  /* height: 100px; */
+}
+
+.flexHeader {
+  display: flex;
+}
+
+#jobTitleInput {
+  height: 20px;
 }
 
 #jobTitleDisplayed {
-  /* padding: 40px; */
   color:  #22223B;
   font-size: 1.5em;
   font-weight: bold;
-  text-align: center;
+
 }
 
-.App, .mainContainer, .headerContainer {
+.App, .mainContainer{
   width: 100%;
 }
 
@@ -67,8 +74,8 @@ code {
   color: #fdfffc;
   font-weight: bold;
   border-radius: 10%;
-  /* box-shadow: 2px, 2px, 2px, #22223B ; */
-  /* box-shadow: 2px, 2px, 2px, #fdfffc;  */
+  height: 20px;
+
 }
 
 .endDatebtn, .startDatebtn, .myRoleButton, .submitButton {
@@ -83,9 +90,6 @@ code {
   width: 300px;
 
 }
-/* .AccompInput {
-  width: 200px;
-} */
 
 .sdinput, .edinput{
   width: 100px;
@@ -100,7 +104,6 @@ font-weight: bold;
 }
 
 .jobListingContainer, .AccompContainer, .goalsContainer {
-  /* border-radius: 10%; */
   margin-top: 20px;
   box-shadow: 4px 4px 4px #dd6e42;
 }
@@ -110,7 +113,6 @@ width: 400px;
 height: 1200px;
 padding: 40px;
 background-color: #00afb9;
-/*background-color: #f2e9e4;*/
 
 }
 
@@ -131,12 +133,7 @@ li, .AccompList{
 .AccompContainer {
 margin-top: 20px;
 height: 700px;
-/* width: 400px;
-height: 500px;
-background-color: #f2e9e4;
-background-color: #00afb9;
-margin-bottom: 150%;
-margin-left: 4%; */
+
 }
 
 .goalsContainer, .AccompContainer {
