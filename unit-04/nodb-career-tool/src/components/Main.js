@@ -12,7 +12,8 @@ constructor(){
       goals: [{goalName: '', startDate: '', endDate: '', goalID: 0, complete: false}],
       careerS: [{careerSId: 0, careerSName: ''}],
       jobListing: {},
-      myNextRole: ''   
+      myNextRole: '',
+      savedRole: ''   
 
     }
 }
@@ -51,17 +52,16 @@ getJobListing=()=>{
       .then(res => {
           console.log(res.data)
           this.setState({
-              myNextRole: res.data
+              savedRole: res.data,
+              myNextRole: ''
+      
           })
       }).catch(err => console.log(err))
       
       
       }
 
-      displayRole=(userInput)=>{
-        return <h1>{userInput}</h1>
-
-      }
+     
 
       handleRoleChange=(e)=>{
         this.setState({myNextRole: e.target.value})
@@ -70,13 +70,13 @@ getJobListing=()=>{
 
 render(){
 
-
+console.log(this.state)
 
 return(
 
 <div>
 
-<Header myNextRole={this.state.myNextRole} displayRole={this.displayRole} handleRoleChange={this.handleRoleChange}/>
+<Header myNextRole={this.state.myNextRole} displayRole={this.displayRole} handleRoleChange={this.handleRoleChange} postMyRole={this.postmyRole} savedRole={this.state.savedRole}/>
       <div className="mainContainer">
       <JobListing jobListing={this.state.jobListing} />
     

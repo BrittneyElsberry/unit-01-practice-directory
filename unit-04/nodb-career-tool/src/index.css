@@ -18,7 +18,8 @@ code {
   flex-direction: row;
   /* flex-wrap: wrap; */
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #22223B;
+  background-color: #fdfffc;
+  /*background-image: url("Hawaii.jpeg");*/
   height: 300vh;
   width: 100vw;
 }
@@ -30,7 +31,7 @@ code {
   height: 150vh;
   text-align: left;
   justify-content: center;
- 
+  padding-left: 5%;
 
   
 
@@ -44,12 +45,22 @@ code {
   width: 100vw;
   padding: 50px;
   align-items: center;
-
+  background-image: linear-gradient(#0081A7 , #00afb9);
 
 }
 
 .roleHeader{
   text-align: center;
+  font-weight: bold;
+  color: #22223B;
+}
+
+.myRoleButton, .submitButton{
+  background-color: #9a8c98;
+  color: #22223B;
+  font-weight: bold;
+  border-radius: 2%;
+  box-shadow: 2px, 2px, 2px, #22223B ;
 }
 
 .AccompInput {
@@ -57,8 +68,9 @@ code {
 
 }
 
-.jlheader{
+.jlheader, .goalsHeader{
 font-size: 1.25;
+text-align: center;
 }
 
 .jobListingContainer, .AccompContainer, .goalsContainer {
@@ -66,10 +78,13 @@ font-size: 1.25;
 }
 
 .jobListingContainer{
-width: 100%;
-height: 100%;
-background-color: #f2e9e4;
-padding: 50px;
+width: 140%;
+height: 140%;
+padding: 20px;
+background-color: #00afb9;
+/*background-color: #f2e9e4;*/
+margin-top: 20px;
+
 }
 
 .jobTitleInput{
@@ -86,20 +101,25 @@ li{
 
 .AccompContainer {
 
-margin-left: 5%;
+margin-left: 50%;
 margin-top: 5%;
 width: 500px;
 height: 70vh;
-background-color: #f2e9e4;
+/*background-color: #f2e9e4;*/
+background-color: #00afb9;
 
 }
 
 .goalsContainer {
-  background: #f2e9e4;
-  width: 80%;
+  background: #00afb9;
+  width: 90%;
   margin: 20px;
   height: 70vh;
-  margin-top: 4%;
+  margin-left: 4%;
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+
 }
 
 .descrip{
@@ -113,7 +133,9 @@ Color Palette:
 
 HEX 22223B
 
-
+HEX #0081A7 - blue
+HEX #00afb9 - teal
+HEX #fdfcdc - creme
 
 HEX CB997E - darker tan
 HEX CB997E lighter tan

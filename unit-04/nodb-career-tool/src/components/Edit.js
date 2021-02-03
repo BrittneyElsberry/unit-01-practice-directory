@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Accomplishments from './Accomplishments'
 import axios from 'axios'
 
+
 class Edit extends Component {
 constructor(){
 super()
@@ -16,15 +17,29 @@ toggleEditMode=()=>{
     this.setState({editing: true})
 }
 
+handleEditChange=(e)=>{
+    this.setState({userInput: e.target.value})
+}
+
 render(){
-    const {accomp, deleteSkills} = this.props
+    const {accomp, deleteSkills, updateSkills, skills} = this.props
     
 return(
 
     <div>
     {this.state.editing ? (
 
-        <div><input/><button>Save</button></div>
+        <div><input className="editInput" 
+                    value={this.state.userInput}
+                    type="text" 
+                    placeholder="what would you like to change?"
+                    onChange={(e)=>this.handleEditChange(e)}/>
+
+       <button onClick={()=> 
+       {
+           updateSkills(accomp.id, this.state.userInput)
+           this.setState({editing: false})
+        }}>Save</button></div>
     ): (
         <div>
              <ul key={accomp.id}>{accomp.skills}
@@ -50,7 +65,8 @@ return(
     //         : 
     //           <ul key={accomp.id}>{accomp.skills}<button onClick={()=>this.deleteSkills(this.state.accomplishments.id)}>X</button><button onClick={(e)=>this.handleSave(e)}>Save</button></ul>        
 
-      
+      // onChange={(e)=>handleSave(e.target.value)
+      //  value={this.state.userInput}
           
 
     //      )}    

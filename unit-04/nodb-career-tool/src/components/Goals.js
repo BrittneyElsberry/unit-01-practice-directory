@@ -9,7 +9,8 @@ render(){
     return(
     
     <div className="goalsContainer">
-    <h1>Goals</h1>
+    <h1 className="goalsHeader">Goals</h1>
+    <br></br>
     <input />
     <button>Submit</button>
 

@@ -12,7 +12,7 @@ app.post('/api/careerSkills', ctrl.addSkills) //test in postman successful
 app.put('/api/careerSkills/:id', ctrl.editSkills)
 app.delete('/api/careerSkills/:id', ctrl.deleteSkills)
 app.get('/api/jobListing', ctrl.getJobListing)
-app.get('/api/myRole', ctrl.getMyRole)
+app.post('/api/myRole', ctrl.getMyRole)
 
 
 const port = 3333

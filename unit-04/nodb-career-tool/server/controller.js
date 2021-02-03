@@ -43,6 +43,8 @@ getJobListing: (req, res)=> {
 },
 
 getMyRole: (req, res)=> {
+    const {roleTitle} = req.body
+    myRole = roleTitle
     res.status(200).send(myRole)
 }
 
