@@ -13,6 +13,7 @@ app.put('/api/careerSkills/:id', ctrl.editSkills)
 app.delete('/api/careerSkills/:id', ctrl.deleteSkills)
 app.get('/api/jobListing', ctrl.getJobListing)
 app.post('/api/myRole', ctrl.getMyRole)
+app.get('/api/home')
 
 
 const port = 3333
