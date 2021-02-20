@@ -21,7 +21,25 @@ addSkills: (req, res)=> {
     careerSkills.push(newSkill)
     id++
     res.status(200).send(careerSkills)
+    const db = req.app.get('db')
+    
 },
+
+/**    createPost: (req, res) => {
+      //code here
+
+      const db = req.app.get('db')
+      const {id} = req.session.user
+      const {title, img, content} = req.body
+      const date = new Date
+      if(id){
+        db.post.create_post([id, title, img, content, date])
+       return res.status(200)
+      } else {
+        return res.status(403)
+      }
+
+    }, */
 
 editSkills: (req, res)=>{
     const {skills} = req.body

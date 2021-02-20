@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import Accomplishments from './Accomplishments'
-import axios from 'axios'
+// import Accomplishments from './Accomplishments'
+// import axios from 'axios'
 
 
 class Edit extends Component {

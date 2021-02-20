@@ -1,8 +1,27 @@
+require('dotenv').config()
 const express = require('express')
+authCTRL = require('./authController')
+const bcrypt = require('bcryptjs')
+const massive = require('massive')
+const session = require('express-session')
 const app = express()
 const ctrl = require('./controller')
 
+
+const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
+
 app.use(express.json())
+
+massive()
+
+//AUTH END POINTS
+
+
+
+
+
+
+
 
 
 //End points
@@ -16,7 +35,7 @@ app.post('/api/myRole', ctrl.getMyRole)
 app.get('/api/home')
 
 
-const port = 3333
-app.listen(port, ()=> console.log(`Port listening on ${port}`))
+// const port = 3333
+app.listen(SERVER_PORT, ()=> console.log(`Port listening on ${SERVER_PORT}`))
 
 

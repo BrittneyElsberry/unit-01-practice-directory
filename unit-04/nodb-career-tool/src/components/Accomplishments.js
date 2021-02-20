@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Main from './Main'
+// import Main from './Main'
 import axios from 'axios'
 import Edit from './Edit'
 
