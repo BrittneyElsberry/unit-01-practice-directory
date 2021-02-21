@@ -6,9 +6,8 @@ module.exports = {
 
         try{
         const {username, password}  = req.body
-        const pic = `https://robohash.org/${username}.png`
         const db = req.app.get('db')
-        const result = await db.user.find_user_by_username([username])
+        const result = await db.find_user_by_username([username])
         const existingUser = result[0]
         console.log(result)
         if(existingUser){
@@ -16,14 +15,14 @@ module.exports = {
         }
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
-        const registeredUser = await db.user.create_user([username, hash, pic])
+        const registeredUser = await db.user.create_user([username, hash])
         const user = registeredUser[0]
       
         req.session.user = 
         {
             username: user.username,
             id: user.id,
-            profilePic: user.pic 
+           
         }
        return res.status(201).send(req.session.user)
     //    delete user.password
@@ -37,7 +36,7 @@ module.exports = {
     login: async (req, res)=>{
         const {username, password} = req.body
         const db = req.app.get('db')
-        const foundUser = await db.user.find_user_by_username([username])
+        const foundUser = await db.find_user_by_username([username])
         const user = foundUser[0]
         if(!user){
             res.status(401).send('User not found. Please register as a new user before logging in')
@@ -51,7 +50,7 @@ module.exports = {
         req.session.user = {
             username: user.username,
             id: user.id,
-            profilePic: user.pic
+            
         }
         delete user.password
         return res.status(200).send(req.session.user)
