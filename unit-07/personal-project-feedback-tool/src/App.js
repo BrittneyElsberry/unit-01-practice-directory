@@ -1,5 +1,5 @@
 import './App.css';
-import Auth from './components/Auth/Auth'
+import routes from './routes'
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
       Innovation station
       </header>
-      <Auth/>
+      {routes}
     </div>
   );
 }

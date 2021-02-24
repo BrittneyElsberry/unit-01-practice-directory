@@ -33,6 +33,11 @@ app.use(session({
 
 //Auth endpoints
 
+app.post('/auth/register', authCtrl.register)
+app.post('/auth/login', authCtrl.login)
+app.get('/auth/me', authCtrl.getUser)
+app.post('/auth/logout', authCtrl.logout)
+
 
 //User endpoints
 
