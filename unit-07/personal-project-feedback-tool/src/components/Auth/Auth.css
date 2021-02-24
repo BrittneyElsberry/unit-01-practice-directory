@@ -1,0 +1,18 @@
+.loginForm{
+    display: flex;
+    background-color: purple;
+    height: 70vh;
+    width: 70vw;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .passInput, .unInput{
+      height: 20px;
+
+  }
+
+  .authbtn{
+      height: 20px;
+      ;
+  }
