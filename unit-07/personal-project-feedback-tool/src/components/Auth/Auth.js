@@ -3,6 +3,7 @@ import axios from 'axios'
 import './Auth.css';
 import {connect} from 'react-redux'
 import {updateUser} from '../../redux/authReducer'
+// import {useHistory} from 'react-router-dom'
 
 const Auth =(props)=>{
 
@@ -11,44 +12,83 @@ const [userInfo, setUserInfo] = useState({
     username: '',
     password: '',
     deptNumber: 0,
-    isAdmin: false
+    // isAdmin: false
 })    
 
 
 const register = ()=>{
 
-    axios.post('/auth/register', {setUserInfo})
+    axios.post('/auth/register', userInfo)
     .then(res=>{
-        this.props.updateUser(res.data)
-        this.props.history('/deptdash')
+        props.updateUser(res.data)
+        // setUserInfo(res.data) leaving this component so don't need to update local state
+        props.history.push('/deptdash')
     }).catch(err=> alert(err))
 
 }
 
 const login = ()=> {
-
+axios.post('/auth/login', userInfo)
+.then(user => {
+    props.updateUser(user.data)
+    // setUserInfo(user.data) 
+    props.history.push('/deptdash')
+})
 
 }
 
+return (
 
-
-
-return (<div>
+<div><h1>Make your voice heard</h1>
+<div className='authContainer'>
     
-
-<form className='loginForm'>
-
-<button className='authbtn'>Login</button>
+<div className='authBtnContainer'>
+<button className='authbtn'onClick={login}>Login</button>
 <button className='authbtn' onClick={register}>Register</button>
+</div>
 
- Username: <input className='unInput'/>
- Password: <input className='passInput'/>
- Department Number: <input className='deptInput'/>
- Admin: <input className='adminInput'/>
 
-</form>
+<div className='authInputFieldContainer'>
+ Username: <input 
+    type='text'
+    placeholder='username'
+    className='unInput'
+    value={userInfo.username}
+    onChange={(e)=>setUserInfo({...userInfo, username: e.target.value})}
 
-</div>)
+ />
+
+ Password: <input 
+    type='text'
+    placeholder='password'
+    className='passInput'
+    value={userInfo.password}
+    onChange={(e)=>setUserInfo({...userInfo, password: e.target.value})}
+ 
+ />
+ 
+ 
+ 
+ Department Number: <input 
+ 
+    type='text'
+    placeholder='department number'
+    className='deptInput'
+    value={userInfo.deptNumber}
+    onChange={(e)=>setUserInfo({...userInfo, deptNumber: e.target.value})}
+ 
+ />
+ {/* Admin: <input 
+    type='text'
+    placeholder='department number'
+    className='adminInput'
+    value={userInfo.admin}
+    onChange={(e)=>setUserInfo({...userInfo, admin: e.target.value})}
+
+ /> */}
+
+ </div>
+</div> </div>)
 
 
 }

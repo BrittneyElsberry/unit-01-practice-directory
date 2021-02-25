@@ -12,6 +12,7 @@ const UPDATE_USER = "UPDATE_USER"
 const LOGOUT = "LOGOUT"
 
 export const updateUser = (user)=> {
+    console.log(user)
     return {
         type: UPDATE_USER,
         payload: user
@@ -26,10 +27,10 @@ export const logout = ()=>{
 
 export default function authReducer(state=initialState, action){
 switch(action.type){
-    case updateUser:
+    case UPDATE_USER:
         return {...initialState, ...action.payload}
 
-    case logout: 
+    case LOGOUT: 
     return {...initialState}
 
     default: 
