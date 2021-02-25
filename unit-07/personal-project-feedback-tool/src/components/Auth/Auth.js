@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import './Auth.css';
+import './Auth.scss';
 import {connect} from 'react-redux'
 import {updateUser} from '../../redux/authReducer'
 // import {useHistory} from 'react-router-dom'

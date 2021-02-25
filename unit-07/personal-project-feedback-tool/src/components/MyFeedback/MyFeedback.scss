@@ -1,0 +1,42 @@
+@import '../SCSS/variables.scss';
+
+
+.myFeedbackContainer{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+header{
+    height: 5vh;
+    width: 100vw;
+}
+
+
+@media screen and (max-width: 25em){
+
+    h1{
+        text-align: center;
+        padding: 10vh;
+        height: 5vh;
+        width: 100vw;
+        background-color: $color-creme;
+    }
+    .myTextArea{
+
+        height: 40vh;
+        width: 80vw;
+        margin: 20px;
+        margin-left: 25px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 1100px){
+
+
+    height: 100vh
+    
+}

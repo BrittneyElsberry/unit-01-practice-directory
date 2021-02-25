@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import './DeptDash.css';
+import './DeptDash.scss';
 import {connect} from 'react-redux'
 // import {updateUser} from '../../redux/authReducer'
 
@@ -12,8 +12,11 @@ const DeptDash = (props)=>{
 console.log(props)
 return(
 
-    <div><h1>Welcome to the {deptName} Dashboard</h1>
-    {props.username}
+    <div><h1 className='welcome'>Welcome to the {deptName} Dashboard {props.username}!</h1>
+  
+
+    <h2>Fiscal Year</h2>
+
     </div>
 )
 

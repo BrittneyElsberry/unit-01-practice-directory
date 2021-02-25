@@ -1,25 +1,30 @@
+@import '../SCSS/variables.scss';
+
+
+
+
 @media only screen and (max-width: 37.5rem)and (min-width: 25rem) {
 
 
     .authContainer{
         display: flex;
-        background-color:#8b8c89;
+        background-color: $color-white;
         align-items: center;
         justify-content: left;
         flex-grow: 2;
         
         height: 60vh;
         width: 60vh;
-        color: white;
+        color: $color-white;
         font-weight: bold;
-        box-shadow: 2px 2px 2px #05668d;
+        box-shadow: 2px 2px 2px $color-dark-green;
         margin: 10vh 10vh 10vh;
         margin-left: 20vw;
         }
         
         .authbtn{
-            background-color: #00a896;
-            color: white;
+            background-color: $color-light-blue;
+            color: $color-white;
             font-weight: bold;
             height: 3em;
             width: 5em;
@@ -48,21 +53,21 @@
 
     .authContainer{
         display: flex;
-        background-color:#8b8c89;
+        background-color: $color-white;
         align-items: center;
         justify-content: left;
         
         height: 50vh;
         width: 50vh;
-        color: white;
+        color: $color-dark-blue;
         font-weight: bold;
-        box-shadow: 2px 2px 2px #05668d;
+        box-shadow: 2px 2px 2px $color-dark-green;
         margin: 20vh 5vh 5vh;
         }
         
         .authbtn{
-            background-color: #00a896;
-            color: white;
+            background-color: $color-light-green;
+            color: $color-white;
             font-weight: bold;
         
         }
@@ -83,17 +88,12 @@
 }
 
 
+nav{
+    display: none;
+}
 
 
-  /*Color palette
-  
+@media screen and (max-width: 1100px){
 
-  GREEN BLUE PALETTE
-  darkest blue #05668d
-  darker blue #028090
-  darker green #00a896
-  lighter green #02c39a
-  creme #f0f3bd
-  grey #8b8c89
-  
-  */
+    
+}

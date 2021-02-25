@@ -7,6 +7,7 @@ import CompDash from './components/CompDash/CompDash'
 import ManagerView from './components/ManagerView/ManagerView'
 
 
+
 export default (
 
 <Switch>
@@ -15,6 +16,7 @@ export default (
 <Route path ='/myfeedback' component={MyFeedback}/>
 <Route path ='/companydash' component={CompDash}/>
 <Route path ='/managerview' component={ManagerView}/>
+
 
 </Switch>
 
