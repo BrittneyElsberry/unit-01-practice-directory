@@ -39,7 +39,8 @@ feedback_id SERIAL PRIMARY KEY,
 category_id INT REFERENCES category(category_id) NOT NULL,
 dept_id INT REFERENCES department(dept_id) NOT NULL,
 user_id INT REFERENCES users(user_id) NOT NULL,
-feedback VARCHAR(5000)
+feedback VARCHAR(5000),
+fb_date date
 
 
 );

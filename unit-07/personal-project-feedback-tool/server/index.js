@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
     authCtrl = require('./controllers/authController'),
-    userCtrl = require('./controllers/userController')
+    fbCtrl = require('./controllers/fbController')
 const massive = require('massive')
 const session = require('express-session')
 const app = express();
@@ -41,5 +41,9 @@ app.post('/auth/logout', authCtrl.logout)
 
 //User endpoints
 
-app.get('https://dummyapi.io/data/api/', userCtrl.getFB)
+// app.get('https://dummyapi.io/data/api/', userCtrl.getFB)
 
+
+//Feedback endpoints
+
+app.post('/auth/myfeedback', fbCtrl.createFB)

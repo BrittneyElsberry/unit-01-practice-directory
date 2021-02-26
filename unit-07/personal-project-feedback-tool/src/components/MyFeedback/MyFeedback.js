@@ -36,8 +36,8 @@ return(
     <br></br>
     <br></br>
     <br></br>
-    <button>Edit</button>
-    <button>Delete</button>
+    {/* <button>Edit</button>
+    <button>Delete</button> */}
     
     
     
