@@ -5,6 +5,7 @@ import DeptDash from './components/DeptDash/DeptDash'
 import MyFeedback from './components/MyFeedback/MyFeedback'
 import CompDash from './components/CompDash/CompDash'
 import ManagerView from './components/ManagerView/ManagerView'
+import InternalProcess from './components/InternalProcess/InternalProcess'
 
 
 
@@ -16,8 +17,7 @@ export default (
 <Route path ='/myfeedback' component={MyFeedback}/>
 <Route path ='/companydash' component={CompDash}/>
 <Route path ='/managerview' component={ManagerView}/>
-
-
+<Route path ='/internalprocess' component={InternalProcess}/>
 </Switch>
 
 )

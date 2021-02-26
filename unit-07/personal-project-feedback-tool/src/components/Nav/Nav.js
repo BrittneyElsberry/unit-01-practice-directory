@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {logout} from '../../redux/authReducer'
 import {updateUser} from '../../redux/authReducer'
 import {Link, withRouter} from 'react-router-dom'
+import './Nav.scss'
 
 
 const Nav = (props)=> {
@@ -26,11 +27,12 @@ const Nav = (props)=> {
           
 
             <div className='nav-links'>
-            <Link to="/deptdash"><li className='nav-item' alt='department dashboard'>Department Dashboard</li></Link>  
-            <Link to='/companydash'><li className='nav-item' alt='my feedback'>Company Dashboard</li> </Link>
+            <Link to="/deptdash"><li className='nav-item' alt='department dashboard'>Department</li></Link>  
+            <Link to='/companydash'><li className='nav-item' alt='my feedback'>Company</li> </Link>
             <Link to='/myfeedback'><li className='nav-item' alt='my feedback' >My Feedback</li></Link>
+            <Link to='/' onClick={logout}><li className='nav-item logout' alt='logout'>Logout</li></Link>
           </div>
-        <Link to='/' onClick={logout}><li className='nav-item logout' alt='logout'>Logout</li></Link>
+        
         </div>
                 
           

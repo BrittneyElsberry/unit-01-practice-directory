@@ -1,7 +1,41 @@
 @import '../SCSS/variables.scss';
 
-@media screen and (max-width: 1100px){
+
+
+@include breakpoints(phone){
+
+    .nav{
+        height: 10vh;
+        background-color: $color-light-blue;
+        width: 100vw;
+    }
+    
+    .nav-links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: 1em;
+      
+    }
+    
+    .nav-item{
+        list-style: none;
+        color: $color-white;
+        font-weight: bold;
+        font-size: .75em;
+        line-height: 3;
+        // padding-left: 5px;
+        padding-right: 30px;
+        // flex-grow: 3;
+    }
+    
+
+
+}
+
+@include breakpoints(laptop){
 
     
-    
 }
+
+

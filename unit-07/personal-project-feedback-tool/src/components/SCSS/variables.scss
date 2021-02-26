@@ -1,3 +1,40 @@
+//Breakpoints
+// $breakpoint-tablet: 768px;
+// $breakpoint-desktop: 1900px;
+// $breakpoint-laptop: 1400px;
+// $breakpoint-large-phone: 425px;
+// $breakpoint-phone: 360px;
+
+@mixin breakpoints($point){
+
+  @if $point  == phone {
+    @media screen and(max-width: 425px) {@content;}
+  } 
+  @else if $point == laptop {
+    @media screen and(min-width: 768px) {@content;}
+  }
+
+  @else if $point == desktop {
+    @media screen and(min-width: 1224px) {@content;}
+  }
+  @else if $point == largescreen {
+    @media screen and(min-width: 1824px) {@content;}
+  }
+}
+
+
+// $breakpoint: (
+//   'phone': 360px,
+//   'tablet': 768px,
+//   'desktop': 1366px,
+//   'LGdesktop': 1920px
+// )!default;
+
+
+
+
+//Colors
+
 $color-light-green:  #02c39a;
 $color-dark-green: #00a896;
 

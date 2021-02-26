@@ -13,7 +13,7 @@ header{
 }
 
 
-@media screen and (max-width: 25em){
+@include breakpoints(phone){
 
     h1{
         text-align: center;
@@ -28,15 +28,44 @@ header{
         width: 80vw;
         margin: 20px;
         margin-left: 25px;
+        // border-radius: 25%;
+    }
+
+    .dropDownMenu{
+        
+        width: 40vw;
+        height: 5vh;
+        border: 2px $color-light-blue;
+    }
+
+    .mySubmit{
+        width: 20vw;
     }
 
 
 }
 
 
-@media screen and (max-width: 1100px){
+@include breakpoints(laptop){
+    h1{
+        text-align: center;
+        padding: 10vh;
+        height: 5vh;
+        width: 100vw;
+        background-color: $color-creme;
+    }
+    .myTextArea{
+
+        height: 40vh;
+        width: 80vw;
+        margin: 20px;
+        margin-left: 25px;
+        
+    }
 
 
-    height: 100vh
-    
 }
+
+
+
+

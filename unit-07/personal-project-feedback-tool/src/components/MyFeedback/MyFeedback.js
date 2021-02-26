@@ -7,15 +7,24 @@ import './MyFeedback.scss';
 
 const MyFeedback = (props)=>{
 
-const [fb, setFB] = useState('')
+const [selectedfb, setSelectedFB] = useState('')
 
+console.log(selectedfb)
 return(
-
+  
     <div className='myFeedbackContainer'>
         
-     <header>
-     <h1>My Feedback</h1>    
-    </header>   
+    
+     {/* <h1>Feedback Category</h1>     */}
+    <select className='dropDownMenu' value='selectedfb' onChange={(e)=> setSelectedFB({selectedfb: e.target.value})} >
+        <option value='default'></option>
+        <option value='leadership'>Customer Experience</option>
+        <option value='internalProcess'>Internal Process</option>
+        <option value='leadership'>Leadership</option>
+        <option value='product'>Product</option>
+       
+    </select>
+     
 
     
     <textarea className='myTextArea'></textarea>
