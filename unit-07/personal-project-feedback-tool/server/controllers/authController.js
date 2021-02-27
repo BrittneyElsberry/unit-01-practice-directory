@@ -57,9 +57,11 @@ module.exports = {
 
         req.session.user = {
             username: user.username,
-            id: user.id
+            id: user.user_id,
+            deptNumber: user.dept_number
         }
         delete user.password
+        console.log(req.session.user)
         return res.status(200).send(req.session.user)
     }catch(err){
         console.log(err)

@@ -1,10 +1,10 @@
 
 
 const initialState = {
-    userId: 0,
+    // userId: 0,
     username: '',
     password: '',
-    deptNumber: 0,
+    // deptNumber: 0,
     isAdmin: false
 }
 

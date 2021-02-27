@@ -1,9 +1,12 @@
 const initialState = {
-    categoryId: 0,
-    deptId: 0,
-    userId: 0,
-    feedback: '',
-    date: 0
+    // categoryId: 0,
+    // deptId: 0,
+    // userId: 0,
+    // feedback: '',
+    // date: 0
+
+    feedback: [],
+    
 
 }
 

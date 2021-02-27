@@ -35,8 +35,8 @@ app.use(session({
 
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
-app.get('/auth/me', authCtrl.getUser)
-app.post('/auth/logout', authCtrl.logout)
+app.get('/me', authCtrl.getUser)
+app.post('/logout', authCtrl.logout)
 
 
 //User endpoints
@@ -46,4 +46,4 @@ app.post('/auth/logout', authCtrl.logout)
 
 //Feedback endpoints
 
-app.post('/auth/myfeedback', fbCtrl.createFB)
+app.post('/myfeedback/submit', fbCtrl.createFB)
