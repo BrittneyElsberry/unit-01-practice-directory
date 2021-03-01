@@ -11,7 +11,7 @@ const [userInfo, setUserInfo] = useState({
     userId: 0,
     username: '',
     password: '',
-    deptNumber: 0,
+    dept_number: 0,
     // isAdmin: false
 })    
 

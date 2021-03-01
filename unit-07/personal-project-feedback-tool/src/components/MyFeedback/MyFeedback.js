@@ -3,37 +3,41 @@ import axios from 'axios'
 import './MyFeedback.scss';
 import {connect} from 'react-redux'
 import {postFB} from '../../redux/fbReducer'
-
+import {updateUser} from '../../redux/authReducer'
 
 const MyFeedback = (props)=>{
 
+    
+
 const [fbInfo, setfbInfo] = useState({
     selectCategory: '',
-    fb: '',
+    fb: [],
 })
 
-const [displayfb, setDisplayFb] = useState([])
+// const [displayfb, setDisplayFb] = useState([]) 
+//trying with just redux fbreducer
 
 
 
 
 const submitFB =()=>{
- axios.post('/myfeedback/submit', fbInfo)
+ axios.post('/myfeedback/submit', fbInfo) //sending fbInfo to fbcontroller.js createFB function
  .then((res)=> {
-    console.log(res.data, `This is from the submitFB in MyFeedback.js`)
-     setDisplayFb({dispalyfb: res.data})
+     props.postFB(res.data)
+     setfbInfo({fbInfo: {selectCategory: '', fb: []}})
+    //  console.log(props)
+
 }).catch((err)=> console.log(err))   
 
 }
 
-console.log(props)
 
 return(
   
     <div className='myFeedbackContainer'>
     <h1>{props.username} Feedback</h1>        
 
-    <select className='dropDownMenu' value='selectCategory' onChange={(e)=> setfbInfo({selectCategory: e.target.value})} >
+    <select className='dropDownMenu' value='selectCategory' onChange={(e)=> setfbInfo({...fbInfo, selectCategory: e.target.value})} >
         <option value='default'></option>
         <option value='Customer Experience'>Customer Experience</option>
         <option value='Internal Process'>Internal Process</option>
@@ -44,15 +48,16 @@ return(
      
 
     
-    <textarea className='myTextArea' value={fbInfo.fb} onChange={(e)=> setfbInfo({fb: e.target.value})}></textarea>
+    <textarea className='myTextArea' value={fbInfo.fb} onChange={(e)=> setfbInfo({...fbInfo, fb: e.target.value})}></textarea>
     <br></br>
     <button className='mySubmit' onClick={submitFB}>Submit</button>
 
 
-    {/* {displayfb.map((fbList)=> {
+    {/* {props.map((fbList)=> {
         return <div key={fbList.id}><h1>{fblist}</h1></div>
 
     })} */}
+    <h1></h1>
     <br></br>
 
     <br></br>
@@ -67,4 +72,9 @@ return(
 
 }
 
-export default connect((s)=> s)(MyFeedback)
+const mapStateToProps = (reduxState) =>{
+    return reduxState.fbReducer
+    
+    }
+
+export default connect(mapStateToProps, {postFB, updateUser})(MyFeedback)

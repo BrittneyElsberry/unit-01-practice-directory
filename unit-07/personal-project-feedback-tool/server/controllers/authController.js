@@ -6,7 +6,7 @@ module.exports = {
     register: async (req,res) =>{
        
        try{
-        const {username, password, deptNumber} = req.body
+        const {username, password, dept_number} = req.body
         console.log(req.body)
         const db = req.app.get('db')
         const result = await db.find_user_by_username([username])
@@ -19,16 +19,19 @@ module.exports = {
 
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
-        const registeredUser = await db.create_user([username, hash, deptNumber])
+        const registeredUser = await db.create_user([username, hash, dept_number]) //registeredUser is destructured
         const user = registeredUser[0]
 
-        req.session.user = {
-            username: user.username,
-            id: user.id,
-            deptNumber: user.deptNumber
+        delete user.password
+        req.session.user = user
+
+        // req.session.user = {
+        //     username: user.username,
+        //     id: user.id,
+        //     dept_number: user.deptNumber
             
 
-        }
+        // }
         return res.status(201).send(req.session.user)
 
     } catch(err) {
@@ -55,12 +58,15 @@ module.exports = {
             res.status(403).send('Incorrect Password!')
         }
 
-        req.session.user = {
-            username: user.username,
-            id: user.user_id,
-            deptNumber: user.dept_number
-        }
+        // req.session.user = {
+        //     username: user.username,
+        //     id: user.user_id,
+        //     deptNumber: user.dept_number
+        // }
         delete user.password
+        req.session.user = user
+        //delete password above req.session 
+        //req.session.user = user
         console.log(req.session.user)
         return res.status(200).send(req.session.user)
     }catch(err){

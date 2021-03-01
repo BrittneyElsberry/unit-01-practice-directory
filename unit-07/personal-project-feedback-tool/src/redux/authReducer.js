@@ -6,6 +6,9 @@ const initialState = {
     password: '',
     // deptNumber: 0,
     isAdmin: false
+
+    //user: null --- if user is null - the user is logged out..
+    // maybe do this? Personal preference option. 
 }
 
 const UPDATE_USER = "UPDATE_USER"

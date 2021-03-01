@@ -9,16 +9,20 @@ module.exports = {
     createFB: async (req, res) =>{
 
         const db = req.app.get('db')
-        // const {id} = req.session.user
-        const {feedback, categoryName} = req.body
-        const {id, deptId} = req.session.user
+        const {fb, selectCategory} = req.body
+        const {id, dept_number} = req.session.user
         const date = new Date 
-        // let newFeedback = feedback 
-        if(feedback){
+
+        console.log(req.body)
+
+        if(fb){
             
-            const [category] = await db.category([categoryName])
-            await db.feedback([category.category_id, deptId, id, feedback, date])
-            return res.status(200).send(feedback)
+            const [category] = await db.category([selectCategory])
+            const [dept] = await db.department([dept_number])
+            const [feedback] = await db.feedback([category.category_id, dept.dept_id, id, fb, date])
+
+            
+            return res.status(200).send(feedback) 
          
 
         } else {

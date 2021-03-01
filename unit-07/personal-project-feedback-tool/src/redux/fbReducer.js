@@ -13,7 +13,7 @@ const initialState = {
 const POST_FEEDBACK = "POST_FEEDBACK"
 
 export const postFB = (fb)=>{
-    console.log(fb)
+   
     return{
         type: POST_FEEDBACK,
         payload: fb

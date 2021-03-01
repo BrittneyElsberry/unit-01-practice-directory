@@ -1,3 +1,40 @@
+
+
+
+Components:
+
+Auth.js
+
+This is the authentication component
+
+Functionality:
+
+User can login or register for the website.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
