@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+
+
 //Breakpoints
 // $breakpoint-tablet: 768px;
 // $breakpoint-desktop: 1900px;
 // $breakpoint-laptop: 1400px;
 // $breakpoint-large-phone: 425px;
 // $breakpoint-phone: 360px;
+
+
 
 @mixin breakpoints($point){
 

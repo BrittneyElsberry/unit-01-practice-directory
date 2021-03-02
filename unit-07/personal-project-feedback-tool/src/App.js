@@ -1,11 +1,11 @@
-import './App.css';
+import './App.scss';
 import routes from './routes'
 import './reset.css'
 import Nav from './components/Nav/Nav'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Nav/>
       {/* <header className="App-header">
       Innovation station

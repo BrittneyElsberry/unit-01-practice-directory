@@ -39,7 +39,8 @@ axios.post('/auth/login', userInfo)
 
 return (
 
-<div><h1>Make your voice heard</h1>
+<div><h1>Increase employee engagement</h1>
+<div className='backgroundAuth'>
 <div className='authContainer'>
     
 <div className='authBtnContainer'>
@@ -88,7 +89,7 @@ return (
  /> */}
 
  </div>
-</div> </div>)
+</div> </div> </div>)
 
 
 }

@@ -10,7 +10,7 @@ module.exports = {
 
         const db = req.app.get('db')
         const {fb, selectCategory} = req.body
-        const {id, dept_number} = req.session.user
+        const {user_id, dept_number} = req.session.user
         const date = new Date 
 
         console.log(req.body)
@@ -19,7 +19,7 @@ module.exports = {
             
             const [category] = await db.category([selectCategory])
             const [dept] = await db.department([dept_number])
-            const [feedback] = await db.feedback([category.category_id, dept.dept_id, id, fb, date])
+            const [feedback] = await db.feedback([category.category_id, dept.dept_id, user_id, fb, date])
 
             
             return res.status(200).send(feedback) 

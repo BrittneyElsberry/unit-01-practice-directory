@@ -39,17 +39,19 @@
               height: 20px;
               ;
           } */
-        
-
-
 }
 
 
 
-
-
-
 @media screen and (max-width: 25rem){
+
+    .h1 {
+        display: none;
+    }
+
+    .backgroundAuth {
+        background-color: $color-dark-blue;
+    }
 
     .authContainer{
         display: flex;
