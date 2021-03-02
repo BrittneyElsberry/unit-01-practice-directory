@@ -46,4 +46,5 @@ app.post('/logout', authCtrl.logout)
 
 //Feedback endpoints
 
+app.get('/myfeedback/home', fbCtrl.readFB)
 app.post('/myfeedback/submit', fbCtrl.createFB)

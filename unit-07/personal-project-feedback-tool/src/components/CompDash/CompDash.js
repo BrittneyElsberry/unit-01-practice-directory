@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import {connect} from 'react-redux'
+import {updateUser} from '../../redux/authReducer'
+import {Redirect} from 'react-router-dom'
 import './CompDash.css';
 // import {connect} from 'react-redux'
 // import {updateUser} from '../../redux/authReducer'
@@ -8,6 +11,9 @@ import './CompDash.css';
 const CompDash = (props)=>{
 
 
+    if(!props.user){
+        return <Redirect to='/'/>
+    }   
 
 return(
 
@@ -26,4 +32,8 @@ return(
 
 }
 
-export default CompDash
+const mapStateToProps = (reduxState) => {
+    return reduxState.authReducer
+}
+
+export default connect(mapStateToProps, {updateUser})(CompDash)

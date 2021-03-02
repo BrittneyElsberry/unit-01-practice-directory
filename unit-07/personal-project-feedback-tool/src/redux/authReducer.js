@@ -5,8 +5,8 @@ const initialState = {
     username: '',
     password: '',
     // deptNumber: 0,
-    isAdmin: false
-
+    isAdmin: false,
+    // user: null
     //user: null --- if user is null - the user is logged out..
     // maybe do this? Personal preference option. 
 }
@@ -16,6 +16,7 @@ const LOGOUT = "LOGOUT"
 
 export const updateUser = (user)=> {
     console.log(user)
+   
     return {
         type: UPDATE_USER,
         payload: user

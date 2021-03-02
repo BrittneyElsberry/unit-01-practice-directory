@@ -29,6 +29,15 @@ module.exports = {
             return res.status(403)
         }       
 
+    }, 
+
+    readFB: async  (req, res)=> {
+        const db = await req.app.get('db')
+       const [fbList] = await db.feedback([])
+       res.status(200).send(fbList)
+    //    .then((res) => {
+    //     return res.status(200).send(fbList)})
+    //    .catch(err => console.log(err))
     }
 
 }

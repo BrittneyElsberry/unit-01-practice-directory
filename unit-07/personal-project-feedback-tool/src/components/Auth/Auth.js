@@ -32,7 +32,7 @@ axios.post('/auth/login', userInfo)
 .then(user => {
     props.updateUser(user.data)
     // setUserInfo(user.data) 
-    props.history.push('/deptdash')
+    props.history.push( props.location.state ? props.location.state.from : '/deptdash')
 })
 
 }
