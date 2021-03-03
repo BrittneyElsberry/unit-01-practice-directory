@@ -8,25 +8,16 @@ import {Redirect} from 'react-router-dom'
 
 const MyFeedback = (props)=>{
 
-    console.log(props.feedback, 'this is the objectttttttttt')
-
 
 const [fbInfo, setfbInfo] = useState({
     selectCategory: '',
     fb: '',
-    fbList: {}
 })
-const [fbList, setfbList] = useState({}) 
 
 
 useEffect(()=>{
     props.postFB() 
-  
-  
-   
-}, []) 
-
-
+}, [fbInfo]) 
 
 
 //Protected Route if the user is not logged in.
@@ -37,6 +28,8 @@ if(!props.username){
      state: {from: props.location}   
     }}/>
 }   
+
+
 
 //This function sends the fbInfo from state to the createFB function in the fbController.js 
 //The feedback is sent to the feedback table and then returned to this function to 
@@ -90,8 +83,14 @@ return(
     <br></br>
     <button className='mySubmit' onClick={submitFB}>Submit</button>
 
+    <h1>Review previously submitted feedback</h1>
+
+    <div className='psfheader'>
+        <h2>Feedback Category</h2><h2>Feedback</h2>
+    </div>
+
     {props.feedback.map((elem)=>{
-        return <div key={elem.feedback_id}><li>{elem.feedback} </li></div>
+        return <div key={elem.feedback_id}><li>{elem.feedback} {elem.category_name} </li></div>
     })}
    
    {/* {props} */}
