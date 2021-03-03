@@ -16,7 +16,7 @@ const [fbInfo, setfbInfo] = useState({
 })
 
 const [isChecked, setIsChecked] = useState(false)
-// const [isAlert, setIsAlert] = useState(false)
+
 
 useEffect(()=>{
     props.postFB() 
@@ -34,19 +34,23 @@ if(!props.username){
 
 
 
+
 //This function sends the fbInfo from state to the createFB function in the fbController.js 
 //The feedback is sent to the feedback table and then returned to this function to 
 const submitFB =(formSubmit)=>{
     formSubmit.preventDefault()
+    let result
+
 
     if(isChecked===true){
-
-        let result = confirm(`Are you sure you want to submit this anonymously? 
+        let result = window.confirm(
+            `Are you sure you want to submit this anonymously? 
+    
         Please make sure your feedback is specific and actionable. 
-        There will be no way to track and ask follow up questions. 
-        If you\'d like to add more detail, please click cancel and add more information. Thank you! :)`)
-        console.log(result)
-
+        There will be no way for leadership to ask follow up questions. 
+    
+        If you\'d like to add more detail, please click cancel
+        and add more information. Thank you! :)`)
         if (result === true){
             axios.post('/myfeedback/anonymous', fbInfo)
             .then((res)=>{
@@ -114,16 +118,6 @@ return(
     checked ={isChecked}
     onChange={(e)=> {setIsChecked(e.target.checked)}}
     />
-
-{/* {setIsChecked({isChecked: false})} */}
-    
-  
-    {/* <textarea 
-    className='myTextArea' 
-    type='radio'
-    value={fbInfo.fb} 
-    onChange={(e)=> setfbInfo({...fbInfo, fb: e.target.value})}>
-    </textarea> */}
 
     <br></br>
     <button className='mySubmit'>Submit</button>
