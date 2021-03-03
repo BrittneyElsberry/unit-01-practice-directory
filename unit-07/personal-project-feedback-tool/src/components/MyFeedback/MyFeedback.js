@@ -5,15 +5,18 @@ import {connect} from 'react-redux'
 import {postFB} from '../../redux/fbReducer'
 import {updateUser} from '../../redux/authReducer'
 import {Redirect} from 'react-router-dom'
+// import Checkbox from '../Checkboxes/Checkbox'
 
 const MyFeedback = (props)=>{
 
 
 const [fbInfo, setfbInfo] = useState({
-    selectCategory: '',
+    selectCategory: 'Internal Process',
     fb: '',
 })
 
+const [isChecked, setIsChecked] = useState(false)
+// const [isAlert, setIsAlert] = useState(false)
 
 useEffect(()=>{
     props.postFB() 
@@ -33,34 +36,59 @@ if(!props.username){
 
 //This function sends the fbInfo from state to the createFB function in the fbController.js 
 //The feedback is sent to the feedback table and then returned to this function to 
-const submitFB =()=>{
- axios.post('/myfeedback/submit', fbInfo) //sending fbInfo to fbcontroller.js createFB function
- .then((res)=> {
-     props.postFB(res.data) //this is receiving the data from the feeback table
-   
-     setfbInfo({fbInfo: {selectCategory: '', fb: []}})
-     console.log(fbInfo.fb)
-  
+const submitFB =(formSubmit)=>{
+    formSubmit.preventDefault()
 
-}).catch((err)=> console.log(err))   
+    if(isChecked===true){
 
-}
+        let result = confirm(`Are you sure you want to submit this anonymously? 
+        Please make sure your feedback is specific and actionable. 
+        There will be no way to track and ask follow up questions. 
+        If you\'d like to add more detail, please click cancel and add more information. Thank you! :)`)
+        console.log(result)
 
-// const handleanonymous = () =>{
-//     setAnonymous({anonymous: true})
-//     console.log(anonymous)
-// }
+        if (result === true){
+            axios.post('/myfeedback/anonymous', fbInfo)
+            .then((res)=>{
+                props.postFB(res.data)
+                setfbInfo({fbInfo: {selectCategory: '', fb: []}})
+    
+            }).catch((err)=> console.log(err))
+        }
+      
+    } else if (result === false){
+       return  console.log('waiting for changes from the user before submit')
+    }
 
-console.log('this is props', props)
+    else if (isChecked === false){
+        axios.post('/myfeedback/submit', fbInfo) //sending fbInfo to fbcontroller.js createFB function
+        .then((res)=> {
+            props.postFB(res.data) //this is receiving the data from the feeback table
+          
+            setfbInfo({fbInfo: {selectCategory: '', fb: []}})
+            console.log(fbInfo.fb)
+         
+       
+       }).catch((err)=> console.log(err)) 
+    }
+    }
+
+
+
+
+
+
 return(
   
     <div className='myFeedbackContainer'>
       <h1>Do you have a great idea?</h1>  
 
+      <form onSubmit={submitFB}>
+
+    
     <div className='fbcategory'>
     <h1>Feedback Category:</h1>        
-
-    <select className='dropDownMenu' value='selectCategory' onChange={(e)=> setfbInfo({...fbInfo, selectCategory: e.target.value})} >
+    <select className='dropDownMenu' value={fbInfo.selectCategory} onChange={(e)=> setfbInfo({...fbInfo, selectCategory: e.target.value})} >
         <option value='default'></option>
         <option value='Customer Experience'>Customer Experience</option>
         <option value='Internal Process'>Internal Process</option>
@@ -68,20 +96,44 @@ return(
         <option value='Product'>Product</option>
        
     </select>
-     
-    </div>    
-    
+     </div>   
 
+    
     <textarea 
     className='myTextArea' 
     type='radio'
     value={fbInfo.fb} 
     onChange={(e)=> setfbInfo({...fbInfo, fb: e.target.value})}>
-    </textarea>
+    </textarea> 
 
+    <label>Submit Anonymously? : {isChecked ? 'True' : 'False' } </label>
+    
+    <input 
+    
+    type='checkbox'
+    checked ={isChecked}
+    onChange={(e)=> {setIsChecked(e.target.checked)}}
+    />
+
+{/* {setIsChecked({isChecked: false})} */}
+    
+  
+    {/* <textarea 
+    className='myTextArea' 
+    type='radio'
+    value={fbInfo.fb} 
+    onChange={(e)=> setfbInfo({...fbInfo, fb: e.target.value})}>
+    </textarea> */}
 
     <br></br>
-    <button className='mySubmit' onClick={submitFB}>Submit</button>
+    <button className='mySubmit'>Submit</button>
+    </form>
+   
+
+
+    
+
+
 
     <h1>Review previously submitted feedback</h1>
 
@@ -92,47 +144,9 @@ return(
     {props.feedback.map((elem)=>{
         return <div key={elem.feedback_id}><li>{elem.feedback} {elem.category_name} </li></div>
     })}
-   
-   {/* {props} */}
-   {/* <label className='anonymousbtn'>Submit anonymously?
-    <input 
-    type='radio' 
-    value='Submit anonymously?' />
-    </label> */}
-    
-    {/* <input 
-   
-    type='checkbox' 
-    onChange={(e) => handleCheckbox(e.target.value)} /> 
-
-    <input/> */}
 
 
-  
-    {/* <textarea className='myTextArea' value={fbInfo.fb} onChange={(e)=> setfbInfo({...fbInfo, fb: e.target.value})}></textarea>
-    <br></br>
-    <button className='mySubmit' onClick={submitFB}>Submit</button>
-    <label>Submit anonymously? </label>
-    
-    <input 
-   
-    type='checkbox' 
-    onChange={(e) => handleCheckbox(e.target.value)} /> 
 
-    <input/> */}
-
-    {/* {props.feedback.map((elem, index) => {
-        return <div key={props.index}><h1>{elem}</h1></div>
-
-    })} */}
-    <h1></h1>
-    <br></br>
-
-    <br></br>
-    <br></br>
-    {/* <button>Edit</button>
-    <button>Delete</button> */}
-    
     
     
     </div>

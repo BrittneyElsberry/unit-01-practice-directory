@@ -5,6 +5,7 @@ Drop table if exists feedback;
 Drop table if exists category;
 Drop table if exists department;
 Drop table if exists users;
+Drop table if exists anonymous_fb;
 
 CREATE TABLE users(
     
@@ -44,3 +45,25 @@ fb_date date
 
 
 );
+
+
+CREATE TABLE anonymous_fb (
+anonymous_id SERIAL PRIMARY KEY,
+feedback varchar (5000),
+dept_name REFERENCES department(dept_name),
+category_name REFERENCES category(category_name)
+
+
+);
+
+
+
+CREATE TABLE anonymous_fb (
+anonymous_id SERIAL PRIMARY KEY,
+feedback varchar (5000),
+dept_id INT REFERENCES department(dept_id),
+category_id INT REFERENCES category(category_id),
+date date
+
+);
+

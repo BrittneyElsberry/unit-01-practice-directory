@@ -48,3 +48,4 @@ app.post('/logout', authCtrl.logout)
 
 app.get('/myfeedback/home', fbCtrl.readFB)
 app.post('/myfeedback/submit', fbCtrl.createFB)
+app.post('/myfeedback/anonymous', fbCtrl.createAnonymous)
