@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {postFB} from '../../redux/fbReducer'
 import {updateUser} from '../../redux/authReducer'
 import {Redirect} from 'react-router-dom'
-// import Checkbox from '../Checkboxes/Checkbox'
+import Edit from '../Edit/Edit'
 
 const MyFeedback = (props)=>{
 
@@ -78,7 +78,13 @@ const submitFB =(formSubmit)=>{
     }
 
 
+// const deleteFeedback = () => {
+//     axios.delete(`/myfeedback`)
+//     .then(res => {
 
+
+//     })
+// }
 
 
 
@@ -125,10 +131,6 @@ return(
    
 
 
-    
-
-
-
     <h1>Review previously submitted feedback</h1>
 
     <div className='psfheader'>
@@ -136,17 +138,10 @@ return(
     </div>
 
     {props.feedback.map((elem)=>{
-        return <div key={elem.feedback_id}><li>{elem.feedback} {elem.category_name} </li></div>
-    })}
-
-
-
-    
+        return  <div key={elem.feedback_id}><li>{elem.feedback} {elem.category_name} <Edit/> </li></div>})}
     
     </div>
-)
-}
-
+)}
 
 export default connect((s)=> ({
     ...s.fbReducer,
@@ -157,3 +152,7 @@ export default connect((s)=> ({
 //this is spreading in two different reducer's props into this component and
 //makes it so you don't have to call
 //axios calls in redux need to have the apply middleware
+
+
+//<div key={elem.feedback_id}><li>{elem.feedback} {elem.category_name} </li></div> /> //previous code for mapping over the data
+//{elem.feedback} {elem.category_name}//

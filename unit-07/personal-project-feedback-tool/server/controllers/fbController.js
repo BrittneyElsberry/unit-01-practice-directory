@@ -66,6 +66,16 @@ module.exports = {
  
     },
 
+    updateFB: (req, res) => {
+
+    },
+
+    deleteFB: (req, res) =>{
+        const {feedback_id} = req.params.id
+        req.app.get('db').deletefeedback(feedback_id)
+        .then(res.sendStatus(200))
+    }
+
     
 }
 
