@@ -8,30 +8,32 @@ import {Redirect} from 'react-router-dom'
 
 const MyFeedback = (props)=>{
 
-    console.log(props)
+    console.log(props.feedback, 'this is the objectttttttttt')
 
 
 const [fbInfo, setfbInfo] = useState({
     selectCategory: '',
     fb: '',
-    fbList: []
+    fbList: {}
 })
+const [fbList, setfbList] = useState({}) 
 
 
 useEffect(()=>{
-    
-    postFB()
+   console.log('hitting useeffect') 
+    props.postFB() //wasn't calling props.postFB() when calling this function
+    // .then((res)=> {
+    //     props.setfbList({fbList: res.data})
+    // })
 
-
+  
+   
 }, []) 
 
-// const [anonymous, setAnonymous]  = useState(false)
 
-// const [displayfb, setDisplayFb] = useState([]) 
-//trying with just redux fbreducer
-
-// console.log(checkbox)
-
+    // console.log(props, 'this is the front end props')
+    // setfbList({fbList: props})
+    // console.log(fbList, 'this is the fbList')
 
 //Protected Route if the user is not logged in.
 if(!props.username){
@@ -62,11 +64,7 @@ const submitFB =()=>{
 //     console.log(anonymous)
 // }
 
-   console.log(props)
-
-
-
-
+console.log('this is props', props)
 return(
   
     <div className='myFeedbackContainer'>
@@ -97,7 +95,12 @@ return(
 
     <br></br>
     <button className='mySubmit' onClick={submitFB}>Submit</button>
+
+    {props.feedback.map((elem)=>{
+        return <div key={elem.feedback_id}><p>{elem.feedback}</p></div>
+    })}
    
+   {/* {props} */}
    {/* <label className='anonymousbtn'>Submit anonymously?
     <input 
     type='radio' 
@@ -157,3 +160,4 @@ export default connect((s)=> ({
 
 //this is spreading in two different reducer's props into this component and
 //makes it so you don't have to call
+//axios calls in redux need to have the apply middleware

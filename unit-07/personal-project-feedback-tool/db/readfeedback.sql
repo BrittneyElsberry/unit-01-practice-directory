@@ -1,1 +1,1 @@
-select feedback, fb_date from feedback where user_id = $3;
+select * from feedback where user_id = $1;

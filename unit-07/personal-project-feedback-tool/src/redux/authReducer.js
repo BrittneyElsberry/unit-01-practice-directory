@@ -32,10 +32,10 @@ export const logout = ()=>{
 export default function authReducer(state=initialState, action){
 switch(action.type){
     case UPDATE_USER:
-        return {...initialState, ...action.payload}
+        return {...state, ...action.payload}
 
     case LOGOUT: 
-    return {...initialState}
+    return {...initialState} 
 
     default: 
     return state

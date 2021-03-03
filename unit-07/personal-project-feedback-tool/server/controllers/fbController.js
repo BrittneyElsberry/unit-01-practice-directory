@@ -1,5 +1,3 @@
-// let displayfb = []
-
 
 module.exports = {
 
@@ -32,12 +30,14 @@ module.exports = {
     }, 
 
     readFB: async  (req, res)=> {
+
+        let {user_id} = req.session.user 
         const db = await req.app.get('db')
-       const [fbList] = await db.feedback([])
-       res.status(200).send(fbList)
-    //    .then((res) => {
-    //     return res.status(200).send(fbList)})
-    //    .catch(err => console.log(err))
+        const fbList = await db.readfeedback([user_id])
+        console.log(fbList, 'controller')
+        res.status(200).send(fbList)
+ 
     }
 
 }
+
