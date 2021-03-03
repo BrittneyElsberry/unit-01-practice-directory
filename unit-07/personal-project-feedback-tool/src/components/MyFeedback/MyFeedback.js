@@ -20,20 +20,14 @@ const [fbList, setfbList] = useState({})
 
 
 useEffect(()=>{
-   console.log('hitting useeffect') 
-    props.postFB() //wasn't calling props.postFB() when calling this function
-    // .then((res)=> {
-    //     props.setfbList({fbList: res.data})
-    // })
-
+    props.postFB() 
+  
   
    
 }, []) 
 
 
-    // console.log(props, 'this is the front end props')
-    // setfbList({fbList: props})
-    // console.log(fbList, 'this is the fbList')
+
 
 //Protected Route if the user is not logged in.
 if(!props.username){
@@ -97,7 +91,7 @@ return(
     <button className='mySubmit' onClick={submitFB}>Submit</button>
 
     {props.feedback.map((elem)=>{
-        return <div key={elem.feedback_id}><p>{elem.feedback}</p></div>
+        return <div key={elem.feedback_id}><li>{elem.feedback} </li></div>
     })}
    
    {/* {props} */}
@@ -144,13 +138,8 @@ return(
     
     </div>
 )
-
 }
 
-// const mapStateToProps = (reduxState) =>{
-//     return reduxState.fbReducer, reduxState.authReducer
-    
-//     }
 
 export default connect((s)=> ({
     ...s.fbReducer,

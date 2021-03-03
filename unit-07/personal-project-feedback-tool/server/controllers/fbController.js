@@ -1,9 +1,6 @@
 
 module.exports = {
 
-
-
-
     createFB: async (req, res) =>{
 
         const db = req.app.get('db')
