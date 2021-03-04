@@ -1,0 +1,6 @@
+@import '../SCSS/variables.scss';
+
+
+.btn{
+    @include btn-theme
+}

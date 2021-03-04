@@ -4,6 +4,7 @@ import {postFB} from '../../redux/fbReducer'
 import {updateFB} from '../../redux/fbReducer'
 import {deleteFB} from '../../redux/fbReducer'
 import {connect} from 'react-redux'
+import './Edit.scss'
 
 class Edit extends Component {
 constructor(props){
@@ -45,8 +46,8 @@ render () {
         )  : (
             <li>
           
-             <button className="editXbtn" onClick={()=>this.props.deleteFB()}>X</button>
-             <button className="editbtn" onClick={(e)=>this.toggleEditMode(e)}>Edit</button>
+             <button className="btn" onClick={()=>this.props.deleteFB()}>X</button>
+             <button className="btn" onClick={(e)=>this.toggleEditMode(e)}>Edit</button>
             </li>
 
         ) }

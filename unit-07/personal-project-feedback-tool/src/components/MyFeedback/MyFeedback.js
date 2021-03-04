@@ -24,15 +24,15 @@ useEffect(()=>{
 
 
 //Protected Route if the user is not logged in.
-if(!props.username){
-    return <Redirect 
-    to={{
-     pathname: '/',
-     state: {from: props.location}   
-    }}/>
-}   
+// if(!props.username){
+//     return <Redirect 
+//     to={{
+//      pathname: '/',
+//      state: {from: props.location}   
+//     }}/>
+// }   
 
-
+// NEED TO REINSTATE WHEN DONE EDITING SASS FOR THIS COMPONENT
 
 
 //This function sends the fbInfo from state to the createFB function in the fbController.js 
@@ -91,15 +91,15 @@ const submitFB =(formSubmit)=>{
 return(
   
     <div className='myFeedbackContainer'>
-      <h1>Do you have a great idea?</h1>  
+      {/* <h1>Do you have a great idea?</h1>   */}
 
       <form onSubmit={submitFB}>
 
     
     <div className='fbcategory'>
-    <h1>Feedback Category:</h1>        
+          
     <select className='dropDownMenu' value={fbInfo.selectCategory} onChange={(e)=> setfbInfo({...fbInfo, selectCategory: e.target.value})} >
-        <option value='default'></option>
+        <option value='default'>Select Feedback Category</option>
         <option value='Customer Experience'>Customer Experience</option>
         <option value='Internal Process'>Internal Process</option>
         <option value='Leadership'>Leadership</option>
@@ -116,30 +116,40 @@ return(
     onChange={(e)=> setfbInfo({...fbInfo, fb: e.target.value})}>
     </textarea> 
 
-    <label>Submit Anonymously? : {isChecked ? 'True' : 'False' } </label>
+    <div className='anonheaderContainer'>
+    <div className='anonheader'>
     
+    <label>Submit Anonymously?</label>
+
     <input 
-    
+    className='checkbox'
     type='checkbox'
     checked ={isChecked}
     onChange={(e)=> {setIsChecked(e.target.checked)}}
     />
+    
+    {/* <button className='mySubmitbtn'>Submit</button> */}
+    </div>
+    <button className='mySubmitbtn'>Submit</button>
+    </div>
 
     <br></br>
-    <button className='mySubmit'>Submit</button>
     </form>
    
 
+<div className='fbListContainer'>
 
-    <h1>Review previously submitted feedback</h1>
+    {/* <h1 className='fblabels'>Review previously submitted feedback</h1> */}
 
     <div className='psfheader'>
-        <h2>Feedback Category</h2><h2>Feedback</h2>
+        <h2 className='fblabels'>Feedback Category</h2><h2 className='fblabels'>Feedback</h2>
     </div>
 
     {props.feedback.map((elem)=>{
-        return  <div key={elem.feedback_id}><li>{elem.feedback} {elem.category_name} <Edit/> </li></div>})}
+        return  <div key={elem.feedback_id}><li className='fbformat'> {elem.category_name}  {elem.feedback} <Edit/> </li></div>})}
     
+    </div>
+
     </div>
 )}
 
@@ -156,3 +166,5 @@ export default connect((s)=> ({
 
 //<div key={elem.feedback_id}><li>{elem.feedback} {elem.category_name} </li></div> /> //previous code for mapping over the data
 //{elem.feedback} {elem.category_name}//
+
+//{isChecked ? 'True' : 'False' } 

@@ -1,5 +1,9 @@
 @import '../SCSS/variables.scss';
 
+html body{
+    margin: 4px;
+}
+
 
 .myFeedbackContainer{
     display: flex;
@@ -15,12 +19,17 @@ header{
 
 @include breakpoints(phone){
 
-    .myTextArea, h1, .dropDownMenu, .mySubmit, .anonymousbtn {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    .myTextArea, h1, .fbcategory, .anonheader, .fblabels, .dropDownMenu, .mySubmitbtn, .anonymousbtn {
+        font-family: $roboto-slab;
+        color: $color-grey;
     }
 
-    .fbcategory {
-        display: flex;
+ 
+ 
+    .dropDownMenu{
+        border: 1px 1px solid $color-purple;
+        font-family: $roboto-slab;
+        margin-left: 4vw;
     }
 
     h1{
@@ -28,17 +37,15 @@ header{
         padding: 10vh;
         height: 5vh;
         width: 50vw;
-        // background-color: $color-dark-green;
-
         font-weight: bold;
         color: $color-grey
     }
     .myTextArea{
 
-        height: 40vh;
+        height: 20vh;
         width: 80vw;
         margin: 20px;
-        margin-left: 25px;
+        margin-left: 4vw;
         // border-radius: 25%;
     }
 
@@ -51,12 +58,69 @@ header{
       
     }
 
-    .mySubmit{
+    .mySubmitbtn{
         width: 20vw;
+        box-shadow: 2px 2px 2px 2px $color-purple;
+        font-size: .70em;
+        height: 5vh;
+        background-color: $color-white;
+        color: $color-grey;
+        // border-radius: 5px;
+        border: hidden $color-white;
+        font-size: 1.0em;
+        margin-top: 20px;
+       
+     
     }
 
     .anonymousbtn{
         background-color: $color-light-green;
+    }
+
+    .anonheaderContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .psfheader, .anonheader {
+        display: flex;
+        flex-direction: row;
+        height: 4vh;
+        background-color: $color-white;
+        box-shadow: 2px 2px 2px 2px $color-purple;
+        font-size: 1.0em;
+        justify-content: space-evenly;
+        padding-top: 8px;
+        margin: 20px;
+        
+    }
+
+    .psfheader {
+        width: 80vw;
+    }
+
+    .anonheader{
+        width: 60vw;
+    }
+    // .anonheader{
+    //     width: 50vw;
+    // }
+
+    .checkbox{
+            padding-right: 10px;
+    }
+
+    .fbListContainer {
+        height: 50vh;
+        width: 100vw;
+      
+
+    }
+
+    .fbformat {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 
 }
@@ -112,6 +176,18 @@ header{
 
 }
 
+
+.myFeedbackContainer{
+   display: flex; 
+}
+
+.mySubmit {
+    background-color: $color-purple;
+    color: $color-white;
+    font-weight: bold;
+    font-size: 1.25em;
+    height: 50px;
+}
 
 
 

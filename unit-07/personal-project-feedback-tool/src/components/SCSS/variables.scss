@@ -1,6 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+
+$roboto-slab: 'Roboto Slab', sans-serif;
+$ubuntu: 'Ubuntu', sans-serif;
+
+
+
+@mixin btn-theme {
+  box-shadow: 2px 2px 2px 2px $color-purple;
+  background-color: $color-white;
+  color: $color-grey;
+  border: hidden $color-white;
+
+}
+ 
+
+
 
 //Breakpoints
 // $breakpoint-tablet: 768px;
@@ -38,6 +56,7 @@
 
 
 
+//can nest things in css - reads button in header button
 
 //Colors
 
@@ -50,6 +69,12 @@ $color-dark-blue: #05668d;
 $color-creme: #f0f3bd;
 $color-grey: #8b8c89;
 $color-white: #f8f9fa;
+
+//new palette
+
+$color-purple: #5e60ce;
+$color-blue: #5390d9;
+$color-green: #64dfdf;
 
 
   /*Color palette
@@ -64,3 +89,5 @@ $color-white: #f8f9fa;
   grey #8b8c89
   
   */
+
+  $font-stack: Roboto;
