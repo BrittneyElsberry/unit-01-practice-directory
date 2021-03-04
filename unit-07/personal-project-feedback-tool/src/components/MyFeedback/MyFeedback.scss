@@ -19,7 +19,7 @@ header{
 
 @include breakpoints(phone){
 
-    .myTextArea, h1, .fbcategory, .anonheader, .fblabels, .dropDownMenu, .mySubmitbtn, .anonymousbtn {
+    .myTextArea, h1, .fbcategory, .anonheader, .fblabels, .dropDownMenu, .mySubmitbtn, .anonymousbtn, .fbformat {
         font-family: $roboto-slab;
         color: $color-grey;
     }
@@ -113,6 +113,7 @@ header{
     .fbListContainer {
         height: 50vh;
         width: 100vw;
+        background-color: $color-blue;
       
 
     }

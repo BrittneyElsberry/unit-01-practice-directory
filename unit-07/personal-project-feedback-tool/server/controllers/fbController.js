@@ -66,14 +66,21 @@ module.exports = {
  
     },
 
-    updateFB: (req, res) => {
+    updateFB: async (req, res) => {
+        let {user_id} = req.session.user
+        const db = await req.app.get('db')
+        const edit = await db.editfeedback(req.params.id)
+        const fbList = await db.readfeedback([user_id])
+        res.status(200).send(fbList)
+
 
     },
 
-    deleteFB: (req, res) =>{
-        const {feedback_id} = req.params.id
-        req.app.get('db').deletefeedback(feedback_id)
-        .then(res.sendStatus(200))
+    deleteFB: async (req, res) =>{
+        const db = req.app.get('db')
+        await db.deletefeedback(req.params.id)
+        .then(_=> res.sendStatus(200))
+
     }
 
     

@@ -78,13 +78,10 @@ const submitFB =(formSubmit)=>{
     }
 
 
-// const deleteFeedback = () => {
-//     axios.delete(`/myfeedback`)
-//     .then(res => {
-
-
-//     })
-// }
+const deleteFeedback = (id) => {
+    axios.delete(`/myfeedback/${id}`)
+    .then(_=> props.postFB())
+}
 
 
 
@@ -146,7 +143,7 @@ return(
     </div>
 
     {props.feedback.map((elem)=>{
-        return  <div key={elem.feedback_id}><li className='fbformat'> {elem.category_name}  {elem.feedback} <Edit/> </li></div>})}
+        return  <div key={elem.feedback_id}><li className='fbformat'> {elem.category_name} {elem.feedback} <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id}/> </li></div>})}
     
     </div>
 
@@ -168,3 +165,5 @@ export default connect((s)=> ({
 //{elem.feedback} {elem.category_name}//
 
 //{isChecked ? 'True' : 'False' } 
+
+//<p>Feedback Id:</p>  {elem.feedback_id} 
