@@ -6,6 +6,7 @@ import {postFB} from '../../redux/fbReducer'
 import {updateUser} from '../../redux/authReducer'
 import {Redirect} from 'react-router-dom'
 import Edit from '../Edit/Edit'
+import {useParams} from 'react-router-dom'
 
 const MyFeedback = (props)=>{
 
@@ -16,6 +17,7 @@ const [fbInfo, setfbInfo] = useState({
 })
 
 const [isChecked, setIsChecked] = useState(false)
+const {user_id} = useParams()
 
 
 useEffect(()=>{
@@ -23,16 +25,17 @@ useEffect(()=>{
 }, [fbInfo]) 
 
 
-//Protected Route if the user is not logged in.
-// if(!props.username){
-//     return <Redirect 
-//     to={{
-//      pathname: '/',
-//      state: {from: props.location}   
-//     }}/>
-// }   
+const {params} = props
 
-// NEED TO REINSTATE WHEN DONE EDITING SASS FOR THIS COMPONENT
+// Protected Route if the user is not logged in.
+if(!props.username){
+    return <Redirect 
+    to={{
+     pathname: '/',
+     state: {from: props.location}   
+    }}/>
+}   
+
 
 
 //This function sends the fbInfo from state to the createFB function in the fbController.js 

@@ -3,7 +3,7 @@ module.exports = {
         const {dept_number} = req.session.user
 
         const db = req.app.get('db')
-        const team = await db.retrieveTeam([dept_number])
+        const team = await db.retrieveteam([dept_number])
         res.status(200).send(team)
 
     }

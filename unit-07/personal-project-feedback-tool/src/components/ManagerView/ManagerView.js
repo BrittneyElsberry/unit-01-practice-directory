@@ -5,13 +5,15 @@ import './ManagerView.scss';
 
 
 
-const BASE_URL = 'https://dummyapi.io/data/api/'
-const APP_ID = '60392ea1b2517899d47d9dc9'
+// const BASE_URL = 'https://dummyapi.io/data/api/'
+// const APP_ID = '60392ea1b2517899d47d9dc9'
 
 const ManagerView = ()=>{
 
 
 const [directory, setDirectory] = useState([])
+
+
 
 useEffect(()=>{
 
@@ -31,17 +33,23 @@ useEffect(()=>{
 
 }, [])
 
-console.log('this is the props looking for')
+console.log(directory, 'this is the directory')
 
 return(
 
-    <div><h1>My Team</h1>
+    <div className='managerviewContainer'>
+        
+        
+   <h1>My Team</h1>
     
     <ul> 
-        
-        {directory.map((employeeD)=>{
+        {/* {directory.map(empList=>{
+             return <Link to={`/myfeedback/`}><li key={empList.user_id}>{empList.username} {empList}<br></br></li></Link>
+
+        })} */}
+        {/* {directory.map((employeeD)=>{
             return <Link to={`/myfeedback/`}> <div key={employeeD.id}><h2>{employeeD.firstName} {employeeD.lastName}<br></br></h2></div></Link>
-        })}
+        })} */}
     </ul>
     
     
