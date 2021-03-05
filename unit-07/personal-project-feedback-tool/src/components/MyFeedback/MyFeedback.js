@@ -143,27 +143,24 @@ return(
     </div>
 
     {props.feedback.map((elem)=>{
-        return  <div key={elem.feedback_id}><li className='fbformat'> {elem.category_name} {elem.feedback} <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id}/> </li></div>})}
-    
-    </div>
+        return  <div className="flex-grid" key={elem.feedback_id}>
+                <div className="col" >
+                    <ul>
+                    <li>{elem.category_name} {elem.feedback} 
+                    <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id}/>
+                    </li>
+                    </ul>
+                </div>
+                </div>})}
 
-    </div>
-)}
-
+</div>
+</div>
+    )
+    }
 export default connect((s)=> ({
     ...s.fbReducer,
     ...s.authReducer
 
 }), {postFB})(MyFeedback)
 
-//this is spreading in two different reducer's props into this component and
-//makes it so you don't have to call
-//axios calls in redux need to have the apply middleware
 
-
-//<div key={elem.feedback_id}><li>{elem.feedback} {elem.category_name} </li></div> /> //previous code for mapping over the data
-//{elem.feedback} {elem.category_name}//
-
-//{isChecked ? 'True' : 'False' } 
-
-//<p>Feedback Id:</p>  {elem.feedback_id} 

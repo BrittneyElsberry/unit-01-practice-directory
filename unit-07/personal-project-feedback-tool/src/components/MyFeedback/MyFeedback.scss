@@ -127,68 +127,190 @@ header{
 }
 
 
-@include breakpoints(laptop){
+
+@include breakpoints(tablet){
+
+    @media(min-width: $breakpoint-large-phone) and (max-width: $breakpoint-tablet){
+
+    
+    .myTextArea, h1, .fbcategory, .anonheader, .fblabels, .dropDownMenu, .mySubmitbtn, .anonymousbtn, .fbformat {
+        font-family: $roboto-slab;
+        color: $color-grey;
+    }
+
+ 
+ 
+    .dropDownMenu{
+        border: 1px 1px solid $color-purple;
+        font-family: $roboto-slab;
+        margin-left: 4vw;
+    }
+
     h1{
         text-align: center;
         padding: 10vh;
         height: 5vh;
-        width: 100vw;
-        background-color: $color-light-green;
-        font-family: Roboto;
-    }
-    .myTextArea{
-
-        height: 60vh;
-        width: 60vw;
-        margin: 20px;
-        margin-left: 20%;
-        
-    }
-
-    .mySubmit{
-        width: 20vw;
-    }
-
-
-}
-
-
-@include breakpoints(desktop){
-    h1{
-        text-align: center;
-        padding: 10vh;
-        height: 5vh;
-        width: 100vw;
-        background-color: $color-dark-blue;
-    }
-    .myTextArea{
-
-        height: 40vh;
         width: 50vw;
+        font-weight: bold;
+        color: $color-grey
+    }
+    .myTextArea{
+
+        height: 20vh;
+        width: 80vw;
         margin: 20px;
-        margin-left: 25px;
+        margin-left: 4vw;
+        // border-radius: 25%;
+    }
+
+    .dropDownMenu{
+        
+        width: 50vw;
+        height: 5vh;
+        border: 2px $color-light-blue;
+        color: $color-grey;
+      
+    }
+
+    .mySubmitbtn{
+        width: 20vw;
+        box-shadow: 2px 2px 2px 2px $color-purple;
+        font-size: .70em;
+        height: 5vh;
+        background-color: $color-white;
+        color: $color-grey;
+        // border-radius: 5px;
+        border: hidden $color-white;
+        font-size: 1.0em;
+        margin-top: 20px;
+       
+     
+    }
+
+    .anonymousbtn{
+        background-color: $color-light-green;
+    }
+
+    .anonheaderContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .psfheader, .anonheader {
+        display: flex;
+        flex-direction: row;
+        height: 4vh;
+        background-color: $color-white;
+        box-shadow: 2px 2px 2px 2px $color-purple;
+        font-size: 1.0em;
+        justify-content: space-evenly;
+        padding-top: 8px;
+        margin: 20px;
         
     }
 
-    .mySubmit{
-        width: 20vw;
+    .psfheader {
+        width: 80vw;
+    }
+
+    .anonheader{
+        width: 60vw;
+    }
+    // .anonheader{
+    //     width: 50vw;
+    // }
+
+    .checkbox{
+            padding-right: 10px;
+    }
+
+    .fbListContainer {
+        height: 50vh;
+        width: 100vw;
+        background-color: $color-blue;
+      
+
+    }
+
+    .fbformat {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 
 
+    }
+
+//     h1{
+//         text-align: center;
+//         padding: 10vh;
+//         height: 5vh;
+//         width: 100vw;
+//         background-color: $color-light-green;
+//         font-family: Roboto;
+//     }
+//     .myTextArea{
+
+//         height: 60vh;
+//         width: 60vw;
+//         margin: 20px;
+//         margin-left: 20%;
+        
+//     }
+
+//     .mySubmit{
+//         width: 20vw;
+//     }
+
+
+// }
+
 }
 
 
-.myFeedbackContainer{
-   display: flex; 
-}
+// @include breakpoints(desktop){
+//     h1{
+//         text-align: center;
+//         padding: 10vh;
+//         height: 5vh;
+//         width: 100vw;
+//         background-color: $color-dark-blue;
+//     }
+//     .myTextArea{
 
-.mySubmit {
-    background-color: $color-purple;
-    color: $color-white;
-    font-weight: bold;
-    font-size: 1.25em;
-    height: 50px;
-}
+//         height: 40vh;
+//         width: 50vw;
+//         margin: 20px;
+//         margin-left: 25px;
+        
+//     }
+
+//     .mySubmit{
+//         width: 20vw;
+//     }
+
+
+// }
+
+
+// .myFeedbackContainer{
+//    display: flex; 
+// }
+
+// .mySubmit {
+//     background-color: $color-purple;
+//     color: $color-white;
+//     font-weight: bold;
+//     font-size: 1.25em;
+//     height: 50px;
+// }
+
+.flex-grid {
+    display: flex;
+  }
+  .col {
+    flex: 1;
+  }
 
 
 
