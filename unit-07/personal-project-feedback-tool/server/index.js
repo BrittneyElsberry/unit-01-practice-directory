@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
     authCtrl = require('./controllers/authController'),
     fbCtrl = require('./controllers/fbController')
+    adminCtrl = require('./controllers/adminController')
 const massive = require('massive')
 const session = require('express-session')
 const app = express();
@@ -32,7 +33,7 @@ app.use(session({
        })
    
 
-//Auth endpoints
+//User Auth endpoints
 
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
@@ -52,3 +53,7 @@ app.post('/myfeedback/submit', fbCtrl.createFB)
 app.post('/myfeedback/anonymous', fbCtrl.createAnonymous)
 app.put(`/myfeedback/:id`, fbCtrl.updateFB)
 app.delete(`/myfeedback/:id`, fbCtrl.deleteFB)
+
+//Admin team endpoints
+
+app.get(`/managerview/myteam`, adminCtrl.retrieveTeam)

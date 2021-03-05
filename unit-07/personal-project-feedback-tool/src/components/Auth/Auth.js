@@ -12,13 +12,14 @@ const [userInfo, setUserInfo] = useState({
     username: '',
     password: '',
     dept_number: 0,
-    // isAdmin: false
+  
 })    
 
+const [user_admin, setuser_admin] = useState(false)
 
 const register = ()=>{
 
-    axios.post('/auth/register', userInfo)
+    axios.post('/auth/register', userInfo, user_admin)
     .then(res=>{
         props.updateUser(res.data)
         // setUserInfo(res.data) leaving this component so don't need to update local state
@@ -36,6 +37,14 @@ axios.post('/auth/login', userInfo)
 })
 
 }
+
+
+// const toggleAdmin =()=>{
+//   setUserInfo({userInfo: {isAdmin: !isAdmin} })
+
+// }
+
+console.log(userInfo.isAdmin, 'this is the admin')
 
 return (
 
@@ -67,6 +76,15 @@ return (
     onChange={(e)=>setUserInfo({...userInfo, password: e.target.value})}
  
  />
+
+
+    Admin : <input 
+    type="checkbox" 
+    className="adminCheckbox" 
+    checked={user_admin}
+    onChange={(e)=>{setuser_admin(e.target.checked)}} /> 
+  
+            
  
  
  

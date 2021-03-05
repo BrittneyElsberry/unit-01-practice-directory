@@ -87,6 +87,7 @@ const deleteFeedback = (id) => {
 
 return(
   
+    <div className='fbpageparent'>
     <div className='myFeedbackContainer'>
       {/* <h1>Do you have a great idea?</h1>   */}
 
@@ -103,8 +104,9 @@ return(
         <option value='Product'>Product</option>
        
     </select>
-     </div>   
-
+     
+    </div>  
+   
     
     <textarea 
     className='myTextArea' 
@@ -132,27 +134,27 @@ return(
 
     <br></br>
     </form>
-   
+    </div>
 
 <div className='fbListContainer'>
 
     {/* <h1 className='fblabels'>Review previously submitted feedback</h1> */}
-
+    
     <div className='psfheader'>
         <h2 className='fblabels'>Feedback Category</h2><h2 className='fblabels'>Feedback</h2>
     </div>
-
+    <div className='list'>
     {props.feedback.map((elem)=>{
         return  <div className="flex-grid" key={elem.feedback_id}>
                 <div className="col" >
-                    <ul>
-                    <li>{elem.category_name} {elem.feedback} 
+                    
+                    <li className='catliststyle'>{elem.category_name}</li><li className='fbliststyle'> {elem.feedback}</li> 
                     <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id}/>
-                    </li>
-                    </ul>
+                   
+                    
                 </div>
                 </div>})}
-
+                </div>
 </div>
 </div>
     )

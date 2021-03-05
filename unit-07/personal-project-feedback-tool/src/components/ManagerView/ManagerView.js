@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom'
 import axios from 'axios';
 import './ManagerView.scss';
-// import {connect} from 'react-redux'
-// import {updateUser} from '../../redux/authReducer'
+
 
 
 const BASE_URL = 'https://dummyapi.io/data/api/'
@@ -15,14 +15,23 @@ const [directory, setDirectory] = useState([])
 
 useEffect(()=>{
 
-axios.get(`${BASE_URL}user`, {headers: {'app-id': APP_ID}})
-.then((res)=> {setDirectory(res.data.data)
-    console.log(res.data.data)
+    axios.get(`/managerview/myteam`)
+    .then((res)=> {
+        setDirectory({directory: res.data})
+        console.log(res.data, 'this worked baby!')
+    
+    }
+        
 
-}).catch(err=> console.log(err))
+// axios.get(`${BASE_URL}user`, {headers: {'app-id': APP_ID}})
+// .then((res)=> {setDirectory(res.data.data)
+//     console.log(res.data.data)
+
+).catch(err=> console.log(err))
 
 }, [])
 
+console.log('this is the props looking for')
 
 return(
 
@@ -31,7 +40,7 @@ return(
     <ul> 
         
         {directory.map((employeeD)=>{
-            return <div key={employeeD.id}><h2>{employeeD.firstName} {employeeD.lastName}<br></br></h2></div>
+            return <Link to={`/myfeedback/`}> <div key={employeeD.id}><h2>{employeeD.firstName} {employeeD.lastName}<br></br></h2></div></Link>
         })}
     </ul>
     

@@ -47,6 +47,8 @@ console.log(this.props.feedback_id)
     return(
         <div>
         {this.state.editing ? (
+
+            <div>
             <li>
                 <input 
                 className='editInput'
@@ -65,14 +67,15 @@ console.log(this.props.feedback_id)
                 }}>
                 SAVE</button>
             </li>
+            </div>
 
         )  : (
-            <li className='btnContainer'>
+          <div>
           
-             <button className="btn" onClick={()=>this.props.deleteFeedback(this.props.feedback_id)}>X</button>
+             <button className="btn" id='fblabels' onClick={()=>this.props.deleteFeedback(this.props.feedback_id)}>X</button>
              <button className="btn" onClick={()=>this.toggleEditMode()}>Edit</button>
-            </li>
-
+             </div>
+        
         ) }
         </div>
     )

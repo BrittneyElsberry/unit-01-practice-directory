@@ -14,7 +14,7 @@ export default (
 <Switch>
 <Route exact path ='/' component={Auth}/>
 <Route path ='/deptdash' component={DeptDash}/>
-<Route path ='/myfeedback' component={MyFeedback}/>
+<Route path ='/myfeedback/:id' component={MyFeedback}/>
 <Route path ='/companydash' component={CompDash}/>
 <Route path ='/managerview' component={ManagerView}/>
 <Route path ='/internalprocess' component={InternalProcess}/>
