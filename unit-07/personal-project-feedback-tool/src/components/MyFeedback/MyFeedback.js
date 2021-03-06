@@ -86,7 +86,7 @@ const deleteFeedback = (id) => {
     .then(_=> props.postFB())
 }
 
-
+console.log(props, 'feedback props..what you look like??')
 
 return(
   
@@ -139,23 +139,26 @@ return(
     </form>
     </div>
 
+
+    
+
 <div className='fbListContainer'>
+
+<div className='psfheader'>
+        <h2 className='fblabels'>Feedback Category</h2><h2 className='fblabels'>Feedback</h2>
+    </div>
 
     {/* <h1 className='fblabels'>Review previously submitted feedback</h1> */}
     
-    <div className='psfheader'>
-        <h2 className='fblabels'>Feedback Category</h2><h2 className='fblabels'>Feedback</h2>
-    </div>
+  
     <div className='list'>
     {props.feedback.map((elem)=>{
         return  <div className="flex-grid" key={elem.feedback_id}>
-                <div className="col" >
+                
                     
-                    <li className='catliststyle'>{elem.category_name}</li><li className='fbliststyle'> {elem.feedback}</li> 
+                    <li className='liststyle'>{elem.category_name}</li><li className='liststyle'> {elem.feedback}</li> 
                     <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id}/>
                    
-                    
-                </div>
                 </div>})}
                 </div>
 </div>

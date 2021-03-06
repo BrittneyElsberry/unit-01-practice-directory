@@ -254,11 +254,11 @@ header{
 
     }
 
-    .fbformat {
-        display: flex;
-        flex-direction: row;
-        // justify-content: space-evenly;
-    }
+    // .fbformat {
+    //     display: flex;
+    //     flex-direction: row;
+    //     justify-content: space-evenly;
+    // }
 
 
     }
@@ -282,51 +282,71 @@ header{
 
     // }
 
-    .col {
-        display: flex;
-        flex-direction: row;
-        // justify-content: space-evenly;
-        align-items: flex-start;
-     
-        
-    }
+  
 
     .psfheader{
         width: 50vw;
         
     }
     
-    .catliststyle, .fbliststyle{
-        list-style: none;
-        border: 2px 2px solid $color-grey;
-        height: 6vh;
-        flex-direction: row;
-        width: 25vw;
-        border: 1px solid $color-grey;
-        border-radius: 5px;
-        flex-grow: 1;
-        flex-wrap: wrap;
+    // .catliststyle, .fbliststyle{
+    //     list-style: none;
+    //     border: 2px 2px solid $color-grey;
+    //     // height: 6vh;
+    //     flex-direction: row;
+    //     // width: 25vw;
+    //     border: 1px solid $color-grey;
+    //     border-radius: 5px;
+    //     flex-grow: 1;
+    //     flex-wrap: wrap;
      
         
-    }
-    .catliststyle {
+    // }
+    // .catliststyle {
     
+    //     width: 20vw;
+    // }
+    // .fbliststyle{
+    //     justify-content: right;
+    //     // border: 2px solid $color-grey;
+    
+    // }
+
+    .fbListContainer > * {
+    
+        // flex-basis: 100%;
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: space-evenly;
+        // align-items: flex-start;
+        // flex-wrap: wrap;
+        // flex-grow: 1;
+        // flex-shrink: 2;
+        width: 50vw;
+    }
+
+  
+    .flex-grid{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
         width: 20vw;
+        height: 20vh;
+     
     }
-    .fbliststyle{
-        justify-content: right;
-        // border: 2px solid $color-grey;
-    
+  
+    .liststyle{
+       
+        // width: 20vw;
+        // height: 20vh;
+        border: 5px 5px solid $color-grey;
+        color: $color-grey;
+        padding-top: 10%;
+        overflow-wrap:break-word;
+        list-style: none;
+      
     }
 
-    // .elemCategoryName, .elemFeedback{
-    //     border: 1px 1px solid $color-grey;
-    // }
-
-    // .list {
-    //     display: flex;
-    //     flex-direction: column;
-    // }
 
 }
 
@@ -369,12 +389,11 @@ header{
 //     height: 50px;
 // }
 
-.flex-grid {
-    display: flex;
-  }
-  .col {
-    flex: 1;
-  }
+// .flex-grid {
+//     display: flex;
+//     flex: 1;
+//   }
+
 
 
 

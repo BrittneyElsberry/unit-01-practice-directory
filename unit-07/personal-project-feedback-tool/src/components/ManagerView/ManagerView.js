@@ -8,12 +8,10 @@ import './ManagerView.scss';
 // const BASE_URL = 'https://dummyapi.io/data/api/'
 // const APP_ID = '60392ea1b2517899d47d9dc9'
 
-const ManagerView = ()=>{
+const ManagerView = (props)=>{
 
 
 const [directory, setDirectory] = useState([])
-
-
 
 useEffect(()=>{
 
@@ -34,6 +32,7 @@ useEffect(()=>{
 }, [])
 
 console.log(directory, 'this is the directory')
+let currentState;
 
 return(
 
@@ -43,8 +42,8 @@ return(
    <h1>My Team</h1>
     
     <ul> 
-        {/* {directory.map(empList=>{
-             return <Link to={`/myfeedback/`}><li key={empList.user_id}>{empList.username} {empList}<br></br></li></Link>
+        {/* {currentState = directory.map(empList=>{
+             <li key={empList.user_id}>{empList.username} {empList}<br></br></li>
 
         })} */}
         {/* {directory.map((employeeD)=>{
