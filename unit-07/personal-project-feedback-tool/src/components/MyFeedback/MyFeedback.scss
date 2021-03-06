@@ -102,9 +102,9 @@ header{
         
     }
 
-    .psfheader {
-        width: 80vw;
-    }
+    // .psfheader {
+    //     width: 80vw;
+    // }
 
     .anonheader{
         width: 60vw;
@@ -160,7 +160,7 @@ header{
 
 }
 
-//@include breakpoints
+
 
 @include breakpoints(laptop){
 
@@ -177,33 +177,31 @@ header{
 
         height: 20vh;
         width: 30vw;
-        // margin: 20px;
         margin-left: 4vw;
        
     }
 
     .dropDownMenu{
-        
+        margin: 30px;
         width: 20vw;
         height: 5vh;
         border: 2px $color-light-blue;
         color: $color-grey;
         border: 1px 1px solid $color-purple;
         font-family: $roboto-slab;
-        // margin-left: 4vw;
+   
       
     }
 
     .mySubmitbtn{
+
+        @include btn-theme;
+
         width: 10vw;
-        box-shadow: 2px 2px 2px 2px $color-purple;
         font-size: .70em;
-        height: 5vh;
-        background-color: $color-white;
-        color: $color-grey;
-        border: hidden $color-white;
-        font-size: 1.0em;
-        margin-top: 20px;
+        height: 6vh;
+        font-size: .75em;
+        padding-top: 4px;
        
      
     }
@@ -217,26 +215,22 @@ header{
         flex-direction: row;
     }
 
-    .psfheader, .anonheader {
+    .anonheader {
+        @include btn-theme;
         display: flex;
         flex-direction: row;
         height: 4vh;
-        background-color: $color-white;
-        box-shadow: 2px 2px 2px 2px $color-purple;
-        font-size: 1.0em;
+        font-size: .75em;
         justify-content: space-evenly;
         padding-top: 8px;
-        // margin: 20px;
+        
         
     }
 
-    .psfheader {
-        width: 40vw;
-    }
-
+   
     .anonheader{
         width: 20vw;
-        // margin-left: 10%;
+     
     }
  
 
@@ -254,11 +248,7 @@ header{
 
     }
 
-    // .fbformat {
-    //     display: flex;
-    //     flex-direction: row;
-    //     justify-content: space-evenly;
-    // }
+
 
 
     }
@@ -268,84 +258,80 @@ header{
         justify-content: flex-start;
         height: 100vh;
         width: 100vw;
-        // margin-left: 10vw;
-        // margin-right: 10vw;
+        background-color: $color-dark-green;
+      
     }
 
     .myFeedbackContainer{
         height: 50vh;
         width: 40vw;
     }
-    // .list{
-    //     border: 2px 2px solid $color-grey;
-    //     list-style: none;
-
-    // }
 
   
 
-    .psfheader{
-        width: 50vw;
-        
-    }
-    
-    // .catliststyle, .fbliststyle{
-    //     list-style: none;
-    //     border: 2px 2px solid $color-grey;
-    //     // height: 6vh;
-    //     flex-direction: row;
-    //     // width: 25vw;
-    //     border: 1px solid $color-grey;
-    //     border-radius: 5px;
-    //     flex-grow: 1;
-    //     flex-wrap: wrap;
-     
+    // .psfheader{
+    //     width: 50vw;
         
     // }
-    // .catliststyle {
     
-    //     width: 20vw;
-    // }
-    // .fbliststyle{
-    //     justify-content: right;
-    //     // border: 2px solid $color-grey;
-    
-    // }
+
 
     .fbListContainer > * {
     
-        // flex-basis: 100%;
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: space-evenly;
-        // align-items: flex-start;
-        // flex-wrap: wrap;
-        // flex-grow: 1;
-        // flex-shrink: 2;
+     
         width: 50vw;
+        display: flex;
+        justify-content: center;
+      
     }
 
+ 
   
     .flex-grid{
         display: flex;
         flex: 1;
-        flex-direction: column;
-        width: 20vw;
-        height: 20vh;
-     
+        flex-direction: row;
+        margin: 30px;
+        overflow: auto;
+        margin-left: 20px;
+        border: 3px solid grey;
+       
     }
   
     .liststyle{
-       
-        // width: 20vw;
-        // height: 20vh;
-        border: 5px 5px solid $color-grey;
-        color: $color-grey;
+
+        display: flex;
+        justify-content: center;
+      
+      @include btn-theme;
+          
+        width: 50vw;
+        height: 30vh;
         padding-top: 10%;
         overflow-wrap:break-word;
         list-style: none;
+        // margin-left: 20px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        border: 3px solid grey;
       
     }
+
+   
+
+    .catName{
+
+        @include border-theme;
+        margin: 0;
+        width: 10vw;
+        height: 10vh;
+        
+    }
+
+    .list{
+        margin-left:50px;
+    }
+
 
 
 }

@@ -91,7 +91,7 @@ console.log(props, 'feedback props..what you look like??')
 return(
   
     <div className='fbpageparent'>
-    <div className='myFeedbackContainer'>
+        <div className='myFeedbackContainer'>
       {/* <h1>Do you have a great idea?</h1>   */}
 
       <form onSubmit={submitFB}>
@@ -130,7 +130,7 @@ return(
     onChange={(e)=> {setIsChecked(e.target.checked)}}
     />
     
-    {/* <button className='mySubmitbtn'>Submit</button> */}
+   
     </div>
     <button className='mySubmitbtn'>Submit</button>
     </div>
@@ -143,26 +143,19 @@ return(
     
 
 <div className='fbListContainer'>
-
-<div className='psfheader'>
-        <h2 className='fblabels'>Feedback Category</h2><h2 className='fblabels'>Feedback</h2>
-    </div>
-
-    {/* <h1 className='fblabels'>Review previously submitted feedback</h1> */}
-    
-  
     <div className='list'>
-    {props.feedback.map((elem)=>{
-        return  <div className="flex-grid" key={elem.feedback_id}>
+        {props.feedback.map((elem)=>{
+            return  <div className="flex-grid" key={elem.feedback_id}>
                 
                     
-                    <li className='liststyle'>{elem.category_name}</li><li className='liststyle'> {elem.feedback}</li> 
-                    <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id}/>
+                    <li className='liststyle'><div className='catName'>{elem.category_name}</div> {elem.feedback}
+                    <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id}/></li>
                    
-                </div>})}
-                </div>
+                    </div>})}
+                    </div>
+    </div>
 </div>
-</div>
+
     )
     }
 export default connect((s)=> ({

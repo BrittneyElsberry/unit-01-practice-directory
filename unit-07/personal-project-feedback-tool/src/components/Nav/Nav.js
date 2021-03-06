@@ -28,11 +28,11 @@ const Nav = (props)=> {
           {props.authReducer.user_admin ?
 
             <div className='nav-links'>
-            <Link to="/managerview"><li className='nav-item' alt='Manager View'>Manager View</li></Link> 
-            <Link to="/deptdash"><li className='nav-item' alt='department dashboard'>Department</li></Link>  
-            <Link to='/companydash'><li className='nav-item' alt='my feedback'>Company</li> </Link>
-            <Link to='/myfeedback'><li className='nav-item' alt='my feedback' >My Feedback</li></Link>
-            <Link to='/' onClick={logout}><li className='nav-item logout' alt='logout'>Logout</li></Link>
+            <Link to="/managerview" ><a className='nav-item'>Manager View</a></Link> 
+            <Link to="/deptdash"  ><a className='nav-item'>Department</a></Link>  
+            <Link to='/companydash' ><a className='nav-item'>Company</a> </Link>
+            <Link to='/myfeedback'><a className='nav-item'>My Feedback</a></Link>
+            <Link to='/' onClick={logout}><a className='nav-item'>Logout</a></Link>
           </div>
             
           
@@ -40,10 +40,10 @@ const Nav = (props)=> {
           :
           
           <div className='nav-links'>
-            <Link to="/deptdash"><li className='nav-item' alt='department dashboard'>Department</li></Link>  
-            <Link to='/companydash'><li className='nav-item' alt='my feedback'>Company</li> </Link>
-            <Link to='/myfeedback'><li className='nav-item' alt='my feedback' >My Feedback</li></Link>
-            <Link to='/' onClick={logout}><li className='nav-item logout' alt='logout'>Logout</li></Link>
+            <Link to="/deptdash"><a className='nav-item' alt='department dashboard'>Department</a></Link>  
+            <Link to='/companydash'><a className='nav-item' alt='my feedback'>Company</a> </Link>
+            <Link to='/myfeedback'><a className='nav-item' alt='my feedback' >My Feedback</a></Link>
+            <Link to='/' onClick={logout}><a className='nav-item logout' alt='logout'>Logout</a></Link>
           </div>
             
           
