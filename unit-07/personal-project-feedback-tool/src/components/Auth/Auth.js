@@ -41,7 +41,7 @@ axios.post('/auth/login', userInfo)
 
 return (
 
-<div><h1>Increase employee engagement</h1>
+
 <div className='backgroundAuth'>
 <div className='authContainer'>
     
@@ -90,7 +90,7 @@ Admin : <input
 
 
  </div> 
-</div> </div> </div>)
+</div> </div> )
 
 
 }

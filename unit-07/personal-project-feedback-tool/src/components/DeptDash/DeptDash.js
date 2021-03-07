@@ -12,7 +12,7 @@ const DeptDash = (props)=>{
 console.log(props)
 return(
 
-    <div><h1 className='welcome'>Welcome to the {deptName} Dashboard {props.username}!</h1>
+    <div className='deptDashContainer'><h1 className='welcome'>Welcome to the {deptName} Dashboard {props.username}!</h1>
   
 
     <h2>Fiscal Year 2021</h2>

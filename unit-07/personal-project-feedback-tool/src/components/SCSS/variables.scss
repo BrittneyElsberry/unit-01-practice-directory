@@ -4,6 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 
+$imgpath: 'src/components/MyFeedback/marker.jpeg';
+
+
+// @mixin background-image ($imgpath, $position: 0 0, $repeat: no-repeat) {
+// image: url($imgpath);
+// position: $position;
+// repeat: $repeat;
+// }
+
+
 $roboto-slab: 'Roboto Slab', sans-serif;
 $ubuntu: 'Ubuntu', sans-serif;
 

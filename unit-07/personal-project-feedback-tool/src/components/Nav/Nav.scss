@@ -6,6 +6,10 @@
 
 @include breakpoints(phone){
 
+@media (min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone)
+
+{
+
     .nav{
         height: 10vh;
         background-color: $color-light-blue;
@@ -35,6 +39,49 @@
 
 
 }
+}
+
+ 
+
+@include breakpoints(tablet){
+
+    @media (min-width: $breakpoint-large-phone) and (max-width: $breakpoint-tablet)
+    
+    {
+    
+        .nav{
+            height: 10vh;
+            background-color: $color-light-blue;
+            width: 100vw;
+        }
+        
+        .nav-links{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding-top: 1em;
+          
+        }
+        
+        .nav-item{
+            list-style: none;
+            color: $color-white;
+            font-weight: bold;
+            font-family: 'Roboto';
+            font-size: .75em;
+            line-height: 3;
+            // padding-left: 5px;
+            padding-right: 30px;
+            // flex-grow: 3;
+        }
+        
+    
+    
+    }
+    }
+
+
+
 
 @include breakpoints (laptop){
 
@@ -76,6 +123,51 @@
 
     
 } }
+
+
+
+
+@include breakpoints (desktop){
+
+    @media(min-width: $breakpoint-laptop) and (max-width: $breakpoint-desktop){
+
+    .nav{
+        height: 10vh;
+        background-color: $color-green;
+        background-image: linear-gradient($color-purple, $color-green);
+        width: 100vw;
+    }
+    
+    .nav-links{
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: 1em;
+      
+    }
+    
+    .nav-item{
+        list-style: none;
+        text-decoration: none;
+         color: $color-white;
+        font-weight: bold;
+        font-size: 1.0em;
+        // line-height: 3;
+        // padding-left: 5px;
+        padding-right: 30px;
+        // flex-grow: 3;
+    }
+
+    .fbcategory{
+        height: 20vh;
+        width: 80vw;
+    }
+
+
+    
+} }
+
 
 
 .navbarlinks {

@@ -5,17 +5,143 @@ html body{
 }
 
 
-// .myFeedbackContainer{
-//     display: flex;
-//     flex-direction: column;
-    
-// }
-
 header{
     height: 5vh;
     width: 100vw;
 }
 
+
+
+@include breakpoints(phone){
+
+    @media (min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
+
+        .myTextArea, h1, .fbcategory, .anonheader, .fblabels, .dropDownMenu, .mySubmitbtn, .anonymousbtn, .fbformat {
+            font-family: $roboto-slab;
+            color: $color-grey;
+        }
+    
+     
+        .dropDownMenu{
+            font-family: $roboto-slab;
+            margin-left: 4vw;
+        }
+    
+      
+        .myTextArea{
+    
+            height: 20vh;
+            width: 80vw;
+            margin: 20px;
+            margin-left: 4vw;
+        }
+    
+        .dropDownMenu{
+            width: 50vw;
+            height: 5vh;
+            color: $color-grey;
+        }
+    
+        .mySubmitbtn{
+            width: 20vw;
+            box-shadow: 2px 2px 2px 2px $color-purple;
+            font-size: .70em;
+            height: 5vh;
+            background-color: $color-white;
+            color: $color-grey;
+            border: hidden $color-white;
+            font-size: 1.0em;
+            margin-top: 20px;
+           
+         
+        }
+    
+        .anonheaderContainer {
+            display: flex;
+            flex-direction: row;
+        }
+    
+        .anonheader {
+            display: flex;
+            flex-direction: row;
+            height: 4vh;
+            background-color: $color-white;
+            box-shadow: 2px 2px 2px 2px $color-purple;
+            font-size: 1.0em;
+            justify-content: space-evenly;
+            padding-top: 8px;
+            margin: 20px;
+            
+        }
+
+    
+        .anonheader{
+            width: 60vw;
+        }
+       
+        .checkbox{
+                padding-right: 10px;
+        }
+    
+        .fbListContainer {
+            height: 50vh;
+            width: 100vw;
+        }
+    
+        .fbformat {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    
+    }
+    
+    .fbpageparent {
+    
+        position: relative;
+    
+    
+        //code for opacity---------------
+        // &::before {
+        //     content: '';
+            background: url('marker.jpeg') no-repeat center center fixed;
+        //     // background-position: 0 0;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        //     position: absolute;
+        //     top: 0px;
+        //     right: 0px;
+        //     bottom: 0px;
+        //     left: 0px;
+        //     opacity: 0.25;
+           
+        // }
+      //code for opacity--------------
+    
+        // min-height: 100%;
+        // min-width: 1024px;
+      
+        // height: auto;
+        // width: 100%;
+    
+        // position: fixed;
+        // top: 0;
+        // left: 0;
+      
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    
+     //messing with pseudo elements
+    
+     // background: url('marker.jpeg') no-repeat center center fixed;
+    //  background-position: 0 0;
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    
+
+    }
+}
 
 
 
@@ -84,12 +210,12 @@ header{
         background-color: $color-light-green;
     }
 
-    .anonheaderContainer {
-        display: flex;
-        flex-direction: row;
-    }
+    // .anonheaderContainer {
+    //     display: flex;
+    //     flex-direction: row;
+    // }
 
-    .psfheader, .anonheader {
+    .anonheader {
         display: flex;
         flex-direction: row;
         height: 4vh;
@@ -102,16 +228,12 @@ header{
         
     }
 
-    // .psfheader {
-    //     width: 80vw;
-    // }
+ 
 
-    .anonheader{
-        width: 60vw;
-    }
     // .anonheader{
-    //     width: 50vw;
+    //     width: 60vw;
     // }
+    
 
     .checkbox{
             padding-right: 10px;
@@ -120,7 +242,7 @@ header{
     .fbListContainer {
         height: 50vh;
         width: 100vw;
-        background-color: $color-blue;
+        // background-color: $color-blue;
       
 
     }
@@ -158,6 +280,52 @@ header{
 
 // }
 
+.fbpageparent {
+    
+    position: relative;
+
+
+    //code for opacity---------------
+    // &::before {
+    //     content: '';
+        background: url('marker.jpeg') no-repeat center center fixed;
+    //     // background-position: 0 0;
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     position: absolute;
+    //     top: 0px;
+    //     right: 0px;
+    //     bottom: 0px;
+    //     left: 0px;
+    //     opacity: 0.25;
+       
+    // }
+  //code for opacity--------------
+
+    // min-height: 100%;
+    // min-width: 1024px;
+  
+    // height: auto;
+    // width: 100%;
+
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+  
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+ //messing with pseudo elements
+
+ // background: url('marker.jpeg') no-repeat center center fixed;
+//  background-position: 0 0;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+
+
+}
+
 }
 
 
@@ -185,7 +353,7 @@ header{
         margin: 30px;
         width: 20vw;
         height: 5vh;
-        border: 2px $color-light-blue;
+        // border: 2px $color-light-blue;
         color: $color-grey;
         border: 1px 1px solid $color-purple;
         font-family: $roboto-slab;
@@ -250,8 +418,7 @@ header{
         justify-content: flex-start;
         height: 100vh;
         width: 100vw;
-        // background-color: linear-gradient($color-dark-green, $color-purple);
-        background-image: linear-gradient($color-purple, $color-green);
+        // background-image: linear-gradient($color-purple, $color-green);
       
     }
 
@@ -335,6 +502,52 @@ header{
         margin: 20px;
     }
 
+    .fbpageparent {
+    
+        position: relative;
+    
+    
+        //code for opacity---------------
+        // &::before {
+        //     content: '';
+            background: url('marker.jpeg') no-repeat center center fixed;
+        //     // background-position: 0 0;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        //     position: absolute;
+        //     top: 0px;
+        //     right: 0px;
+        //     bottom: 0px;
+        //     left: 0px;
+        //     opacity: 0.25;
+           
+        // }
+      //code for opacity--------------
+    
+        // min-height: 100%;
+        // min-width: 1024px;
+      
+        // height: auto;
+        // width: 100%;
+    
+        // position: fixed;
+        // top: 0;
+        // left: 0;
+      
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    
+     //messing with pseudo elements
+    
+     // background: url('marker.jpeg') no-repeat center center fixed;
+    //  background-position: 0 0;
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    
+
+    }
+
 }
 
 
@@ -385,111 +598,11 @@ header{
 
 
 
-  @include breakpoints(phone){
-
-    .myTextArea, h1, .fbcategory, .anonheader, .fblabels, .dropDownMenu, .mySubmitbtn, .anonymousbtn, .fbformat {
-        font-family: $roboto-slab;
-        color: $color-grey;
-    }
-
  
- 
-    .dropDownMenu{
-        border: 1px 1px solid $color-purple;
-        font-family: $roboto-slab;
-        margin-left: 4vw;
-    }
-
-    h1{
-        text-align: center;
-        padding: 10vh;
-        height: 5vh;
-        width: 50vw;
-        font-weight: bold;
-        color: $color-grey
-    }
-    .myTextArea{
-
-        height: 20vh;
-        width: 80vw;
-        margin: 20px;
-        margin-left: 4vw;
-        // border-radius: 25%;
-    }
-
-    .dropDownMenu{
-        
-        width: 50vw;
-        height: 5vh;
-        border: 2px $color-light-blue;
-        color: $color-grey;
-      
-    }
-
-    .mySubmitbtn{
-        width: 20vw;
-        box-shadow: 2px 2px 2px 2px $color-purple;
-        font-size: .70em;
-        height: 5vh;
-        background-color: $color-white;
-        color: $color-grey;
-        // border-radius: 5px;
-        border: hidden $color-white;
-        font-size: 1.0em;
-        margin-top: 20px;
-       
-     
-    }
-
-    .anonymousbtn{
-        background-color: $color-light-green;
-    }
-
-    .anonheaderContainer {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .psfheader, .anonheader {
-        display: flex;
-        flex-direction: row;
-        height: 4vh;
-        background-color: $color-white;
-        box-shadow: 2px 2px 2px 2px $color-purple;
-        font-size: 1.0em;
-        justify-content: space-evenly;
-        padding-top: 8px;
-        margin: 20px;
-        
-    }
-
-    .psfheader {
-        width: 100vw;
-    }
-
-    .anonheader{
-        width: 60vw;
-    }
-    // .anonheader{
-    //     width: 50vw;
-    // }
-
-    .checkbox{
-            padding-right: 10px;
-    }
-
-    .fbListContainer {
-        height: 50vh;
-        width: 100vw;
-        background-color: $color-blue;
-    
-
-    }
-
-    .fbformat {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-}
+// html {
+//     background-image: url('marker.jpeg') no-repeat center center fixed;
+//     -webkit-background-size: cover;
+//     -moz-background-size: cover;
+//     -o-background-size: cover;
+//     background-size: cover;
+// }

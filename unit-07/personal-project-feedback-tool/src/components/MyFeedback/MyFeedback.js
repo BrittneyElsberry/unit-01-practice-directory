@@ -90,7 +90,9 @@ console.log(props, 'feedback props..what you look like??')
 
 return(
   
-    <div className='fbpageparent'>
+    <div className='fbpageparent' >
+       
+   {/* <img className='backimage' src='marker.jpeg'/> */}
         <div className='myFeedbackContainer'>
       {/* <h1>Do you have a great idea?</h1>   */}
 
@@ -154,6 +156,7 @@ return(
                     </div>})}
                     {/* </div> */}
     </div>
+    
 </div>
 
     )
