@@ -14,7 +14,7 @@ header{
 
 @include breakpoints(phone){
 
-    @media (min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
+    @media  (max-width: $breakpoint-large-phone){
 
         .myTextArea, h1, .fbcategory, .anonheader, .fblabels, .dropDownMenu, .mySubmitbtn, .anonymousbtn, .fbformat {
             font-family: $roboto-slab;
@@ -76,7 +76,7 @@ header{
 
     
         .anonheader{
-            width: 60vw;
+            width: 60vw; //60
         }
        
         .checkbox{
@@ -84,7 +84,7 @@ header{
         }
     
         .fbListContainer {
-            height: 50vh;
+            height: 10vh; //was 50
             width: 100vw;
         }
     
@@ -141,6 +141,39 @@ header{
     
 
     }
+
+    .liststyle{
+
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      
+      @include btn-theme;
+          
+        width: 30vw;
+        // height: 10vh;
+        list-style: none;
+        // padding: 10px; testing
+        overflow-wrap: break-word;
+        overflow: auto;
+
+
+        box-shadow:
+        /* The top layer shadow */
+        0 -1px 1px rgba(0,0,0,0.15),
+        /* The second layer */
+        0 -10px 0 -5px #eee,
+        /* The second layer shadow */
+        0 -10px 1px -4px rgba(0,0,0,0.15),
+         /* The third layer */
+        0 -20px 0 -10px #eee,
+        /* The third layer shadow */
+        0 -20px 1px -9px rgba(0,0,0,0.15);
+        /* Padding for demo purposes */
+        // padding: 30px; //testing
+    
+    }
+
 }
 
 
@@ -324,6 +357,39 @@ header{
 //   background-size: cover;
 
 
+
+
+}
+
+.liststyle{
+
+    display: flex;
+    flex-direction: column;
+  
+  @include btn-theme;
+      
+    width: 50vw;
+    height: 50vh;
+    list-style: none;
+    padding: 10px;
+    overflow-wrap: break-word;
+    overflow: auto;
+
+
+    box-shadow:
+    /* The top layer shadow */
+    0 -1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 -10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 -10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 -20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 -20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+    padding: 30px;
+
 }
 
 }
@@ -333,6 +399,244 @@ header{
 @include breakpoints(laptop){
 
     @media(min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop){
+
+    
+    .myTextArea, h1, .fbcategory, .anonheader, .fblabels, .dropDownMenu, .mySubmitbtn, .anonymousbtn, .fbformat {
+        font-family: $roboto-slab;
+        color: $color-grey;
+    }
+
+ 
+    .myTextArea{
+
+        height: 20vh;
+        width: 30vw;
+        margin-left: 4vw;
+       
+    }
+
+    .dropDownMenu{
+        margin-left: 4vw;
+        margin: 30px;
+        width: 20vw;
+        height: 5vh;
+        // border: 2px $color-light-blue;
+        color: $color-grey;
+        border: 1px 1px solid $color-purple;
+        font-family: $roboto-slab;
+   
+      
+    }
+
+    .mySubmitbtn{
+
+        @include btn-theme;
+
+        width: 10vw;
+        font-size: .70em;
+        height: 6vh;
+        font-size: .75em;
+        padding-top: 4px;
+       
+     
+    }
+
+    .anonymousbtn{
+        background-color: $color-light-green;
+    }
+
+    .anonheaderContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .anonheader {
+        @include btn-theme;
+        display: flex;
+        flex-direction: row;
+        height: 4vh;
+        font-size: .75em;
+        justify-content: space-evenly;
+        padding-top: 8px;
+        
+        
+    }
+
+   
+    .anonheader{
+        width: 20vw;
+     
+    }
+ 
+
+    .checkbox{
+            padding-right: 10px;
+    }
+
+
+    }
+    .fbpageparent{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 100vh;
+        width: 100vw;
+        // background-image: linear-gradient($color-purple, $color-green);
+      
+    }
+
+    .myFeedbackContainer{
+        height: 50vh;
+        width: 40vw;
+    }
+
+  
+    // .fbListContainer {
+    //     // height: 50vh;
+    //     width: 40vw;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-start;
+      
+    // }
+
+    // .psfheader{
+    //     width: 50vw;
+        
+    // }
+    
+
+
+    .fbListContainer > * {
+    
+        height: 30vh;
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+      
+        // background-color: black;
+    }
+
+ 
+  
+    .fb-box{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        margin: 30px;
+        // margin-left: 20px;
+
+        // height: 80vh;
+        height: 20vh; //sizes the content ins
+
+
+         
+       
+    }
+  
+    .liststyle{
+
+        display: flex;
+        flex-direction: column;
+      
+      @include btn-theme;
+          
+        width: 50vw;
+        height: 50vh;
+        list-style: none;
+        padding: 10px;
+        overflow-wrap: break-word;
+        overflow: auto;
+
+
+        box-shadow:
+        /* The top layer shadow */
+        0 -1px 1px rgba(0,0,0,0.15),
+        /* The second layer */
+        0 -10px 0 -5px #eee,
+        /* The second layer shadow */
+        0 -10px 1px -4px rgba(0,0,0,0.15),
+         /* The third layer */
+        0 -20px 0 -10px #eee,
+        /* The third layer shadow */
+        0 -20px 1px -9px rgba(0,0,0,0.15);
+        /* Padding for demo purposes */
+        padding: 30px;
+    
+    }
+
+   
+
+    .catName{
+
+        @include border-theme;
+        // margin: 20px;
+        // margin-bottom: 20px;
+        width: 10vw;
+        height: 5vh;
+        // padding-bottom: 10px;
+        
+    }
+
+
+
+    .text{
+        margin: 20px;
+    }
+
+    .fbpageparent {
+    
+        position: relative;
+    
+    
+        //code for opacity---------------
+        // &::before {
+        //     content: '';
+            background: url('marker.jpeg') no-repeat center center fixed;
+        //     // background-position: 0 0;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        //     position: absolute;
+        //     top: 0px;
+        //     right: 0px;
+        //     bottom: 0px;
+        //     left: 0px;
+        //     opacity: 0.25;
+           
+        // }
+      //code for opacity--------------
+    
+        // min-height: 100%;
+        // min-width: 1024px;
+      
+        // height: auto;
+        // width: 100%;
+    
+        // position: fixed;
+        // top: 0;
+        // left: 0;
+      
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    
+     //messing with pseudo elements
+    
+     // background: url('marker.jpeg') no-repeat center center fixed;
+    //  background-position: 0 0;
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    
+
+    }
+
+}
+
+
+
+@include breakpoints(desktop){
+
+    @media(min-width: $breakpoint-laptop) and (max-width: $breakpoint-desktop){
 
     
     .myTextArea, h1, .fbcategory, .anonheader, .fblabels, .dropDownMenu, .mySubmitbtn, .anonymousbtn, .fbformat {
@@ -406,9 +710,6 @@ header{
             padding-right: 10px;
     }
 
-   
-
-
 
 
     }
@@ -446,7 +747,7 @@ header{
 
     .fbListContainer > * {
     
-        height: 30vh;
+        // height: 15vh; -testing
         width: 50vw;
         display: flex;
         justify-content: center;
@@ -464,7 +765,7 @@ header{
         // margin-left: 20px;
 
         // height: 80vh;
-        height: 40vh; //sizes the content ins
+        height: 20vh; //sizes the content ins
        
     }
   
@@ -481,6 +782,19 @@ header{
         padding: 10px;
         overflow-wrap: break-word;
         overflow: auto;
+
+        box-shadow:
+        /* The top layer shadow */
+        0 -1px 1px rgba(0,0,0,0.15),
+        /* The second layer */
+        0 -10px 0 -5px #eee,
+        /* The second layer shadow */
+        0 -10px 1px -4px rgba(0,0,0,0.15),
+         /* The third layer */
+        0 -20px 0 -10px #eee,
+        /* The third layer shadow */
+        0 -20px 1px -9px rgba(0,0,0,0.15);
+        /* Padding for demo purposes */
     }
 
    
@@ -552,57 +866,4 @@ header{
 
 
 
-// @include breakpoints(desktop){
-//     h1{
-//         text-align: center;
-//         padding: 10vh;
-//         height: 5vh;
-//         width: 100vw;
-//         background-color: $color-dark-blue;
-//     }
-//     .myTextArea{
 
-//         height: 40vh;
-//         width: 50vw;
-//         margin: 20px;
-//         margin-left: 25px;
-        
-//     }
-
-//     .mySubmit{
-//         width: 20vw;
-//     }
-
-
-// }
-
-
-// .myFeedbackContainer{
-//    display: flex; 
-// }
-
-// .mySubmit {
-//     background-color: $color-purple;
-//     color: $color-white;
-//     font-weight: bold;
-//     font-size: 1.25em;
-//     height: 50px;
-// }
-
-// .flex-grid {
-//     display: flex;
-//     flex: 1;
-//   }
-
-
-
-
-
- 
-// html {
-//     background-image: url('marker.jpeg') no-repeat center center fixed;
-//     -webkit-background-size: cover;
-//     -moz-background-size: cover;
-//     -o-background-size: cover;
-//     background-size: cover;
-// }

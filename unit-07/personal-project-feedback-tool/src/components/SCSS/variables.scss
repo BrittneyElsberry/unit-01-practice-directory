@@ -20,7 +20,7 @@ $ubuntu: 'Ubuntu', sans-serif;
 
 
 @mixin btn-theme {
-  box-shadow: 2px 2px 2px 2px $color-purple;
+  box-shadow: 2px 2px 2px 2px $color-mauve;
   background-color: $color-white;
   color: $color-grey;
   border: hidden $color-white;
@@ -28,7 +28,7 @@ $ubuntu: 'Ubuntu', sans-serif;
 }
 
 @mixin border-theme{
-  box-shadow: 2px 2px 2px 2px $color-purple;
+  box-shadow: 2px 2px 2px 2px $color-mauve;
   background-color: $color-white;
   color: $color-grey;
  
@@ -97,7 +97,16 @@ $color-blue: #5390d9;
 $color-green: #64dfdf;
 
 
+//new palette
+
+$color-navy: #4a4e69;
+$color-mauve: #9a8c98;
+
   /*Color palette
+
+  //new palette
+
+  
   
 
   GREEN BLUE PALETTE
