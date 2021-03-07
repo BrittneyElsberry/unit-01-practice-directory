@@ -70,9 +70,9 @@ console.log(this.props.feedback_id)
             </div>
 
         )  : (
-          <div>
+          <div className='btnContainer'>
           
-             <button className="btn" id='fblabels' onClick={()=>this.props.deleteFeedback(this.props.feedback_id)}>X</button>
+             <button className="btn" id='fblabels' onClick={()=>this.props.deleteFeedback(this.props.feedback_id)}>Delete</button>
              <button className="btn" onClick={()=>this.toggleEditMode()}>Edit</button>
              </div>
         

@@ -143,16 +143,16 @@ return(
     
 
 <div className='fbListContainer'>
-    <div className='list'>
+    {/* <div className='list'> */}
         {props.feedback.map((elem)=>{
-            return  <div className="flex-grid" key={elem.feedback_id}>
+            return  <div className="fb-box" key={elem.feedback_id}>
                 
                     
-                    <li className='liststyle'><div className='catName'>{elem.category_name}</div> {elem.feedback}
+                    <li className='liststyle'><div className='catName'>{elem.category_name}</div> <p className='text'>{elem.feedback}</p>
                     <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id}/></li>
                    
                     </div>})}
-                    </div>
+                    {/* </div> */}
     </div>
 </div>
 

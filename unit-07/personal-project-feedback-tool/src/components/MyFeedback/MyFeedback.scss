@@ -238,15 +238,7 @@ header{
             padding-right: 10px;
     }
 
-    .fbListContainer {
-        height: 50vh;
-        width: 40vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-      
-
-    }
+   
 
 
 
@@ -258,7 +250,8 @@ header{
         justify-content: flex-start;
         height: 100vh;
         width: 100vw;
-        background-color: $color-dark-green;
+        // background-color: linear-gradient($color-dark-green, $color-purple);
+        background-image: linear-gradient($color-purple, $color-green);
       
     }
 
@@ -268,6 +261,14 @@ header{
     }
 
   
+    // .fbListContainer {
+    //     // height: 50vh;
+    //     width: 40vw;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-start;
+      
+    // }
 
     // .psfheader{
     //     width: 50vw;
@@ -278,43 +279,41 @@ header{
 
     .fbListContainer > * {
     
-     
+        height: 30vh;
         width: 50vw;
         display: flex;
         justify-content: center;
       
+        // background-color: black;
     }
 
  
   
-    .flex-grid{
+    .fb-box{
         display: flex;
         flex: 1;
-        flex-direction: row;
+        flex-direction: column;
         margin: 30px;
-        overflow: auto;
-        margin-left: 20px;
-        border: 3px solid grey;
+        // margin-left: 20px;
+
+        // height: 80vh;
+        height: 40vh; //sizes the content ins
        
     }
   
     .liststyle{
 
         display: flex;
-        justify-content: center;
+        flex-direction: column;
       
       @include btn-theme;
           
         width: 50vw;
-        height: 30vh;
-        padding-top: 10%;
-        overflow-wrap:break-word;
+        height: 50vh;
         list-style: none;
-        // margin-left: 20px;
-        padding-bottom: 30px;
-        padding-left: 30px;
-        border: 3px solid grey;
-      
+        padding: 10px;
+        overflow-wrap: break-word;
+        overflow: auto;
     }
 
    
@@ -322,17 +321,19 @@ header{
     .catName{
 
         @include border-theme;
-        margin: 0;
+        // margin: 20px;
+        // margin-bottom: 20px;
         width: 10vw;
-        height: 10vh;
+        height: 5vh;
+        // padding-bottom: 10px;
         
     }
 
-    .list{
-        margin-left:50px;
+
+
+    .text{
+        margin: 20px;
     }
-
-
 
 }
 
