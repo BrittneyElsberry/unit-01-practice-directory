@@ -587,22 +587,30 @@ header{
     .fbpageparent {
     
         position: relative;
+        // background: url('marker.jpeg') no-repeat center center fixed;
+        // background-position: 0 0;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // opacity: 0.25;
+        // z-index: -100;
+ 
     
     
-        //code for opacity---------------
-        // &::before {
-        //     content: '';
+        // code for opacity---------------
+        &::before {
+            content: '';
             background: url('marker.jpeg') no-repeat center center fixed;
-        //     // background-position: 0 0;
-        //     background-repeat: no-repeat;
-        //     background-size: cover;
-        //     position: absolute;
-        //     top: 0px;
-        //     right: 0px;
-        //     bottom: 0px;
-        //     left: 0px;
-        //     opacity: 0.25;
-           
+            // background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.25;
+            z-index: -4;
+        }
         // }
       //code for opacity--------------
     
@@ -615,18 +623,12 @@ header{
         // position: fixed;
         // top: 0;
         // left: 0;
-      
-      background-position: 0 0;
-      background-repeat: no-repeat;
-      background-size: cover;
     
-     //messing with pseudo elements
-    
-     // background: url('marker.jpeg') no-repeat center center fixed;
-    //  background-position: 0 0;
-    //   background-repeat: no-repeat;
-    //   background-size: cover;
-    
+     
+
+     
+ 
+     
 
     }
 

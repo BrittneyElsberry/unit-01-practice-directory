@@ -68,8 +68,10 @@ module.exports = {
 
     updateFB: async (req, res) => {
         let {user_id} = req.session.user
+        let {userInput} = req.body
+        let {id} = req.params.id
         const db = await req.app.get('db')
-        const edit = await db.editfeedback(req.params.id)
+        await db.editfeedback([userInput, id])
         const fbList = await db.readfeedback([user_id])
         res.status(200).send(fbList)
 

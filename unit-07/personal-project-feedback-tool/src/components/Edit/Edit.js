@@ -25,7 +25,7 @@ constructor(props){
 
 toggleEditMode=()=>{
     this.setState({editing: true})
-    this.handleEditChange(this.props.feedback_id)
+    // this.handleEditChange(this.props.feedback_id)
 }
 
 handleEditChange=(e)=>{
@@ -33,16 +33,16 @@ handleEditChange=(e)=>{
    
 }
 
-handleSave=(id)=>{
-    axios.put(`/myfeedback/${id}`)
-    .then(_=> this.props.postFB())
+handleSave=(id, userInput)=>{
+    axios.put(`/myfeedback/${id}`, {userInput})
+    .then(_ => this.props.postFB())
 }
 
 
 render () {
    
 
-console.log(this.props.feedback_id)
+
 
     return(
         <div>
@@ -61,8 +61,9 @@ console.log(this.props.feedback_id)
                 <button 
                 className='btn' 
                 onClick={()=> {
-                    this.handleSave(this.props.feedback_id)
+                    this.handleSave(this.props.feedback_id, this.state.userInput)
                     this.setState({editing: false})
+                    console.log(this.props.feedback_id, 'this is what is passed to the controller function')
 
                 }}>
                 SAVE</button>

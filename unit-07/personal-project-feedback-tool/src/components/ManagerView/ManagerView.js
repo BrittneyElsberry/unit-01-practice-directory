@@ -17,12 +17,13 @@ useEffect(()=>{
 
     axios.get(`/managerview/myteam`)
     .then((res)=> {
-        setDirectory({directory: res.data})
-        console.log(res.data, 'this worked baby!')
+        setDirectory(res.data) //key learning
+        console.log(res.data)
     
     }
         
-
+//saving to state, passing into the key value we want to override on state
+//functional components don't need to override anything so you just set it directly.
 // axios.get(`${BASE_URL}user`, {headers: {'app-id': APP_ID}})
 // .then((res)=> {setDirectory(res.data.data)
 //     console.log(res.data.data)
@@ -31,8 +32,9 @@ useEffect(()=>{
 
 }, [])
 
-console.log(directory, 'this is the directory')
-let currentState;
+console.log(directory)
+console.log('this is the directory')
+
 
 return(
 
@@ -41,15 +43,29 @@ return(
         
    <h1>My Team</h1>
     
-    <ul> 
-        {/* {currentState = directory.map(empList=>{
-             <li key={empList.user_id}>{empList.username} {empList}<br></br></li>
+  
+        {  directory && directory.map((empList)=> {
+            return <div key={empList.user_id} ><li> {empList.username}</li></div>  
+                                                    })  
+            
+       
+        
+        
+        } 
+        
+      
 
-        })} */}
+
+
+
+
+
+
+
         {/* {directory.map((employeeD)=>{
             return <Link to={`/myfeedback/`}> <div key={employeeD.id}><h2>{employeeD.firstName} {employeeD.lastName}<br></br></h2></div></Link>
         })} */}
-    </ul>
+  
     
     
     </div>
