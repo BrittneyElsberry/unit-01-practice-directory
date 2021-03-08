@@ -9,11 +9,12 @@ const initialState = {
 
 const POST_FEEDBACK = "POST_FEEDBACK"
 const UPDATE_FEEDBACK = "UPDATE_FEEDBACK"
+const POST_FEEDBACK_MANAGER_VIEW = "POST_FEEDBACK_MANAGER_VIEW"
 
 
 
 export const postFB = ()=>{
-    let data = axios.get('/myfeedback/home')
+    let data = axios.get('/myfeedback/:user_id')
     .then(res => res.data)
  
     return{
@@ -23,6 +24,19 @@ export const postFB = ()=>{
     
 }
 
+
+
+
+export const postFBManagerView = ()=>{
+    let data = axios.get('/myfeedback/:user_id')
+    .then(res => res.data)
+ 
+    return{
+        type: POST_FEEDBACK_MANAGER_VIEW,
+        payload: data
+    }
+    
+}
 
 // export const updateFB = (id)=> {
     
@@ -43,6 +57,11 @@ export default function fbReducer(state=initialState, action){
 
     switch(action.type){
     case POST_FEEDBACK + '_FULFILLED':
+        console.log(action)
+        return {...state, feedback: action.payload}
+
+
+    case POST_FEEDBACK_MANAGER_VIEW + '_FULFILLED':
         console.log(action)
         return {...state, feedback: action.payload}
 

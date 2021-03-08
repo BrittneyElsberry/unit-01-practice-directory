@@ -9,6 +9,7 @@ import './Nav.scss'
 
 const Nav = (props)=> {
 
+  console.log(props, 'this is props BABAY')
 
     return (
         
@@ -31,7 +32,7 @@ const Nav = (props)=> {
             <Link to="/managerview" ><a className='nav-item'>Manager View</a></Link> 
             <Link to="/deptdash"  ><a className='nav-item'>Department</a></Link>  
             <Link to='/companydash' ><a className='nav-item'>Company</a> </Link>
-            <Link to='/myfeedback'><a className='nav-item'>My Feedback</a></Link>
+            <Link to={`/myfeedback/${props.user_id}`}><a className='nav-item'>My Feedback</a></Link>
             <Link to='/' onClick={logout}><a className='nav-item'>Logout</a></Link>
           </div>
             
@@ -42,7 +43,7 @@ const Nav = (props)=> {
           <div className='nav-links'>
             <Link to="/deptdash"><a className='nav-item' alt='department dashboard'>Department</a></Link>  
             <Link to='/companydash'><a className='nav-item' alt='my feedback'>Company</a> </Link>
-            <Link to='/myfeedback'><a className='nav-item' alt='my feedback' >My Feedback</a></Link>
+            <Link to={`/myfeedback/${props.authReducer.user_id}`}><a className='nav-item' alt='my feedback' >My Feedback</a></Link>
             <Link to='/' onClick={logout}><a className='nav-item logout' alt='logout'>Logout</a></Link>
           </div>
             

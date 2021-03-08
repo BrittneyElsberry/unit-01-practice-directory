@@ -36,6 +36,9 @@ console.log(directory)
 console.log('this is the directory')
 
 
+
+
+
 return(
 
     <div className='managerviewContainer'>
@@ -45,7 +48,8 @@ return(
     
   
         {  directory && directory.map((empList)=> {
-            return <div key={empList.user_id} ><li> {empList.username}</li></div>  
+            return <Link to={`/myfeedback/${empList.user_id}`}>
+            <div key={empList.user_id} ><li> {empList.username}</li></div>  </Link>
                                                     })  
             
        

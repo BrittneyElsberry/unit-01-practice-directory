@@ -48,7 +48,7 @@ app.post('/logout', authCtrl.logout)
 
 //Feedback endpoints
 
-app.get('/myfeedback/home', fbCtrl.readFB)
+app.get('/myfeedback/:user_id', fbCtrl.readFB)
 app.post('/myfeedback/submit', fbCtrl.createFB)
 app.post('/myfeedback/anonymous', fbCtrl.createAnonymous)
 app.put(`/myfeedback/:id`, fbCtrl.updateFB)
@@ -57,3 +57,4 @@ app.delete(`/myfeedback/:id`, fbCtrl.deleteFB)
 //Admin team endpoints
 
 app.get(`/managerview/myteam`, adminCtrl.retrieveTeam)
+app.get(`/myteamfeedback/:id`, fbCtrl.readFB)

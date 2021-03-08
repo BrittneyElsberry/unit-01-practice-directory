@@ -20,8 +20,23 @@ const [isChecked, setIsChecked] = useState(false)
 const {user_id} = useParams()
 
 
+
+
+console.log(props, 'this is the req.params.id')
+
 useEffect(()=>{
-    props.postFB() 
+
+   if(props.user_admin=== true){
+        axios.get(`/myteamfeedback/${user_id}`)
+        .then(res => console.log(res.data))
+        // console.log(res.data, 'is this logging correctly?')
+    }
+    else {
+        props.postFB() 
+    }
+   
+
+ 
 }, [fbInfo]) 
 
 
@@ -86,7 +101,7 @@ const deleteFeedback = (id) => {
     .then(_=> props.postFB())
 }
 
-console.log(props, 'feedback props..what you look like??')
+console.log(props.user_admin, 'feedback props..what you look like??')
 
 return(
   
@@ -151,7 +166,7 @@ return(
                 
                     
                     <li className='liststyle'><div className='catName'>{elem.category_name}</div> <p className='text'>{elem.feedback}</p>
-                    <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id}/></li>
+                    <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id} user_admin={props.user_admin}/></li>
                    
                     </div>})}
                     {/* </div> */}
