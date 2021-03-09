@@ -10,19 +10,6 @@ const app = express();
 const nodemailer = require('nodemailer')
 
 
-let transporter = nodemailer.createTransport({
-
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD
-    },
-    // host: 'smtp.mail.yahoo.com',
-    // port: 465,
-    // secure: false,
-    // debug: false,
-    // logger: true
-})
 
 
 
@@ -49,10 +36,10 @@ app.use(session({
     
     
     })
-       .then((db, transporter)  => {
+       .then((db)  => {
            app.set('db', db)
-           app.set('transporter', transporter)
-           console.log('db and transporter connected')
+        //    app.set('transporter', transporter)
+           console.log('db connected')
            app.listen(SERVER_PORT, ()=> console.log(`running on ${SERVER_PORT}`));
        })
    
@@ -88,7 +75,7 @@ app.get(`/myteamfeedback/:id`, fbCtrl.readFB)
 
 //Nodemailer -------------------------------------------------------
 
-//Step 1
+
 // let transporter = nodemailer.createTransport({
 
 //     service: 'gmail',
@@ -96,12 +83,17 @@ app.get(`/myteamfeedback/:id`, fbCtrl.readFB)
 //         user: process.env.EMAIL,
 //         pass: process.env.PASSWORD
 //     },
+//     sendmail: true
+
+
+
 //     // host: 'smtp.mail.yahoo.com',
 //     // port: 465,
 //     // secure: false,
 //     // debug: false,
 //     // logger: true
 // })
+
 
 
 //Step 2
@@ -128,3 +120,28 @@ app.get(`/myteamfeedback/:id`, fbCtrl.readFB)
 //Step 4
 
 //disable gmail feature
+
+
+
+ // const transporter = req.app.get('transporter')
+
+    // let mailOptions = {
+
+    //     from: 'testnodemailerprojects@gmail.com',
+    //     to: 'testnodemailerprojects@gmail.com',
+    //     subject: ` ${username} on your team submitted new feedback!`,
+
+    //     html: `
+
+    //     <h2>Testing this out</h2>
+    //     <p>${feedback}</p>
+    //     `
+    // }
+    
+//   let sending =  await transporter.sendMail(mailOptions, function (err, res){
+//     if(err){
+//         console.log('Nodemailer error', err)
+//     }else {
+//         res.status(200).send(console.log('Email Sent!', sending))
+//     }
+// } )

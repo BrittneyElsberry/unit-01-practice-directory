@@ -64,7 +64,7 @@ module.exports = {
         let {user_id} = req.session.user 
         const db = await req.app.get('db')
         const fbList = await db.readfeedback([user_id])
-        console.log(fbList, 'controller')
+        // console.log(fbList, 'controller')
         res.status(200).send(fbList)
  
     },
@@ -73,7 +73,7 @@ module.exports = {
         // let {user_id} = req.session.user
         let {userInput} = req.body
         let {id} = req.params
-        console.log(req.params, req.body)
+        // console.log(req.params, req.body)
 
         const db = await req.app.get('db')
         await db.editfeedback([userInput, id])
@@ -93,29 +93,55 @@ module.exports = {
     },
 
     confirmationEmail: async (req, res)=>{
-    let {username} = req.session.user
-    let {feedback} = req.body
-    const transporter = req.app.get('transporter')
 
-    let mailOptions = {
+        try{
 
-        from: 'testnodemailerprojects@gmail.com',
-        to: 'testnodemailerprojects@gmail.com',
-        subject: ` ${username} on your team submitted new feedback!`,
-        text: `${feedback} `
-    }
+            let {username} = req.session.user
+            let {fb} = req.body
+            // console.log(req.body, 'req.body')
+
+            let transporter = nodemailer.createTransport({
+
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL,
+                pass: process.env.PASSWORD
+            },
+                // sendMail: true,
+                //  port: 465,
+                 
     
-    const sendconfemail = await transporter.sendMail(mailOptions)
-    .then(res.status(200).send(sendconfemail))
-    .catch(err=> console.log(err))
+            })
+
+
+            let sending = await transporter.sendMail({
+                from: ' "Test Employee" <testnodemailerprojects@gmail.com>',
+                to: ' "Test Manager" <testnodemailerprojects@gmail.com>',
+                subject: ` ${username} submitted new feedback!`,
+                text: `${fb}`,
+                html: `
+
+                     <h2>Testing this out</h2>
+                    <p>Just seeing if this will work:
+                    ${fb}
+                    </p>
+                     `
+                    }, (err) => {
+                        if(err){
+                            console.log(err)
+                            res.sendStatus(500)
+                        } else {
+                            res.status(200).send(sending)
+                        }
+
+                        
+                    })
     
-
-
+             }
+        catch (err){
+            console.log(err)
+            }
     }
-
-
-
-
     
 }
 
