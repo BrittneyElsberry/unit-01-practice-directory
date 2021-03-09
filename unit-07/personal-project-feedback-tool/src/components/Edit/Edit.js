@@ -5,7 +5,7 @@ import {updateUser} from '../../redux/authReducer'
 import {connect} from 'react-redux'
 import './Edit.scss'
 import axios from 'axios'
-import e from 'express';
+
 
 class Edit extends Component {
 constructor(props){
@@ -46,7 +46,7 @@ handleCommentInput = (e) => {
 
 addComment = (comment) => {
 axios.post(`/managercomment`, comment)
-//need to create a controller function to add comments to feedback
+// need to create a controller function to add comments to feedback
 .then(res=> res.data)
 }
 

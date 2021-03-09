@@ -20,16 +20,12 @@ const [isChecked, setIsChecked] = useState(false)
 const {user_id} = useParams()
 
 
-
-
-console.log(props, 'this is the req.params.id')
-
 useEffect(()=>{
 
    if(props.user_admin=== true){
         axios.get(`/myteamfeedback/${user_id}`)
         .then(res => console.log(res.data))
-        // console.log(res.data, 'is this logging correctly?')
+   
     }
     else {
         props.postFB() 
@@ -78,20 +74,28 @@ const submitFB =(formSubmit)=>{
             }).catch((err)=> console.log(err))
         }
       
-    } else if (result === false){
+    } 
+    else if (result === false){
        return  console.log('waiting for changes from the user before submit')
     }
 
     else if (isChecked === false){
         axios.post('/myfeedback/submit', fbInfo) //sending fbInfo to fbcontroller.js createFB function
         .then((res)=> {
+
             props.postFB(res.data) //this is receiving the data from the feeback table
           
             setfbInfo({fbInfo: {selectCategory: '', fb: []}})
             console.log(fbInfo.fb)
+
+            console.log(res.data, 'this is what is sending to email controller function')
+            // axios.post(`/confirmationemail/`, {...res.data})
          
        
        }).catch((err)=> console.log(err)) 
+      
+       axios.post(`/confirmationemail/`, fbInfo)
+    
     }
     }
 
@@ -101,16 +105,14 @@ const deleteFeedback = (id) => {
     .then(_=> props.postFB())
 }
 
-console.log(props.user_admin, 'feedback props..what you look like??')
 
 return(
   
     <div className='fbpageparent' >
        
-   {/* <img className='backimage' src='marker.jpeg'/> */}
+  
         <div className='myFeedbackContainer'>
-      {/* <h1>Do you have a great idea?</h1>   */}
-
+  
       <form onSubmit={submitFB}>
 
     
@@ -149,7 +151,12 @@ return(
     
    
     </div>
-    <button className='mySubmitbtn'>Submit</button>
+        <button 
+    
+            className='mySubmitbtn'
+          >Submit
+    
+        </button>
     </div>
 
     <br></br>
@@ -160,7 +167,7 @@ return(
     
 
 <div className='fbListContainer'>
-    {/* <div className='list'> */}
+ 
         {props.feedback.map((elem)=>{
             return  <div className="fb-box" key={elem.feedback_id}>
                 
@@ -169,13 +176,15 @@ return(
                     <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id} user_admin={props.user_admin}/></li>
                    
                     </div>})}
-                    {/* </div> */}
+                   
     </div>
     
 </div>
 
     )
     }
+
+   
 export default connect((s)=> ({
     ...s.fbReducer,
     ...s.authReducer

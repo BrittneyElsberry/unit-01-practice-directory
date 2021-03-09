@@ -1,3 +1,6 @@
+const nodemailer = require('nodemailer')
+
+
 
 module.exports = {
 
@@ -33,7 +36,7 @@ module.exports = {
         const {fb, selectCategory} = req.body
         const {dept_number} = req.session.user //removed user_id
         const date = new Date
-        // let date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate() 
+        
 
 
         console.log(req.body)
@@ -87,7 +90,31 @@ module.exports = {
         await db.deletefeedback(req.params.id)
         .then(_=> res.sendStatus(200))
 
+    },
+
+    confirmationEmail: async (req, res)=>{
+    let {username} = req.session.user
+    let {feedback} = req.body
+    const transporter = req.app.get('transporter')
+
+    let mailOptions = {
+
+        from: 'testnodemailerprojects@gmail.com',
+        to: 'testnodemailerprojects@gmail.com',
+        subject: ` ${username} on your team submitted new feedback!`,
+        text: `${feedback} `
     }
+    
+    const sendconfemail = await transporter.sendMail(mailOptions)
+    .then(res.status(200).send(sendconfemail))
+    .catch(err=> console.log(err))
+    
+
+
+    }
+
+
+
 
     
 }
