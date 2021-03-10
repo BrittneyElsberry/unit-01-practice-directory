@@ -14,17 +14,20 @@ const MyFeedback = (props)=>{
 const [fbInfo, setfbInfo] = useState({
     selectCategory: 'Internal Process',
     fb: '',
+   
 })
 
 const [isChecked, setIsChecked] = useState(false)
 const {user_id} = useParams()
+const [retrieveIndividualFB, setRetrieveIndividualFB] = useState([]) 
 
 
 useEffect(()=>{
 
    if(props.user_admin=== true){
         axios.get(`/myteamfeedback/${user_id}`)
-        .then(res => console.log(res.data))
+        .then(res => setRetrieveIndividualFB([res.data]))
+        .catch(err=>console.log(err, 'this is the error'))
    
     }
     else {
@@ -34,6 +37,8 @@ useEffect(()=>{
 
  
 }, [fbInfo]) 
+
+
 
 
 const {params} = props
@@ -95,7 +100,7 @@ const submitFB =(formSubmit)=>{
        }).catch((err)=> console.log(err)) 
       
        axios.post(`/confirmationemail/`, fbInfo)
-       .then(res => console.log(res))
+       .then(res => console.log(res, 'this is the confirmation email'))
     
     }
     }

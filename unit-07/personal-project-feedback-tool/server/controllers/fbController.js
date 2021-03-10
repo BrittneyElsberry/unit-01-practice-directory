@@ -92,12 +92,13 @@ module.exports = {
 
     },
 
+
     confirmationEmail: async (req, res)=>{
 
         try{
 
             let {username} = req.session.user
-            let {fb} = req.body
+            let {fb, selectCategory} = req.body
             // console.log(req.body, 'req.body')
 
             let transporter = nodemailer.createTransport({
@@ -121,9 +122,10 @@ module.exports = {
                 text: `${fb}`,
                 html: `
 
-                     <h2>Testing this out</h2>
-                    <p>Just seeing if this will work:
-                    ${fb}
+                     <h2>See what your team member had to say:</h2>
+                     <h3> feedback category: ${selectCategory}
+                    <p>:
+                    "${fb}"
                     </p>
                      `
                     }, (err) => {

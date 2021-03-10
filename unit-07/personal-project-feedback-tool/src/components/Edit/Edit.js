@@ -15,9 +15,12 @@ constructor(props){
         editing: false,
         userInput: '',
         feedback: [],
-        comment: ''
+        comment: '',
+        savedComment: []
     }
 }
+
+
 
 
 //Editing functions ----------------------------
@@ -38,22 +41,33 @@ handleSave=(id, userInput)=>{
 }
 
 
-//Manager comment functions ---------------
+
+
+
+
+//Manager comment functions ---------------------------------
 
 handleCommentInput = (e) => {
     this.setState({comment: e.target.value})
 }
 
-addComment = (comment) => {
-axios.post(`/managercomment`, comment)
-// need to create a controller function to add comments to feedback
-.then(res=> res.data)
+addComment = (comment, feedback_id) => {
+
+axios.post(`/managercomment/`, {comment, feedback_id})
+.then(res=>{
+    this.setState({savedComment: res.data})
+
+})
+
+
+
 }
 
 
 render () {
    
-console.log(this.props.user_admin, 'propppppps')
+// console.log(this.res.data, 'is the data empty?')
+console.log(this.state.savedComment, 'this has been saved to local state')
 
 
     return(
@@ -86,18 +100,33 @@ console.log(this.props.user_admin, 'propppppps')
 
             this.props.user_admin ? (
                 <div>
+                    hi
+                         { this.state.savedComment.map((com)=> {
+
+                            return (<div className='commentContainer' key={com.comment_id}>
+                                    <li>{com.comment}</li>
+                                <h1>Hello World</h1>
+                            </div> )
+                        })}
+
+                   
+
+
                     <input 
                     value={this.state.comment}
                     type='text'
                     onChange={(e)=> this.handleCommentInput(e)}
                     
                     />
+                   
                     <button 
-                    onClick={()=>this.addComment(this.state.comment)}
+                    onClick={()=>this.addComment(this.state.comment, this.props.feedback_id)}
                     
                     
                     >Comment</button>
                 </div>
+
+
                     
         )
         :

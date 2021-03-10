@@ -69,7 +69,8 @@ app.post(`/confirmationemail/`, fbCtrl.confirmationEmail)
 //Admin team endpoints
 
 app.get(`/managerview/myteam`, adminCtrl.retrieveTeam)
-app.get(`/myteamfeedback/:id`, fbCtrl.readFB)
+app.get(`/myteamfeedback/:user_id`, adminCtrl.retrieveIndividualFB) //change this to user_id
+app.post(`/managercomment/`, adminCtrl.addComment)
 
 
 
