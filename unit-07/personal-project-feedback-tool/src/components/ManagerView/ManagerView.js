@@ -44,18 +44,16 @@ return(
     <div className='managerviewContainer'>
         
         
-   <h1>My Team</h1>
-    
+   <h1 className='myteam'>My Team</h1>
+    <div className='teamListContainer' >
   
         {  directory && directory.map((empList)=> {
             return <Link to={`/myfeedback/${empList.user_id}`}>
-            <div key={empList.user_id} ><li> {empList.username}</li></div>  </Link>
+            <div key={empList.user_id} ><li className='teamList' > {empList.username}</li></div>  </Link>
                                                     })  
-            
-       
-        
-        
         } 
+
+    </div>
         
       
 

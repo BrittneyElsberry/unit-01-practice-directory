@@ -60,6 +60,7 @@ app.post('/logout', authCtrl.logout)
 //Feedback endpoints
 
 app.get('/myfeedback/:user_id', fbCtrl.readFB)
+app.get('/mycomments/:dept_number', fbCtrl.readComments)
 app.post('/myfeedback/submit', fbCtrl.createFB)
 app.post('/myfeedback/anonymous', fbCtrl.createAnonymous)
 app.put(`/myfeedback/:id`, fbCtrl.updateFB)
@@ -70,6 +71,7 @@ app.post(`/confirmationemail/`, fbCtrl.confirmationEmail)
 
 app.get(`/managerview/myteam`, adminCtrl.retrieveTeam)
 app.get(`/myteamfeedback/:user_id`, adminCtrl.retrieveIndividualFB) //change this to user_id
+// app.get(`/managercommentlist/:feedback_id`, adminCtrl.retrieveComments)
 app.post(`/managercomment/`, adminCtrl.addComment)
 
 

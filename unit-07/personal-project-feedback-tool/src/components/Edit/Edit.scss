@@ -55,3 +55,14 @@
         //     margin: 4px 2px;
         //     padding: 20px;        }
     }}
+
+
+    .commentContainer {
+        @include btn-theme;
+        padding: 20px;
+        margin: 20px
+    }
+
+    .commentbtn{
+        @include btn-theme;
+    }

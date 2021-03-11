@@ -2,9 +2,30 @@
 
 
 
+@include breakpoints(phone){
+@media(min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
 
-@media only screen and (max-width: 37.5rem)and (min-width: 25rem) {
+ 
 
+    header {
+        width: 100vw;
+        background-color: white;
+        text-align: center;
+        font-size: 1.5em;
+        font-family: $roboto-slab;
+        color: $color-grey;
+       
+    }
+
+    .employeeEngagement{
+        display: flex;
+        background-color: $color-white;
+        color: $color-grey;
+        font-size: 1.25em;
+        @include border-theme;
+        margin: auto;
+        
+    }
 
     .authContainer{
         display: flex;
@@ -13,257 +34,226 @@
         justify-content: left;
         flex-grow: 2;
         
-        height: 60vh;
-        width: 60vh;
+        height: 40vh;
+        width: 30vh;
         color: $color-white;
         font-weight: bold;
-        box-shadow: 2px 2px 2px $color-dark-green;
-        margin: 10vh 10vh 10vh;
-        margin-left: 20vw;
-
-
+        box-shadow: 4px 4px 4px $color-navy;
+        margin: auto;
+        margin-top: 20%;
+        padding: 10%;
+   
         }
-        
-        .authbtn{
-            background-color: $color-light-blue;
-            color: $color-white;
-            font-weight: bold;
-            height: 3em;
-            width: 5em;
-        
+        .labelText{
+            color: $color-mauve;
+            font-size: 1.0em;
+            font-family: $roboto-slab;
         }
-          .passInput, .unInput{
-              height: 20px;
-        
-          }
 
-          .admin{
-              color: $color-grey;
-          }
-        
-          /* .authbtn{
-              height: 20px;
-              ;
-          } */
-}
-
-
-
-@media screen and (max-width: 25rem){
-
-    .h1 {
-        display: none;
+    .authbtn {
+        @include btn-theme;
     }
 
-    .backgroundAuth {
-        background-color: $color-dark-blue;
-    }
 
-    .authContainer{
+    .authInputFieldContainer{
         display: flex;
-        background-color: $color-white;
-        align-items: center;
-        justify-content: left;
-        
-        height: 50vh;
-        width: 50vh;
-        color: $color-dark-blue;
-        font-weight: bold;
-        box-shadow: 2px 2px 2px $color-dark-green;
-        margin: 20vh 5vh 5vh;
-        }
-        
-        .authbtn{
-            background-color: $color-light-green;
-            color: $color-white;
-            font-weight: bold;
-        
-        }
-          .passInput, .unInput{
-              height: 20px;
-        
-          }
-        
-          .authbtn{
-              height: 20px;
-              ;
-          }
-        
+        flex-direction: column;
+        justify-content: center;
+        color: $color-purple;
+       
+    }
 
-
-
+}
 
 }
 
 
-nav{
-    display: none;
-}
+@include breakpoints(tablet){
+    @media(min-width: $breakpoint-large-phone) and (max-width: $breakpoint-tablet){
 
 
-@include breakpoints (laptop){
-
-    @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop){
-        .backgroundAuth{
-            background: url('lightbulb.jpg') no-repeat center center fixed;
-            height: 100vh;
+        header {
             width: 100vw;
-              
-      background-position: 0 0;
-      background-repeat: no-repeat;
-      background-size: cover;
+            background-color: white;
+            text-align: center;
+            font-size: 1.0em;
+            font-family: $roboto-slab;
+            color: $color-grey;
+           
         }
     
+        .authContainer{
+            display: flex;
+            background-color: $color-white;
+            align-items: center;
+            justify-content: left;
+            flex-grow: 2;
+            
+            height: 40vh;
+            width: 30vh;
+            color: $color-white;
+            font-weight: bold;
+            box-shadow: 4px 4px 4px $color-navy;
+            margin: auto;
+            margin-top: 20%;
+       
+    
+    
+            }
+    
+        .authbtn {
+            @include btn-theme;
+        }
+    
+    
+        .authInputFieldContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-
-
+        
+    }
+    
     }
 
 
-  
-    
-}
+    @include breakpoints(laptop){
+        @media(min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop){
+            
+        }
+        
+        }
 
 
-// html, body{
-//     padding:0px;
-//     margin:0px;
-//     background:#F8F2ED;
-//     font-family: 'Raleway', sans-serif;
-//     color:#FFF;
-//     height:100%;
-//  }
- 
-//  .container{
-//     min-height:300px;
-//     max-width:250px;
-//     margin:40px auto;
-//     background:#FFF;
-//     border-radius:2px;
-//     box-shadow:0px 2px 3px rgba(0, 0, 0, 0.2);
-//     display:flex;
-//     flex-direction:column;
-//     overflow:hidden;
-//     animation: hi 0.5s;
-//     -webkit-transform: translateZ(0px);
-//     *{
-//        box-sizing:border-box;
-//     }
-//  }
- 
-//  .pages{
-//     flex:1;
-//     white-space:nowrap;
-//     position:relative;
-//     transition:all 0.4s;
-//     display:flex;
-//     .page{
-//        min-width:100%;
-//        padding:20px 15px;
-//        padding-top:0px;
-//        background:linear-gradient(to left, #955DFF, #6FAAFF);
-//        &:nth-of-type(1){
-//           .input { transform:translateX(-100%) scale(0.5); }
-//        }
-//        &:nth-of-type(2){
-//           .input { transform:translateX(100%) scale(0.5); }
-          
-//        }
-//        .input{
-//           transition:all 1s; 
-//           opacity:0; 
-//           transition-delay:0s;
-          
-//        }
-//        &.signup{
-//           background:linear-gradient(to left, #6FAAFF, #955DFF);
-//        }
-//        .title{
-//           margin-bottom:10px;
-//           font-size:14px;
-//           position:relative;
-//           line-height:14px;
-//           i{
-//              vertical-align:text-bottom;
-//              font-size:19px;
+        @include breakpoints(desktop){
+            @media(min-width: $breakpoint-laptop) and (max-width: $breakpoint-desktop){
+                
+            }
+            
+            }
+
+
+
+            .body, html{
+                background-color: $color-mauve;
+            } 
+
+
+// @media only screen and (max-width: 37.5rem)and (min-width: 25rem) {
+
+
+//     .authContainer{
+//         display: flex;
+//         background-color: $color-white;
+//         align-items: center;
+//         justify-content: left;
+//         flex-grow: 2;
+        
+//         height: 60vh;
+//         width: 60vh;
+//         color: $color-white;
+//         font-weight: bold;
+//         box-shadow: 2px 2px 2px $color-dark-green;
+//         margin: 10vh 10vh 10vh;
+//         margin-left: 20vw;
+
+
+//         }
+        
+//         .authbtn{
+//             background-color: $color-light-blue;
+//             color: $color-white;
+//             font-weight: bold;
+//             height: 3em;
+//             width: 5em;
+        
+//         }
+//           .passInput, .unInput{
+//               height: 20px;
+        
 //           }
-//        }
-//        .input{
-//           margin-top:20px;
-//        }
-//        input.text{
-//           background:#F6F7F9;
-//           border:none;
-//           border-radius:4px;
-//           width:100%;
-//           height:40px;
-//           line-height:40px;
-//           padding:0px 10px;
-//           color:rgba(0, 0, 0, 0.5);
-//           outline:none;
-//        }
-       
-//        input[type=submit]{
-//           background:rgba(0, 0, 0, 0.5);
-//           color:#F6F7F9;
-//           height:40px;
-//           line-height:40px;
-//           width:100%;
-//           border:none;
-//           border-radius:4px;
-//           font-weight:600;
-//        }
+
+//           .admin{
+//               color: $color-grey;
+//           }
+        
+//           /* .authbtn{
+//               height: 20px;
+//               ;
+//           } */
+// }
+
+
+
+// @media screen and (max-width: 25rem){
+
+//     .h1 {
+//         display: none;
 //     }
-//  }
- 
-//  .tabs{
-//     max-height:50px;
-//     height:50px;
-//     display:flex;
-//     background:#FFF;
+
+//     .backgroundAuth {
+//         background-color: $color-dark-blue;
+//     }
+
+//     .authContainer{
+//         display: flex;
+//         background-color: $color-white;
+//         align-items: center;
+//         justify-content: left;
+        
+//         height: 50vh;
+//         width: 50vh;
+//         color: $color-dark-blue;
+//         font-weight: bold;
+//         box-shadow: 2px 2px 2px $color-dark-green;
+//         margin: 20vh 5vh 5vh;
+//         }
+        
+//         .authbtn{
+//             background-color: $color-light-green;
+//             color: $color-white;
+//             font-weight: bold;
+        
+//         }
+//           .passInput, .unInput{
+//               height: 20px;
+        
+//           }
+        
+//           .authbtn{
+//               height: 20px;
+//               ;
+//           }
+        
+
+
+
+
+// }
+
+
+// nav{
+//     display: none;
+// }
+
+
+// @include breakpoints (laptop){
+
+//     @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop){
+//         .backgroundAuth{
+//             background: url('lightbulb.jpg') no-repeat center center fixed;
+//             height: 100vh;
+//             width: 100vw;
+              
+//       background-position: 0 0;
+//       background-repeat: no-repeat;
+//       background-size: cover;
+//         }
     
-//     .tab{
-//        flex:1;
-//        color:#5D708A;
-//        text-align:center;
-//        line-height:50px;
-//        transition:all 0.2s;
-//        .text{
-//           font-size:14px;
-//           transform:scale(1);
-//           transition:all 0.2s;
-//        }
+
+
+
 //     }  
-//  }
- 
-//  input[type=radio]{ display:none; }
-//  @for $i from 0 through 1{
-//     input[type=radio]:nth-of-type(#{$i + 1}):checked {
-//        ~ .tabs .tab:nth-of-type(#{$i + 1}){
-//           box-shadow:inset (6 * $i) + -3px 2px 5px rgba(0, 0, 0, 0.25);
-//           color:#3F4C7F;
-//           .text{ transform:scale(0.9); }
-//        }
-       
-//        ~ .pages{
-//           transform:translateX(-100% * $i);
-          
-//           .page:nth-of-type(#{$i + 1}){
-//              .input { 
-//                 opacity:1; 
-//                 transform:translateX(0%); 
-//                 transition:all 0.5s;
-//                 @for $i from 1 through 5{
-//                    &:nth-child(#{$i}) { 
-//                       transition-delay:0.2s*$i
-//                    }
-//                 }
-//              }
-//           }
-//        }
-//     }
-//  }
- 
-//  @keyframes hi{
-//     from { transform: translateY(50%) scale(0, 0); opacity:0; }
-//  }
+// }
+

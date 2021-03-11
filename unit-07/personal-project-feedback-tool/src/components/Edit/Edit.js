@@ -16,10 +16,17 @@ constructor(props){
         userInput: '',
         feedback: [],
         comment: '',
-        savedComment: []
+        savedComment: [],
     }
 }
 
+
+componentDidMount(){
+
+axios.get(`mycomments/:dept_number`)
+.then(res=> this.setState({savedComment: res.data}))
+
+}
 
 
 
@@ -52,15 +59,12 @@ handleCommentInput = (e) => {
 }
 
 addComment = (comment, feedback_id) => {
-
 axios.post(`/managercomment/`, {comment, feedback_id})
 .then(res=>{
-    this.setState({savedComment: res.data})
+    this.setState({...this.state.savedComment, savedComment: res.data})
+    this.setState({comment: ''})
 
 })
-
-
-
 }
 
 
@@ -72,6 +76,16 @@ console.log(this.state.savedComment, 'this has been saved to local state')
 
     return(
         <div>
+
+                    { this.state.savedComment.map((com)=> {
+                        return (
+                        <div className='commentContainer' key={com.comment_id}>
+                        <li className='co'>{com.comment}</li>
+    
+                        </div> )
+                    })}
+
+
         {this.state.editing ? (
 
             <div>
@@ -94,22 +108,30 @@ console.log(this.state.savedComment, 'this has been saved to local state')
                 }}>
                 SAVE</button>
             </li>
+
+
+             
+
+
             </div>
 
         )  : (
 
             this.props.user_admin ? (
                 <div>
-                    hi
-                         { this.state.savedComment.map((com)=> {
+                    
+                         {/* { this.state.savedComment.map((com)=> {
 
                             return (<div className='commentContainer' key={com.comment_id}>
-                                    <li>{com.comment}</li>
-                                <h1>Hello World</h1>
+                                    <li className='co'>{com.comment}</li>
+                                
                             </div> )
                         })}
+                     */}
 
                    
+                   <br></br>
+                   <br></br>
 
 
                     <input 
@@ -120,6 +142,7 @@ console.log(this.state.savedComment, 'this has been saved to local state')
                     />
                    
                     <button 
+                    className='commentbtn'
                     onClick={()=>this.addComment(this.state.comment, this.props.feedback_id)}
                     
                     

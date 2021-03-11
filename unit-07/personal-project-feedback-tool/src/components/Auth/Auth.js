@@ -3,6 +3,7 @@ import axios from 'axios'
 import './Auth.scss';
 import {connect} from 'react-redux'
 import {updateUser} from '../../redux/authReducer'
+// import VisibilityToggler from './VisibilityToggler' //will implement later
 // import {useHistory} from 'react-router-dom'
 
 const Auth =(props)=>{
@@ -16,6 +17,10 @@ const [userInfo, setUserInfo] = useState({
 })    
 
 const [user_admin, setuser_admin] = useState(false)
+
+
+// const [] = useVisibilityToggler()
+
 
 const register = ()=>{
 
@@ -42,51 +47,71 @@ axios.post('/auth/login', userInfo)
 return (
 
 
+
 <div className='backgroundAuth'>
-<div className='authContainer'>
-    
-<div className='authBtnContainer'>
-<button className='authbtn'onClick={login}>Login</button>
-<button className='authbtn' onClick={register}>Register</button>
+
+<header>Feedback Hub</header>
+<div className='employeeEngagement'>
+<p>Why is feedback important? </p>
+
 </div>
 
 
+<div className='authContainer'>
+
+    
+
+
+
 <div className='authInputFieldContainer'>
- Username: <input 
+ <p className='labelText'>Username:</p><br></br> 
+    
+    <input 
     type='text'
-    placeholder='username'
     className='unInput'
     value={userInfo.username}
     onChange={(e)=>setUserInfo({...userInfo, username: e.target.value})}
 
  />
+ <br></br>
 
- Password: <input 
+<p className='labelText'>Password:</p><br></br> 
+    
+    <input 
     type='text'
-    placeholder='password'
     className='passInput'
     value={userInfo.password}
     onChange={(e)=>setUserInfo({...userInfo, password: e.target.value})}
  
  />
+  <br></br>
 
-Admin : <input 
+<p className='labelText'>Admin:</p> 
+    
+    <input 
     type="checkbox" 
     className="adminCheckbox" 
     checked={user_admin}
     onChange={(e)=>{setuser_admin(e.target.checked)}} /> 
  
  
+ <br></br>
+ <p className='labelText'>Department Number:</p><br></br> 
  
- Department Number: <input 
- 
+    <input 
     type='text'
-    placeholder='department number'
     className='deptInput'
     value={userInfo.dept_number}
     onChange={(e)=>setUserInfo({...userInfo, dept_number: e.target.value})}
  
  />
+
+<br></br>
+
+<div className='authBtnContainer'>
+<button className='authbtn'onClick={login}>Login</button>
+<button className='authbtn' onClick={register}>Register</button>
+</div>
 
 
  </div> 

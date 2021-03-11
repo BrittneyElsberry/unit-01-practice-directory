@@ -54,31 +54,44 @@ module.exports = {
         } else {
             return res.status(403)
         }       
-
     },
 
 
 
     readFB: async  (req, res)=> {
 
-        let {user_id} = req.session.user 
+      
+        // console.log(req.body, 'is this the params')
+        let {user_id} =  req.session.user 
         const db = await req.app.get('db')
-        const fbList = await db.readfeedback([user_id])
-        // console.log(fbList, 'controller')
+        const fbList = await db.readfeedbackandcomments([user_id])
+        // console.log(fbList, 'controller data on readFB function')
+        // let {feedback_id} = fbList.feedback_id        
+
         res.status(200).send(fbList)
  
     },
 
+
+    readComments: async (req, res)=>{
+        let {dept_number} = req.session.user
+        console.log(dept_number)
+        const db = await req.app.get('db')
+        const [admin] = await db.finduseradmin([dept_number])
+        console.log(admin.user_id, 'is this destructering getting 23?')
+
+        const comList = await db.readcomments([admin.user_id])
+        console.log(comList, 'readComments pulling from user admin id instead of user_id')
+        res.status(200).send(comList)
+ 
+    },
+
     updateFB: async (req, res) => {
-        // let {user_id} = req.session.user
+       
         let {userInput} = req.body
         let {id} = req.params
-        // console.log(req.params, req.body)
-
         const db = await req.app.get('db')
         await db.editfeedback([userInput, id])
-        // const fbList = await db.readfeedback([user_id])
-
         res.sendStatus(200)
 
 
@@ -87,7 +100,9 @@ module.exports = {
 
     deleteFB: async (req, res) =>{
         const db = req.app.get('db')
+        await db.deletecomments(req.params.id)
         await db.deletefeedback(req.params.id)
+    
         .then(_=> res.sendStatus(200))
 
     },
@@ -96,11 +111,8 @@ module.exports = {
     confirmationEmail: async (req, res)=>{
 
         try{
-
             let {username} = req.session.user
             let {fb, selectCategory} = req.body
-            // console.log(req.body, 'req.body')
-
             let transporter = nodemailer.createTransport({
 
             service: 'gmail',
@@ -110,8 +122,6 @@ module.exports = {
             },
                 // sendMail: true,
                 //  port: 465,
-                 
-    
             })
 
 
@@ -134,9 +144,7 @@ module.exports = {
                             res.sendStatus(500)
                         } else {
                             res.status(200).send(sending)
-                        }
-
-                        
+                        } 
                     })
     
              }

@@ -13,8 +13,8 @@ module.exports = {
         let {user_id} = req.params
         console.log( req.params, 'is this passign back what it should')
         const db = await req.app.get('db')
-        const indfbList = await db.readfeedback([user_id])
-        console.log(indfbList, 'controller')
+        const indfbList = await db.readfeedbackandcomments([user_id])
+        console.log(indfbList, 'controller are you working?')
         res.status(200).send(indfbList)
     },
 
@@ -43,4 +43,16 @@ module.exports = {
 
 
     },
+
+    // retrieveComments: async (req, res)=> {
+    //     // let {user_id} = req.session.user 
+    //     let {feedback_id} = req.body
+    //     console.log(req.body, 'is this right?')
+    //     const db = await req.app.get('db')
+    //     const commentList = await db.readcomments([feedback_id])
+    //     // console.log(fbList, 'controller')
+    //     res.status(200).send(commentList)
+    // }
+
+
 }

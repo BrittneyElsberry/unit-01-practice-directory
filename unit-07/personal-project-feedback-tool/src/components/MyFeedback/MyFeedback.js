@@ -21,17 +21,24 @@ const [isChecked, setIsChecked] = useState(false)
 const {user_id} = useParams()
 const [retrieveIndividualFB, setRetrieveIndividualFB] = useState([]) 
 
+console.log(props.user_admin, 'this is props from the myfeedback')
 
 useEffect(()=>{
 
    if(props.user_admin=== true){
         axios.get(`/myteamfeedback/${user_id}`)
-        .then(res => setRetrieveIndividualFB([res.data]))
+        .then((res) => {setRetrieveIndividualFB(res.data)
+        console.log(res.data, 'res.data')
+      
+    }
+        
+        )
         .catch(err=>console.log(err, 'this is the error'))
    
     }
     else {
         props.postFB() 
+
     }
    
 
@@ -41,7 +48,7 @@ useEffect(()=>{
 
 
 
-const {params} = props
+console.log(retrieveIndividualFB)
 
 // Protected Route if the user is not logged in.
 if(!props.username){
@@ -115,15 +122,11 @@ const deleteFeedback = (id) => {
 return(
   
     <div className='fbpageparent' >
-       
-  
-        <div className='myFeedbackContainer'>
-  
-      <form onSubmit={submitFB}>
+       <div className='myFeedbackContainer'>
+        <form onSubmit={submitFB}>
 
     
     <div className='fbcategory'>
-          
     <select className='dropDownMenu' value={fbInfo.selectCategory} onChange={(e)=> setfbInfo({...fbInfo, selectCategory: e.target.value})} >
         <option value='default'>Select Feedback Category</option>
         <option value='Customer Experience'>Customer Experience</option>
@@ -132,7 +135,6 @@ return(
         <option value='Product'>Product</option>
        
     </select>
-     
     </div>  
    
     
@@ -170,12 +172,12 @@ return(
     </div>
 
 
-    
+    { props.user_admin ? (
 
-<div className='fbListContainer'>
+        <div className='fbListContainer'>
  
-        {props.feedback.map((elem)=>{
-            return  <div className="fb-box" key={elem.feedback_id}>
+            {retrieveIndividualFB.map((elem)=>{
+                return  <div className="fb-box" key={elem.feedback_id}>
                 
                     
                     <li className='liststyle'><div className='catName'>{elem.category_name}</div> <p className='text'>{elem.feedback}</p>
@@ -184,7 +186,28 @@ return(
                     </div>})}
                    
     </div>
-    
+    )
+       :
+
+            <div className='fbListContainer'>
+ 
+                {props.feedback.map((elem)=>{
+                    return  <div className="fb-box" key={elem.feedback_id}>
+         
+             
+                    <li className='liststyle'><div className='catName'>{elem.category_name}</div> <p className='text'>{elem.feedback}</p>
+                     <Edit deleteFeedback={deleteFeedback} feedback_id={elem.feedback_id} user_admin={props.user_admin}/></li>
+            
+                     </div>})}
+            
+            </div>
+       
+       
+       }
+   
+   
+
+
 </div>
 
     )

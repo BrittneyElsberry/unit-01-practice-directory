@@ -3,28 +3,34 @@ import axios from 'axios'
 const initialState = {
    
     feedback: [],
+    comment: []
     
 
 }
 
 const POST_FEEDBACK = "POST_FEEDBACK"
-const UPDATE_FEEDBACK = "UPDATE_FEEDBACK"
+const POST_COMMENT = "POST_COMMENT"
 const POST_FEEDBACK_MANAGER_VIEW = "POST_FEEDBACK_MANAGER_VIEW"
 
 
 
 export const postFB = ()=>{
-    let data = axios.get('/myfeedback/:user_id')
+    let dataFB = axios.get('/myfeedback/:user_id')
     .then(res => res.data)
+    
+    // let dataComments = axios.get('/mycomments/:user_id')
+    // .then((res) =>{ res.data
+    // console.log(res.data, 'checking if readcomments is working')
+    // })
  
     return{
         type: POST_FEEDBACK,
-        payload: data
+        payload: dataFB
     }
     
 }
 
-
+// console.log(dataFB, 'reducer checking')
 
 
 export const postFBManagerView = ()=>{
@@ -38,18 +44,18 @@ export const postFBManagerView = ()=>{
     
 }
 
-// export const updateFB = (id)=> {
-    
-//     let data = axios.put(`/myfeedback/${id}`)
 
-//     return {
-//         type: UPDATE_FEEDBACK,
+
+// export const postComment = ()=>{
+//     let data = axios.get(`/managercommentlist/:feedback_id`)
+//     .then(res => res.data)
+ 
+//     return{
+//         type: POST_COMMENT,
 //         payload: data
 //     }
-
+    
 // }
-
-
 
 
 export default function fbReducer(state=initialState, action){
@@ -65,13 +71,10 @@ export default function fbReducer(state=initialState, action){
         console.log(action)
         return {...state, feedback: action.payload}
 
-    //  case  UPDATE_FEEDBACK + '_FULFILLED':
+    //  case  POST_COMMENT + '_FULFILLED':
     //      console.log(action)
-    //      return{...state, feedback: action.payload}  
+    //      return{...state, comment: action.payload}  
 
-    //  case  DELETE_FEEDBACK + '_FULFILLED':
-    //      console.log(action)
-    //      return{...state, feedback: action.payload}  
 
       
 
