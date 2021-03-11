@@ -17,9 +17,10 @@ const [userInfo, setUserInfo] = useState({
 })    
 
 const [user_admin, setuser_admin] = useState(false)
+const [toggleLogin, setToggleLogin] = useState(false)
+const [toggleRegister, setToggleRegister] = useState(false)
 
 
-// const [] = useVisibilityToggler()
 
 
 const register = ()=>{
@@ -44,25 +45,54 @@ axios.post('/auth/login', userInfo)
 }
 
 
+const displayLoginForm = ()=> {
+setToggleLogin(true)
+setToggleRegister(false)
+
+
+}
+
+const displayRegisterForm = ()=> {
+    setToggleRegister(true)
+    setToggleLogin(false)
+    }
+    
+
+
 return (
 
 
 
 <div className='backgroundAuth'>
 
-<header>Feedback Hub</header>
 <div className='employeeEngagement'>
-<p>Why is feedback important? </p>
+<p>Welcome to the feedback Hub! </p>
+<br></br>
+
+<div className='flexauthbtn'>
+<button
+className='authbtn'
+onClick={(e)=>displayLoginForm(e)}
+
+>Login</button>
+
+<button
+className='authbtn'
+onClick={(e)=>displayRegisterForm(e)}
+
+>Register</button>
 
 </div>
 
 
+
+
+</div>
+
+
+{ toggleLogin ? (
+
 <div className='authContainer'>
-
-    
-
-
-
 <div className='authInputFieldContainer'>
  <p className='labelText'>Username:</p><br></br> 
     
@@ -86,7 +116,78 @@ return (
  />
   <br></br>
 
-<p className='labelText'>Admin:</p> 
+{/* <p className='labelText'>Are you a Manager? :</p> 
+    
+    <input 
+    type="checkbox" 
+    className="adminCheckbox" 
+    checked={user_admin}
+    onChange={(e)=>{setuser_admin(e.target.checked)}} />  */}
+ 
+ 
+ <br></br>
+ {/* <p className='labelText'>Department Number:</p><br></br> 
+ 
+    <input 
+    type='text'
+    className='deptInput'
+    value={userInfo.dept_number}
+    onChange={(e)=>setUserInfo({...userInfo, dept_number: e.target.value})} */}
+ 
+ {/* /> */}
+
+<br></br>
+
+<div className='authBtnContainer'>
+<button className='authbtn'onClick={login}>Login</button>
+{/* <button className='authbtn' onClick={register}>Register</button> */}
+</div>
+
+<br></br>
+{/* <p className='labelText'>Already have an account?</p> */}
+<br></br>
+{/* <button className='authbtn'>Login</button> */}
+
+ </div> 
+</div> 
+)
+:
+<div>
+
+
+</div>
+
+}
+
+
+{ toggleRegister ? 
+
+
+<div className='authContainer'>
+<div className='authInputFieldContainer'>
+ <p className='labelText'>Username:</p><br></br> 
+    
+    <input 
+    type='text'
+    className='unInput'
+    value={userInfo.username}
+    onChange={(e)=>setUserInfo({...userInfo, username: e.target.value})}
+
+ />
+ <br></br>
+
+<p className='labelText'>Password:</p><br></br> 
+    
+    <input 
+    type='text'
+    className='passInput'
+    value={userInfo.password}
+    onChange={(e)=>setUserInfo({...userInfo, password: e.target.value})}
+ 
+ />
+  <br></br>
+
+<p className='labelText'>Are you a Manager? :</p> 
     
     <input 
     type="checkbox" 
@@ -109,13 +210,27 @@ return (
 <br></br>
 
 <div className='authBtnContainer'>
-<button className='authbtn'onClick={login}>Login</button>
+{/* <button className='authbtn'onClick={login}>Login</button> */}
 <button className='authbtn' onClick={register}>Register</button>
 </div>
 
+<br></br>
+
 
  </div> 
-</div> </div> )
+</div> 
+
+: 
+
+<div><h1>testing testing</h1></div>
+
+
+
+}
+
+
+
+</div> )
 
 
 }
