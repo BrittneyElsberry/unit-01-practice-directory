@@ -138,42 +138,32 @@
     @include breakpoints(laptop){
         @media(min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop){
             
-            header {
-                width: 100vw;
-                background-color: white;
-                text-align: center;
-                font-size: 1.0em;
-                font-family: $roboto-slab;
-                color: $color-grey;
-               
-            }
+            
     
             .employeeEngagement{
                 display: flex;
                 justify-content: space-between;
                 background-color: $color-white;
                 color: $color-grey;
-                font-size: 1.25em;
+                font-size: 1.0em;
                 @include border-theme;
                 margin: auto;
+                // position: fixed;
         
             }
 
-            .flexauthbtn{
-                display: flex;
-                flex-direction: row;
-                width: 40%;
-                height: 40%;
-                
-                
-            }
+            
+    
 
+            
             .authbtn {
-               width: 50%;
-               height: 50%;
-               font-size: 1.25em;
-                
+               width: 60%;
+               height: 60%;
+               font-size: 1.0em;
+
+              
             }
+        
 
         
             .authContainer{
@@ -182,15 +172,14 @@
                 align-items: center;
                 justify-content: left;
                 flex-grow: 2;
-                
                 height: 40vh;
                 width: 40vh;
                 color: $color-white;
                 font-weight: bold;
                 box-shadow: 4px 4px 4px $color-navy;
                 margin: auto;
-                margin-top: 10%;
-                padding: 10%;
+                margin-top: 2%;
+                padding: 6%;
            
         
         
@@ -202,9 +191,6 @@
                     font-family: $roboto-slab;
                 }
     
-        
-         
-        
         
             .authInputFieldContainer{
                 display: flex;
@@ -233,6 +219,7 @@
         
                 .employeeEngagement{
                     display: flex;
+                    justify-content: space-between;
                     background-color: $color-white;
                     color: $color-grey;
                     font-size: 1.25em;
@@ -240,6 +227,7 @@
                     margin: auto;
             
                 }
+
             
                 .authContainer{
                     display: flex;
@@ -270,6 +258,9 @@
             
                 .authbtn {
                     @include btn-theme;
+                    width: 40%;
+                    height: 40%;
+                    font-size: 1.25em;
                 }
             
             
@@ -288,6 +279,15 @@
             .body, html{
                 background-color: $color-mauve;
             } 
+
+            .flexauthbtn{
+                display: flex;
+                flex-direction: row;
+                width: 30%;
+                height: 30%;
+                
+                
+            }
 
             .authbtn {
                 @include btn-theme;

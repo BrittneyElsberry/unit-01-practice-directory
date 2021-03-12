@@ -14,16 +14,17 @@ return(
 
     <div className='deptDashContainer'><h1 className='welcome'>Welcome to the {deptName} Dashboard {props.username}!</h1>
   
-
-    <h2>Fiscal Year 2021</h2>
-    <select>
+    <div className='fiscalYearContainer'>
+    <h2 className='fiscalYear'>Fiscal Year 2021</h2>
+    <br></br>
+    <select className='qtrContainer'>
     <option>Q1</option>
     <option>Q2</option>
     <option>Q3</option>
     <option>Q4</option>
 
     </select>
-
+    </div>
     </div>
 )
 
