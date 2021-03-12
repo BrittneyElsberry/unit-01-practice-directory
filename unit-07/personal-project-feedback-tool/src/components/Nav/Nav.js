@@ -9,7 +9,7 @@ import './Nav.scss'
 
 const Nav = (props)=> {
 
-  console.log(props, 'this is props BABAY')
+ 
 
     return (
         

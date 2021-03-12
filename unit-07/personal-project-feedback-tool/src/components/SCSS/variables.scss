@@ -39,11 +39,14 @@ $ubuntu: 'Ubuntu', sans-serif;
 
 
 //Breakpoints
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1900px;
-$breakpoint-laptop: 1400px;
+$breakpoint-phone: 100px;
 $breakpoint-large-phone: 425px;
-$breakpoint-phone: 360px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1200px;
+$breakpoint-desktop: 1800px;
+
+
+
 
 
 
@@ -51,20 +54,22 @@ $breakpoint-phone: 360px;
 
   @if $point  == phone {
     @media screen and(max-width: 425px) {@content;}
-  } 
-  @else if $point == tablet{
+  }  @else if $point == large-phone{
     @media screen and (max-width: 768px) {@content;}
   }
+  @else if $point == tablet{
+    @media screen and (max-width: 1200px) {@content;}
+  }
   @else if $point == laptop {
-    @media screen and(min-width: 768px) {@content;}
+    @media screen and(max-width: 1800px) {@content;}
   }
 
   @else if $point == desktop {
-    @media screen and(min-width: 1224px) {@content;}
+    @media screen and(max-width: 2500px) {@content;}
   }
-  @else if $point == largescreen {
-    @media screen and(min-width: 1824px) {@content;}
-  }
+  // @else if $point == largescreen {
+  //   @media screen and(max-width: 3500px) {@content;}
+  // }
 }
 
 
