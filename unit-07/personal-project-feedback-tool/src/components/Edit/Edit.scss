@@ -6,6 +6,8 @@
     width: 10vw;
     margin-top: 30px; 
 
+    
+
 }
 
 
@@ -18,42 +20,34 @@
     justify-content: space-evenly;
 }
 
-@include breakpoints (phone){
 
-    @media(min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
-
-        .btnContainer{
-            width:30vw;
-            
-        }
-    }}
 
 
 @include breakpoints (tablet){
 
     @media(min-width: $breakpoint-large-phone) and (max-width: $breakpoint-tablet){
+
+        .btn{
+            width: 40vw;
+        }
     }}
 
 @include breakpoints (laptop){
 
     @media(min-width: $breakpoint-tablet) and (max-width: $breakpoint-tablet){
+
+        .btn{
+            width: 30vw;
+        }
     }}
 
 @include breakpoints (desktop){
 
     @media(min-width: $breakpoint-laptop) and (max-width: $breakpoint-desktop){
 
-        // .btnContainer{
-        //     display: flex;
-        //     flex-direction: row;
-        // }
-
-        // .btn{
-        //     border-radius: 50%;
-        //     width: 20px;
-        //     text-align: center;
-        //     margin: 4px 2px;
-        //     padding: 20px;        }
+        .btn{
+            width: 30vw;
+        }      
     }}
 
 
@@ -66,3 +60,19 @@
     .commentbtn{
         @include btn-theme;
     }
+
+
+
+    @include breakpoints (phone){
+
+        @media(min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
+    
+            .btnContainer{
+                width:30vw;
+                
+            }
+    
+            .btn{
+                width: 40vw;
+            }
+        }}

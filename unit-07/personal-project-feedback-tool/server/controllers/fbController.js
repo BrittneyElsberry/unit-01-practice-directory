@@ -99,15 +99,21 @@ module.exports = {
     },
 
     deleteFB: async (req, res) =>{
-        let {feedback_id} = req.params.id
-
-        const db = req.app.get('db')
-        
-        await db.deletecomments([feedback_id])
-        (console.log(req.params.id, 'this is for the deleteFB controller function'))
+       
+       try{
+        let feedback_id = req.params.id
+       const db = await req.app.get('db')
+       await db.deletecomments([feedback_id])
+       console.log(req.params.id, 'this is for the deleteFB controller function')
        await db.deletefeedback([feedback_id])
-    
-        .then(_=> res.sendStatus(200))
+       res.sendStatus(200)
+
+       }
+       catch(err) {
+           res.status(500).send(err)
+           console.log(err)
+       }
+        
 
     },
 

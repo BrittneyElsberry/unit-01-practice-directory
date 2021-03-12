@@ -105,6 +105,8 @@ const submitFB =(formSubmit)=>{
          
        
        }).catch((err)=> console.log(err)) 
+
+       
       
        axios.post(`/confirmationemail/`, fbInfo)
        .then(res => console.log(res, 'this is the confirmation email'))
