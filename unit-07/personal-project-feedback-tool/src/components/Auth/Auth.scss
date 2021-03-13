@@ -138,7 +138,14 @@
     @include breakpoints(laptop){
         @media(min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop){
             
-            
+            .authandinfocontainer{
+                display:flex;
+                flex-direction: row;
+                width: 80vw;
+                height: 100vh;
+                justify-content: space-between;
+               
+            }
     
             .employeeEngagement{
                 display: flex;
@@ -149,7 +156,7 @@
                 @include border-theme;
                 margin: auto;
                 // position: fixed;
-        
+                height: 5vh;
             }
 
             
@@ -157,11 +164,30 @@
 
             
             .authbtn {
-               width: 60%;
-               height: 60%;
+               width: 80px;
+               height: 50px;
                font-size: 1.0em;
 
               
+            }
+
+            .info {
+
+                display: flex;
+
+                background-color: $color-white;
+                align-items: left;
+                justify-content: space-between;
+                height: 50vh;
+                width: 10vw;
+                color: $color-grey;
+                box-shadow: 4px 4px 4px $color-navy;
+                // margin: auto;
+                margin-top: 2%;
+                padding: 6%;
+                font-weight: bold;
+           
+
             }
         
 
@@ -171,9 +197,9 @@
                 background-color: $color-white;
                 align-items: center;
                 justify-content: left;
-                flex-grow: 2;
-                height: 40vh;
-                width: 40vh;
+                // flex-grow: 2;
+                // height: 30vh;
+                // width: 30vh;
                 color: $color-white;
                 font-weight: bold;
                 box-shadow: 4px 4px 4px $color-navy;

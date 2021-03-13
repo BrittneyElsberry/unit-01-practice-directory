@@ -106,7 +106,7 @@ const submitFB =(formSubmit)=>{
        
        }).catch((err)=> console.log(err)) 
 
-       
+
       
        axios.post(`/confirmationemail/`, fbInfo)
        .then(res => console.log(res, 'this is the confirmation email'))
@@ -124,7 +124,7 @@ const deleteFeedback = (id) => {
 return(
   
     <div className='fbpageparent' >
-       <div className='myFeedbackContainer'>
+       {/* <div className='myFeedbackContainer'> */}
         <form onSubmit={submitFB}>
 
     
@@ -171,7 +171,7 @@ return(
 
     <br></br>
     </form>
-    </div>
+    {/* </div> */}
 
 
     { props.user_admin ? (

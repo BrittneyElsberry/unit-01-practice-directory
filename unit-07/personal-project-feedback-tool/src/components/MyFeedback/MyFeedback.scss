@@ -390,10 +390,12 @@
             margin: 0;
         }
 
-        .myFeedbackContainer{
-            margin: auto;
-            background-color: purple;
-        }
+        // .myFeedbackContainer{
+        //     margin: auto;
+        //     background-color: purple;
+        //     width: 100vw;
+        //     height: 50vh;
+        // }
      
         .dropDownMenu{
             font-family: $roboto-slab;
@@ -406,8 +408,9 @@
         .myTextArea{
             margin: auto;
             height: 20vh;
-            width: 50vw;
+            width: 70vw;
             margin-left: 4vw;
+            margin-left: 20%;
         }
     
         .dropDownMenu{
@@ -428,7 +431,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            width: 40vw;
+            width: 70vw;
             margin-top: 10%;
             margin-left: 4vw;
             @include btn-theme;
@@ -441,16 +444,13 @@
             padding-top: 8px;
             margin-left: 4vw;
             @include btn-theme;
-            width: 30vw;
+            width: 50vw;
+            justify-content: center;
             
         }
 
     
-        // .anonheader{
-        //     display: flex;
-        //     width: 60vw; //60
-     
-        // }
+    
        
         .checkbox{
                 padding-right: 10px;
@@ -462,6 +462,7 @@
           
             display:flex;
             flex-direction: column;
+            // justify-content: center;
             flex-shrink: 2;
             width: 100vw;
             overflow: scroll;

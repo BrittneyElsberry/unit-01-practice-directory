@@ -66,7 +66,8 @@ return (
 <div className='backgroundAuth'>
 
 <div className='employeeEngagement'>
-<p>Welcome to the feedback Hub! </p>
+<p>Welcome to the feedback Hub! <br></br>
+</p>
 <br></br>
 
 <div className='flexauthbtn'>
@@ -89,6 +90,10 @@ onClick={(e)=>displayRegisterForm(e)}
 
 </div>
 
+
+<div className='authandinfocontainer'>
+
+<div className='info'><p> Provide feedback to your manager about process or product improvements and track the progress of your suggestions!. </p></div>
 
 { toggleLogin ? (
 
@@ -229,7 +234,7 @@ onClick={(e)=>displayRegisterForm(e)}
 }
 
 
-
+</div>
 </div> )
 
 
