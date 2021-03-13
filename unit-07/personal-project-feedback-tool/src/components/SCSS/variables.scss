@@ -71,7 +71,12 @@ $ubuntu: 'Ubuntu', sans-serif;
 }
 
 
- 
+ @mixin about-theme{
+   background-color: $color-navy;
+   color: $color-white;
+   padding: 3%;
+  //  box-shadow: 2px 2px 2px 2px $color-navy;
+ }
 
 
 

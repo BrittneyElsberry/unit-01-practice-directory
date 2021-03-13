@@ -189,7 +189,30 @@
            
 
             }
+
+          
+
+            .aboutus{
+                @include about-theme;
+                height: 100vh;
+                width: 20vw;
+               
+            }
+
         
+            p{
+                transition: all 1s ease;
+            }
+
+            p:hover{
+                color: $color-navy;
+            }
+
+            .border {
+                border: 2px solid white;
+                list-style: none; 
+                padding: 5%;
+            }
 
         
             .authContainer{
