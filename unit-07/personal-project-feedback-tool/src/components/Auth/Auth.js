@@ -76,13 +76,14 @@ const [about, setAbout] = useState (false)
     <div className='backgroundAuth'>
 
                     <div className='employeeEngagement'>
-                    <button className='aboutbtn' onClick={(e)=>displayAbout(e)}>About</button>
-                        <p>Increase employee engagement with the Feedback Hub! <br></br>
+                    <p className='increaseempl'>Increase employee engagement with the Feedback Hub! <br></br>
                         </p>
-                        <br></br>
+                    <button className='aboutbtn' onClick={(e)=>displayAbout(e)}>About</button>
+                       
+                    
                             {/* <button className='aboutbtn' onClick={(e)=>displayAbout(e)}>About</button> */}
 
-                                <div className='flexauthbtn'>
+                                {/* <div className='flexauthbtn'> */}
                                      <button
                                     className='authbtn'
                                     onClick={(e)=>displayLoginForm(e)}
@@ -95,7 +96,7 @@ const [about, setAbout] = useState (false)
 
                                     >Register</button>
 
-                                </div>
+                                {/* </div> */}
                                 
                     </div>
 
@@ -189,10 +190,10 @@ const [about, setAbout] = useState (false)
 
                         <br></br>
 
-                                    <div className='authBtnContainer'>
-                                    <button className='authbtn'onClick={login}>Login</button>
+                                  
+                                    <button className='smallloginbtn'onClick={login}>Login</button>
 
-                                    </div>
+                                  
 
                                     <br></br>
 
@@ -260,10 +261,9 @@ const [about, setAbout] = useState (false)
 
                                 <br></br>
 
-                                <div className='authBtnContainer'>
-                                {/* <button className='authbtn'onClick={login}>Login</button> */}
-                                <button className='authbtn' onClick={register}>Register</button>
-                                </div>
+                              
+                                <button className='smallregisterbtn' onClick={register}>Register</button>
+                            
 
                                 <br></br>
 
