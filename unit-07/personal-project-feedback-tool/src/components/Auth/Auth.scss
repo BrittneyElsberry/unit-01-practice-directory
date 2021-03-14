@@ -120,6 +120,7 @@
     
         .authbtn {
             @include btn-theme;
+            width: 20vw;
         }
     
     
@@ -163,13 +164,19 @@
     
 
             
-            .authbtn {
-               width: 80px;
-               height: 50px;
-               font-size: 1.0em;
+            // .authbtn {
+            //    width: 40%;
+            //    height: 20%;
+                             
+            // }
 
-              
+            .aboutbtn, .authbtn{
+                @include btn-theme;
+                font-size: 1.25em;
+                font-weight: bold;
+                // margin-left: 5%;
             }
+        
 
             .info {
 
@@ -192,27 +199,7 @@
 
           
 
-            .aboutus{
-                @include about-theme;
-                height: 100vh;
-                width: 20vw;
-               
-            }
-
-        
-            p{
-                transition: all 1s ease;
-            }
-
-            p:hover{
-                color: $color-navy;
-            }
-
-            .border {
-                border: 2px solid white;
-                list-style: none; 
-                padding: 5%;
-            }
+            
 
         
             .authContainer{
@@ -255,23 +242,13 @@
             @media(min-width: $breakpoint-laptop) and (max-width: $breakpoint-desktop){
 
 
-
-                header {
-                    width: 100vw;
-                    background-color: white;
-                    text-align: center;
-                    font-size: 1.0em;
-                    font-family: $roboto-slab;
-                    color: $color-grey;
-                   
-                }
         
                 .employeeEngagement{
                     display: flex;
                     justify-content: space-between;
                     background-color: $color-white;
                     color: $color-grey;
-                    font-size: 1.25em;
+                    font-size: 1.5em;
                     @include border-theme;
                     margin: auto;
             
@@ -285,8 +262,8 @@
                     justify-content: left;
                     flex-grow: 2;
                     
-                    height: 40vh;
-                    width: 40vh;
+                    height: 20vh;
+                    width: 20vh;
                     color: $color-white;
                     font-weight: bold;
                     box-shadow: 4px 4px 4px $color-navy;
@@ -297,7 +274,15 @@
             
             
                     }
-        
+
+                    
+                .aboutus{
+                   
+                    font-size: 1.25em;
+               
+                
+                }
+            
                     .labelText{
                         color: $color-mauve;
                         font-size: 1.0em;
@@ -306,9 +291,15 @@
         
             
                 .authbtn {
+                width: 60%;
+                }
+
+                .aboutbtn{
+                width: 18%;
+                }
+
+                .aboutbtn, .authbtn{
                     @include btn-theme;
-                    width: 40%;
-                    height: 40%;
                     font-size: 1.25em;
                 }
             
@@ -338,9 +329,42 @@
                 
             }
 
-            .authbtn {
+          
+
+            .aboutbtn, .authbtn{
                 @include btn-theme;
-                margin-left: 5%;
+                font-size: 1.25em;
                 font-weight: bold;
+                margin-left: 5%;
+            }
+        
+
+            .aboutus{
+                @include about-theme;
+                height: 150vh;
+                width: 20vw;
+                font-size: 1.25em;
+               
+            }
+
+        
+            p{
+                transition: all 1s ease;
+            }
+
+            p:hover{
+                color: $color-navy;
+            }
+
+            .border {
+                border: 2px solid white;
+                list-style: none; 
+                padding: 5%;
+            }
+
+
+            .unInput, .passInput, .deptInput{
+                // border-radius: 12%;
+                border: 4px solid $color-mauve;
             }
 

@@ -13,19 +13,14 @@
     
     {
     
-    
+      
+
+        .nav-item{
+         
+            font-size: 1.0em;
         
-    
-        
-        // .nav-item{
-        //     list-style: none;
-        //     color: $color-white;
-        //     font-weight: bold;
-        //     font-family: 'Roboto';
-        //     font-size: 1.0em;
-        //     padding-right: 30px;
            
-        // }
+        }
         
     
     
@@ -39,32 +34,12 @@
 
     @media(min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop){
 
-    // .nav{
-    //     margin: 0;
-    //     height: 10vh;
-    //     background-color: $color-navy;
-    //     // background-image: linear-gradient($color-purple, $color-green);
-    //     width: 100vw;
-    // }
-    
-
-    
-    // .nav-item{
-    //     list-style: none;
-    //     text-decoration: none;
-    //      color: $color-white;
-    //     font-weight: bold;
-    //     font-size: 1.0em;
-    //     // line-height: 3;
-    //     // padding-left: 5px;
-    //     padding-right: 30px;
-    //     // flex-grow: 3;
-    // }
-
-    // .fbcategory{
-    //     height: 20vh;
-    //     width: 80vw;
-    // }
+        .nav-item{
+        
+            font-size: 1.0em;
+            line-height: 1;
+        }
+        
 
 
     
@@ -135,7 +110,7 @@ a{
     text-decoration: none;
     color: $color-white;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.0em;
    
 }
 
@@ -153,8 +128,8 @@ a{
     
         .nav-item{
         
-            font-size: 0.75em;
-            line-height: 2;
+            font-size: 1.0em;
+            line-height: 1;
         }
         
     

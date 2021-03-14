@@ -63,6 +63,8 @@ const [about, setAbout] = useState (false)
     
     const displayAbout = () => {
         setAbout(!about)
+        setToggleRegister(false)
+        setToggleLogin(false)
       
     }    
 
@@ -74,7 +76,7 @@ const [about, setAbout] = useState (false)
     <div className='backgroundAuth'>
 
                     <div className='employeeEngagement'>
-                    <button className='authbtn' onClick={(e)=>displayAbout(e)}>About</button>
+                    <button className='aboutbtn' onClick={(e)=>displayAbout(e)}>About</button>
                         <p>Increase employee engagement with the Feedback Hub! <br></br>
                         </p>
                         <br></br>
