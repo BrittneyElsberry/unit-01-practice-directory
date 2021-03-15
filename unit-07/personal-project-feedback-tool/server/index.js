@@ -3,6 +3,7 @@ const express = require('express')
     authCtrl = require('./controllers/authController'),
     fbCtrl = require('./controllers/fbController')
     adminCtrl = require('./controllers/adminController')
+    chartCtrl = require('./controllers/chartController')
 const massive = require('massive')
 const session = require('express-session')
 const app = express();
@@ -75,6 +76,9 @@ app.get(`/myteamfeedback/:user_id`, adminCtrl.retrieveIndividualFB) //change thi
 app.post(`/managercomment/`, adminCtrl.addComment)
 
 
+// Chart endpoint
+
+app.get(`/chart`, chartCtrl.chartData)
 
 //Nodemailer -------------------------------------------------------
 
