@@ -78,7 +78,10 @@ app.post(`/managercomment/`, adminCtrl.addComment)
 
 // Chart endpoint
 
-app.get(`/chart`, chartCtrl.chartData)
+app.get(`/chart1`, chartCtrl.chartData1)
+app.get(`/chart2`, chartCtrl.chartData2)
+app.get(`/chart3`, chartCtrl.chartData3)
+app.get(`/chart4`, chartCtrl.chartData4)
 
 //Nodemailer -------------------------------------------------------
 

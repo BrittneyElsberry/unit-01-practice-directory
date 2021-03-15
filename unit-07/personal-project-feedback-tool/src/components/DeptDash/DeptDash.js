@@ -12,22 +12,58 @@ const DeptDash = (props)=>{
     const [deptName, setDeptName] = useState('')
     const [catChartData, setCatChartData] = useState({})
     const [resChartData, setResChartData] = useState({})
+    const [category1, setCategory1] = useState({})
+    const [category2, setCategory2] = useState({})
+    const [category3, setCategory3] = useState({})
+    const [category4, setCategory4] = useState({})
 
-    const [category, setCategory] = useState({})
+      
 
     
     useEffect(()=>{
 
-        // stackedBar()
-        axios.get(`/chart`)
-        .then( res=> {setCategory(res.data)
-        console.log(res.data, 'this is coming through in the useEffect')
+        stackedBar()
+        axios.get(`/chart1`)
+        .then( res=> {
+            
+        setCategory1(res.data)
+        console.log(res.data, 'this is category_id 1 data')
         })
         .catch(err=> console.log(err))
 
+
+        axios.get(`/chart2`)
+        .then( res=> {
+            
+        setCategory2(res.data)
+        console.log(res.data, 'this is category_id 2 data')
+        })
+        .catch(err=> console.log(err))
+
+
+        axios.get(`/chart3`)
+        .then( res=> {
+            
+        setCategory3(res.data)
+        console.log(res.data, 'this is category_id 3 data')
+        })
+        .catch(err=> console.log(err))
+
+
+        axios.get(`/chart4`)
+        .then( res=> {
+            
+        setCategory4(res.data)
+        console.log(res.data, 'this is category_id 4 data')
+        })
+        .catch(err=> console.log(err))
+      
+      
     
 
     }, [])
+
+
 
 
 
@@ -36,39 +72,52 @@ const DeptDash = (props)=>{
         labels: ['Customer Experience', 'Internal Process', 'Leadership', 'Product'],
         datasets: [{
             label: 'Department Feedback by Category',
-            data: ()=>{
-            return {
-                labels: [],
-                confirmed: []
-            }    
-            } ,
+            data: [category1, category2, category3, category4],
             backgroundColor: ['#9a8c66'],
             borderWidth: 2
 
-        }]    
+        }]
+    })
+}
+
+     
 
 
-        })
-        setResChartData({
-            labels: ['Customer Experience', 'Internal Process', 'Leadership', 'Product'],
-            datasets: [{
-                label: 'Department Feedback by Category',
-                data: [1, 2, 45, 7],
-                backgroundColor: ['#9a8c98'],
-                borderWidth: 2
+
+    // const stackedBar2 = ()=>{
+    //     setResChartData({
+    //         labels: ['Customer Experience', 'Internal Process', 'Leadership', 'Product'],
+    //         datasets: [{
+    //             label: 'Department Feedback by Category',
+    //             data: [1, 2, 45, 7],
+    //             backgroundColor: ['#9a8c98'],
+    //             borderWidth: 2
     
-            }]  
+    //         }]  
 
-        })
-
-    }
-
+    //     })
+    // }
 
 
 
+    // const stackedBar = new Chart(ctx, {
+    //     type: 'bar',
+    //     data: [category1, category2, category3, category4],
+    //     options: {
+    //         scales: {
+    //             xAxes: [{
+    //                 stacked: true
+    //             }],
+    //             yAxes: [{
+    //                 stacked: true
+    //             }]
+    //         }
+    //     }
+    // });
 
 
-console.log(props)
+    console.log(category1, 'is the data correct in state?')
+
 return(
 
     <div className='deptDashContainer'><h1 className='welcome'>Welcome to the {deptName} Dashboard {props.username}!</h1>
@@ -86,26 +135,58 @@ return(
     </div>
 
     <div className='chart'>
-       <Bar data={catChartData} options={{
-           responsive: true,
-           scales: {
-               yAxes: [{
-                   ticks: {
-                       autoSkip: true,
-                       maxTicksLimit: 10,
-                       beginAtZero: true
-                   }, 
-                   gridLines: {
-                       display: false,
-                       stacked: true
-                   }
-               }],
-               xAxes: [{
-                   gridLines: false,
-                   stacked: true
-               }]
-           }
-       }} /> 
+       <Bar data={{
+         options: {
+            scales: {
+                xAxes: [{
+                    stacked: true
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        },
+        labels: ['Customer Experience', 'Internal Process', 'Leadership', 'Product'],
+        datasets: [{
+            label: 'Department Feedback by Category',
+            data: [category1.length, category2.length, category3.length, category4.length],
+            backgroundColor: ['#9a8c66'],
+            borderWidth: 2
+
+        },   
+        {
+            label: 'manager comments',
+            data: [category1.length, category2.length, category3.length, category4.length],
+            backgroundColor: ['pink'],
+            borderWidth: 2
+
+        }
+    
+    ]
+    }}
+       
+    //     options={{
+    //        responsive: true,
+    //        scales: {
+    //            yAxes: [{
+    //                ticks: {
+    //                    autoSkip: true,
+    //                    maxTicksLimit: 10,
+    //                    beginAtZero: true
+    //                }, 
+    //                gridLines: {
+    //                    display: false,
+    //                    stacked: true
+    //                }
+    //            }],
+    //            xAxes: [{
+    //                gridLines: false,
+    //                stacked: true
+    //            }]
+    //        }
+    //    }} 
+       
+       /> 
 
     {/* <Line data={resChartData} options={{
             responsive: true,
@@ -130,9 +211,13 @@ return(
 
     </div>
 
-    </div>
-)
 
+    </div>
+
+
+
+)
+       
 }
 
 

@@ -1,1 +1,1 @@
-select * from feedback;
+select * from feedback where category_id = $1;
