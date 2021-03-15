@@ -31,7 +31,7 @@ module.exports = {
 
         if(comment){
             
-            const savedComment = await db.comments([comment, feedback_id, user_id, date])
+            const savedComment = await db.comments([comment, feedback_id, user_id, date, feedback_id])
         
             return res.status(200).send(savedComment) 
          

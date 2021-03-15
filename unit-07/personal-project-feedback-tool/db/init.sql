@@ -73,7 +73,8 @@ comment_id SERIAL PRIMARY KEY,
 comment VARCHAR(5000),
 feedback_id INT REFERENCES feedback(feedback_id),
 user_id INT REFERENCES users(user_id),
-date date
+date date,
+linkcommenttofb_id INT
 
 
 );

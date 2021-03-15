@@ -60,7 +60,7 @@ app.post('/logout', authCtrl.logout)
 //Feedback endpoints
 
 app.get('/myfeedback/:user_id', fbCtrl.readFB)
-app.get('/mycomments/:dept_number', fbCtrl.readComments)
+app.get('/mycomments/:feedback_id', fbCtrl.readComments)
 app.post('/myfeedback/submit', fbCtrl.createFB)
 app.post('/myfeedback/anonymous', fbCtrl.createAnonymous)
 app.put(`/myfeedback/:id`, fbCtrl.updateFB)

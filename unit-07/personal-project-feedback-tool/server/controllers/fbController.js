@@ -75,14 +75,17 @@ module.exports = {
 
     readComments: async (req, res)=>{
         let {dept_number} = req.session.user
+        let {feedback_id} = req.params
         console.log(dept_number)
         const db = await req.app.get('db')
         const [admin] = await db.finduseradmin([dept_number])
         console.log(admin.user_id, 'is this destructering getting 23?')
 
-        const comList = await db.readcomments([admin.user_id])
-        console.log(comList, 'readComments pulling from user admin id instead of user_id')
+        const comList = await db.readcomments([admin.user_id, feedback_id])
+
+        console.log(comList, 'this is coming from the comment list')
         res.status(200).send(comList)
+  
  
     },
 
@@ -142,10 +145,10 @@ module.exports = {
                 text: `${fb}`,
                 html: `
 
-                     <h2>See what your team member had to say:</h2>
-                     <h3> feedback category: ${selectCategory}
-                    <p>:
-                    "${fb}"
+                     <h2>See what your team member had to say</h2>
+                     <h3> Feedback Category: ${selectCategory}
+                    <p>
+                    ${fb}
                     </p>
                      `
                     }, (err) => {

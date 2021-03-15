@@ -22,9 +22,16 @@ constructor(props){
 
 
 componentDidMount(){
+    console.log(this.props)
 
-axios.get(`mycomments/:dept_number`)
-.then(res=> this.setState({savedComment: res.data}))
+
+axios.get(`mycomments/${this.props.feedback_id}`)
+
+.then(res=>{
+
+console.log(res.data)
+this.setState({savedComment: res.data})}
+)
 
 }
 
@@ -71,19 +78,27 @@ axios.post(`/managercomment/`, {comment, feedback_id})
 render () {
    
 // console.log(this.res.data, 'is the data empty?')
-console.log(this.state.savedComment, 'this has been saved to local state')
+console.log(this.state.savedComment, 'this is this.state.savedComment.feedback_id')
 
 
     return(
         <div>
 
                     { this.state.savedComment.map((com)=> {
+                      if(com.feedback_id === com.linkcommenttofb_id){
                         return (
+                         
+                            
+
                         <div className='commentContainer' key={com.comment_id}>
                         <li className='co'>{com.comment}</li>
     
                         </div> )
-                    })}
+                      } else {
+                          return null
+                      }  
+                
+                })}
 
 
         {this.state.editing ? (
