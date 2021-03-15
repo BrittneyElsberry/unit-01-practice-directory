@@ -135,11 +135,13 @@ console.log(this.state.savedComment, 'this has been saved to local state')
 
 
                     <input 
+                    className='unInput'
                     value={this.state.comment}
                     type='text'
                     onChange={(e)=> this.handleCommentInput(e)}
                     
                     />
+                   
                    
                     <button 
                     className='commentbtn'

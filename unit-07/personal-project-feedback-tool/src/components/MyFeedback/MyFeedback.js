@@ -103,13 +103,18 @@ const submitFB =(formSubmit)=>{
             console.log(res.data, 'this is what is sending to email controller function')
             // axios.post(`/confirmationemail/`, {...res.data})
          
+            axios.post(`/confirmationemail/`, fbInfo)
+            .then(res => console.log(res, 'this is the confirmation email'))
        
-       }).catch((err)=> console.log(err)) 
+        }).catch((err)=> console.log(err)) 
 
 
+    //    if(result ===false){
+
+    //    }
       
-       axios.post(`/confirmationemail/`, fbInfo)
-       .then(res => console.log(res, 'this is the confirmation email'))
+    //    axios.post(`/confirmationemail/`, fbInfo)
+    //    .then(res => console.log(res, 'this is the confirmation email'))
     
     }
     }
