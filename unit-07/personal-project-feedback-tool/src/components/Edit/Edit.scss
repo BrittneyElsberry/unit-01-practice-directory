@@ -4,22 +4,38 @@
 .btn{
     @include btn-theme;
     width: 10vw;
-    margin-top: 30px; 
+    // margin-top: 30px; 
 
     
 
 }
 
 
-.btnContainer{
-    // margin-top: 20px;
-    margin-left: 5px;
-    display: flex;
-    flex-direction: row;
-    width: 20vw;
-    justify-content: space-evenly;
-}
+// .btnContainer{
+//     // margin-top: 20px;
+//     margin-left: 5px;
+//     display: flex;
+//     flex-direction: row;
+//     width: 20vw;
+//     justify-content: space-evenly;
+//     background-color: blue;
+// }
 
+
+
+@include breakpoints (phone){
+
+    @media(min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
+
+        .btnContainer{
+            width:30vw;
+            
+        }
+
+        .btn{
+            width: 40vw;
+        }
+    }}
 
 
 
@@ -28,7 +44,7 @@
     @media(min-width: $breakpoint-large-phone) and (max-width: $breakpoint-tablet){
 
         .btn{
-            width: 40vw;
+            width: 20vw;
         }
     }}
 
@@ -37,7 +53,7 @@
     @media(min-width: $breakpoint-tablet) and (max-width: $breakpoint-tablet){
 
         .btn{
-            width: 30vw;
+            width: 15vw;
         }
     }}
 
@@ -46,7 +62,8 @@
     @media(min-width: $breakpoint-laptop) and (max-width: $breakpoint-desktop){
 
         .btn{
-            width: 30vw;
+            width: 10vw;
+            
         }      
     }}
 
@@ -62,17 +79,3 @@
     }
 
 
-
-    @include breakpoints (phone){
-
-        @media(min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
-    
-            .btnContainer{
-                width:30vw;
-                
-            }
-    
-            .btn{
-                width: 40vw;
-            }
-        }}
