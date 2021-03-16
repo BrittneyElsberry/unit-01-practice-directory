@@ -44,8 +44,10 @@ return(
     <div className='managerviewContainer'>
         
         
-   <h1 className='myteam'>My Team</h1>
+   
     <div className='teamListContainer' >
+    <h1 className='myteam'>My Team</h1>
+    <br></br>
   
         {  directory && directory.map((empList)=> {
             return <Link to={`/myfeedback/${empList.user_id}`}>

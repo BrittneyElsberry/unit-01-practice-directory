@@ -111,7 +111,9 @@
     .fiscalYearContainer{
       font-size: 1.0em;
       @include border-theme;
-      width: 20%
+      width: 20%;
+      margin: auto;
+      margin-bottom: 10%;
 
     }
 
@@ -125,8 +127,9 @@
     }
 
     .chart {
-      height: 50vh;
+      height: 60vh;
       width: 50vw;
+     
+      background-color: $color-white;
       margin: auto;
-      background-color: white;
     }

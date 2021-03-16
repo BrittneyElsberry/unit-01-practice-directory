@@ -37,7 +37,8 @@ module.exports = {
 
         const db = req.app.get('db')
         let com1 = 1
-        const comment1 = await db.readchart([com1])
+        const comment1 = await db.commentchart([com1])
+        console.log(comment1, 'commentData1 controller function?')
         return res.status(200).send(comment1)
 
 
@@ -46,7 +47,7 @@ module.exports = {
 
         const db = req.app.get('db')
         let com2 = 2
-        const cat4 = await db.readchart([category4])
+        const comment2 = await db.commentchart([com2])
         return res.status(200).send(comment2)
 
 
@@ -55,7 +56,7 @@ module.exports = {
 
         const db = req.app.get('db')
         let com3 = 3
-        const comment3 = await db.readchart([category4])
+        const comment3 = await db.commentchart([com3])
         return res.status(200).send(comment3)
 
 
@@ -64,7 +65,7 @@ module.exports = {
 
         const db = req.app.get('db')
         let com4 = 4
-        const comment4 = await db.readchart([category4])
+        const comment4 = await db.commentchart([com4])
         return res.status(200).send(comment4)
 
 

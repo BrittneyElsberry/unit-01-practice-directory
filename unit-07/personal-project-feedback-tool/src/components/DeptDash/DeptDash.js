@@ -16,13 +16,17 @@ const DeptDash = (props)=>{
     const [category2, setCategory2] = useState({})
     const [category3, setCategory3] = useState({})
     const [category4, setCategory4] = useState({})
+    const [comment1, setComment1] = useState({})
+    const [comment2, setComment2] = useState({})
+    const [comment3, setComment3] = useState({})
+    const [comment4, setComment4] = useState({})
 
       
 
     
     useEffect(()=>{
 
-        stackedBar()
+        // stackedBar()
         axios.get(`/chart1`)
         .then( res=> {
             
@@ -59,6 +63,38 @@ const DeptDash = (props)=>{
         .catch(err=> console.log(err))
       
       
+
+        axios.get(`/comment1`)
+        .then( res=> {
+            
+        setComment1(res.data)
+        console.log(res.data, 'this is comment1 data. YOU WORKING OR WHAT?')
+        })
+        .catch(err=> console.log(err))
+
+        axios.get(`/comment2`)
+        .then( res=> {
+            
+        setComment2(res.data)
+        console.log(res.data, 'this is comment1 data. YOU WORKING OR WHAT?')
+        })
+        .catch(err=> console.log(err))
+
+        axios.get(`/comment3`)
+        .then( res=> {
+            
+        setComment3(res.data)
+        console.log(res.data, 'this is comment1 data. YOU WORKING OR WHAT?')
+        })
+        .catch(err=> console.log(err))
+
+        axios.get(`/comment4`)
+        .then( res=> {
+            
+        setComment4(res.data)
+        console.log(res.data, 'this is comment1 data. YOU WORKING OR WHAT?')
+        })
+        .catch(err=> console.log(err))
     
 
     }, [])
@@ -67,18 +103,18 @@ const DeptDash = (props)=>{
 
 
 
-    const stackedBar = ()=> {
-        setCatChartData({
-        labels: ['Customer Experience', 'Internal Process', 'Leadership', 'Product'],
-        datasets: [{
-            label: 'Department Feedback by Category',
-            data: [category1, category2, category3, category4],
-            backgroundColor: ['#9a8c66'],
-            borderWidth: 2
+//     const stackedBar = ()=> {
+//         setCatChartData({
+//         labels: ['Customer Experience', 'Internal Process', 'Leadership', 'Product'],
+//         datasets: [{
+//             label: 'Department Feedback by Category',
+//             data: [category1, category2, category3, category4],
+//             backgroundColor: ['#9a8c66'],
+//             borderWidth: 2
 
-        }]
-    })
-}
+//         }]
+//     })
+// }
 
      
 
@@ -120,7 +156,7 @@ const DeptDash = (props)=>{
 
 return(
 
-    <div className='deptDashContainer'><h1 className='welcome'>Welcome to the {deptName} Dashboard {props.username}!</h1>
+    <div className='deptDashContainer'>
   
     <div className='fiscalYearContainer'>
     <h2 className='fiscalYear'>Fiscal Year 2021</h2>
@@ -150,14 +186,14 @@ return(
         datasets: [{
             label: 'Department Feedback by Category',
             data: [category1.length, category2.length, category3.length, category4.length],
-            backgroundColor: ['#9a8c66'],
+            backgroundColor: ['#9a8c98'],
             borderWidth: 2
 
         },   
         {
-            label: 'manager comments',
-            data: [category1.length, category2.length, category3.length, category4.length],
-            backgroundColor: ['pink'],
+            label: 'Manager Response Rate',
+            data: [comment1.length, comment2.length, comment3.length, comment4.length],
+            backgroundColor: ['#4a4e69'],
             borderWidth: 2
 
         }
