@@ -17,9 +17,9 @@ const CompDash = (props)=>{
 
 return(
 
-    <div className='compDashContainer'><h1>You've been redirected to the Company Dashboard page.</h1>
-    <h2>Fiscal Year 2021</h2>
-    <select>
+    <div className='compDashContainer'>
+    <h2 className='fiscalYear'>Fiscal Year 2021</h2>
+    <select className='qtrContainer'>
     <option>Q1</option>
     <option>Q2</option>
     <option>Q3</option>

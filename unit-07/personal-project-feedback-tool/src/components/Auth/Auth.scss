@@ -390,7 +390,9 @@
                 background-color: $color-mauve;
             } 
 
-      
+            .authbtn, .aboutbtn{
+                font-size: 0.75em;
+            }
           
 
             .aboutbtn, .authbtn, .smallloginbtn, .smallregisterbtn{
