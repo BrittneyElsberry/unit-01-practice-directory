@@ -11,15 +11,22 @@
 }
 
 
-// .btnContainer{
-//     // margin-top: 20px;
-//     margin-left: 5px;
-//     display: flex;
-//     flex-direction: row;
-//     width: 20vw;
-//     justify-content: space-evenly;
-//     background-color: blue;
-// }
+.commentContainer {
+    @include btn-theme;
+    padding: 5px;
+    margin-top: 3%;
+    font-size: 0.75rem;
+}
+
+.commentbtn{
+    @include btn-theme;
+}
+
+
+.btn{
+    margin-top: 3%;
+}
+
 
 
 
@@ -27,13 +34,10 @@
 
     @media(min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
 
-        // .btnContainer{
-        //     width:40vw;
-            
-        // }
+    
 
         .btn{
-            margin-top: 10%;
+            // margin-top: 10%;
             width: 50px;
             font-size: 0.75rem;
         }
@@ -47,9 +51,15 @@
 
         .btn{
             margin-top: 10%;
-            width: 50px; //was 12
+            width: 50px; 
             font-size: 0.75rem;
          }
+
+         .commentContainer{
+            margin-top: 10%;
+
+         }
+
     }}
 
 @include breakpoints (laptop){
@@ -69,7 +79,7 @@
 
         .btn{
             // width: 8%;
-            margin-top: 5%;
+            // margin-top: 5%;
             width: 60px;
             font-size: 0.75rem;
             
@@ -77,15 +87,7 @@
     }}
 
 
-    .commentContainer {
-        @include btn-theme;
-        padding: 5px;
-        margin: 10px
-    }
-
-    .commentbtn{
-        @include btn-theme;
-    }
+   
 
  
 

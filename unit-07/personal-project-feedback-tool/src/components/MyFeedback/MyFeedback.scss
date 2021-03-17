@@ -34,6 +34,8 @@
 
 
 
+
+
 //tablet design finished!!
 @include breakpoints(tablet){
 
@@ -83,20 +85,15 @@
             width: 30vw;
             height: 10vh;
             margin-top: 10%;
-            // margin-left: 4vw;
-            // @include btn-theme;
            
         }
     
         .anonheader {
-            // display: flex;
-            // justify-content: space-between;
+       
             padding: 8px;
-            // margin-left: 4vw;
             @include btn-theme;
-            font-size: 0.75em;
-            // width: 50vw;
-            // justify-content: center;
+            font-size: 0.75rem;
+          
             
         }
         .mySubmitbtn{
@@ -116,29 +113,6 @@
         }
 
 
-
-        // .myFeedbackContainer{
-        //     height: 30vh;
-        //     width: 100vw;
-        //     margin-top: 4px;
-        //     background-color: goldenrod;
-
-        // }
-
-        // .fbListContainer{
-        //     display: flex;
-        //     flex-direction: column;
-        //     align-items: flex-start;
-        //     margin-left: 0;
-        //     background-color: blue;
-        //     width: 100vw;
-        //     // height: 50vh;
-        // }
-
-        // .fb-box{
-        //     height: 10vh;
-        //     width: 10vw;
-        // }
     
      
 
@@ -187,31 +161,18 @@
             padding: 2%;
             width: 80%;
             height: 30vh;
-            list-style: none;
-            // padding: 10px; testing
-            overflow-wrap: break-word;
-            overflow: auto;
-
-
-            box-shadow:
-            /* The top layer shadow */
-            0 -1px 1px rgba(0,0,0,0.15),
-            /* The second layer */
-            0 -10px 0 -5px #eee,
-            /* The second layer shadow */
-            0 -10px 1px -4px rgba(0,0,0,0.15),
-            /* The third layer */
-            0 -20px 0 -10px #eee,
-            /* The third layer shadow */
-            0 -20px 1px -9px rgba(0,0,0,0.15);
-            /* Padding for demo purposes */
-            // padding: 30px; //testing
+            margin-bottom: 5%;
+        
+        
 
 }
         
             .catName{
-                width: 55vw;
-                // padding: 5px;
+                @include border-theme;
+                width: 20%;
+                padding: 3px;
+                font-size: 0.75rem;
+                margin-bottom: 10px;
                
                 
             }
@@ -269,12 +230,12 @@
        
 
 
-            .anonheader{
+        .anonheader{
                 padding-bottom: 5px;
             }
     
         .anonheaderContainer{
-            width: 15vw;
+            width: 20vw;
             height: 15vh;
             padding: 4px;
             margin-top: 10%;
@@ -290,7 +251,7 @@
         height: 4vh;
         @include btn-theme;
         padding-top: 4%;
-        font-size: .75em;
+        font-size: .75rem;
       }
     
      
@@ -350,26 +311,8 @@
     
             @include list-style;
             @include btn-theme;
-    
             width: 100%;
-            // height: 50vh;
-            // list-style: none;
-            // padding: 10px;
-            // overflow-wrap: break-word;
-            // overflow: auto;
-            font-size: 0.75em;
-            // box-shadow:
-            // /* The top layer shadow */
-            // 0 -1px 1px rgba(0,0,0,0.15),
-            // /* The second layer */
-            // 0 -10px 0 -5px #eee,
-            // /* The second layer shadow */
-            // 0 -10px 1px -4px rgba(0,0,0,0.15),
-            //  /* The third layer */
-            // 0 -20px 0 -10px #eee,
-            // /* The third layer shadow */
-            // 0 -20px 1px -9px rgba(0,0,0,0.15);
-            // /* Padding for demo purposes */
+      
               
         }
     
@@ -378,11 +321,9 @@
         .catName{
     
             @include border-theme;
-            // margin: 20px;
-            // margin-bottom: 20px;
-            width: 5vw;
-            height: 3vh;
-            // padding-bottom: 10px;
+            width: 20%;
+            padding: 1%;
+            margin-bottom: 10px;
             
         }
     
@@ -472,7 +413,7 @@
       
     }
 
-    .dropDownMenu, .myTextArea, .anonheader{
+    .dropDownMenu, .myTextArea, .anonheaderContainer{
         margin-left: 4vw;
     }
  
@@ -483,39 +424,41 @@
     }
 
     
-    .anonheader {
-      
-      
-        font-size: .75em;
-        padding-top: 8px;
-        
-        
+    .anonheader{
+        padding-bottom: 5px;
+   
     }
 
-    .anonheaderContainer{
-        width: 40vw;
-        padding: 4px;
-        margin-top: 10%;
-        display: flex;
-        flex-direction: column;
-      
-    }
+.anonheaderContainer{
+    width: 20vw;
+    height: 15vh;
+    padding: 4px;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  
+}
 
 
-  .anonheader, .mySubmitbtn{
-    height: 4vh;
-    @include btn-theme;
-    padding-top: 10px;
-    font-size: .75em;
-  }
+.anonheader, .mySubmitbtn{
+height: 4vh;
+@include btn-theme;
+padding-top: 4%;
+font-size: .75rem;
+}
 
- 
 
-    .mySubmitbtn{
-        width: 10vw;
-        // margin-left: 30px;
-        padding: 18px;
-    }
+
+.mySubmitbtn{
+    width: 10vw;
+    // margin-left: 30px;
+    padding-bottom: 18px;
+}
+
+
+
 
    
     .checkbox{
@@ -558,51 +501,30 @@
 
 
     li.liststyle{
-        // margin-top: 5%;
-        // margin-bottom: 10%; //changed this
-        // display: flex;
-        // flex-direction: column;
+        
         @include btn-theme;
         @include list-style;
-        // list-style: none;
-        // overflow-wrap: break-word;
-        // padding: 2%;
-        // box-shadow:
-        // /* The top layer shadow */
-        // 0 -1px 1px rgba(0,0,0,0.15),
-        // /* The second layer */
-        // 0 -10px 0 -5px #eee,
-        // /* The second layer shadow */
-        // 0 -10px 1px -4px rgba(0,0,0,0.15),
-        //  /* The third layer */
-        // 0 -20px 0 -10px #eee,
-        // /* The third layer shadow */
-        // 0 -20px 1px -9px rgba(0,0,0,0.15);
-        // /* Padding for demo purposes */
+    
     }
 
 
+    
+    .catName{
+    
+        @include border-theme;
+        margin-bottom: 20px;
+        width: 20%;
+        padding: 1%;
+        text-align: center;
 
-    // .text{
-    //     margin: 50px;
-    // }
+        
+    }
 
 
     }
 
 
  
-    .catName{
-    
-        @include border-theme;
-        // margin: 20px;
-        margin-bottom: 10px;
-        width: 20%;
-        height: 4%;
-        padding-bottom: 5px;
-        text-align: center;
-        
-    }
 
 
 }
@@ -654,33 +576,10 @@
 
         .myTextArea, .dropDownMenu, .anonheader{
             margin-left: 4vw;
-            // margin: auto;
+          
         }
 
   
-        // .myFeedbackContainer{
-        //     // display: flex;
-        //     // flex-direction: column-reverse;
-        //     // justify-content: flex-start;
-        //         height: 30vh;
-        //         width: 100vw;
-        //         // margin-left: 10vw;
-        //         margin-top: 4px;
-        //         // justify-content: center;
-              
-         
-        //     }
-
-
-        // .fbListContainer{
-        //     // display: flex;
-        //     // flex-direction: column;
-        //     // margin: auto;
-        //     margin: 5%;
-        //     height: 70vh;
-        //     width: 90vw;
-        //     background-color: goldenrod;
-        // }
 
      
         .dropDownMenu{
@@ -694,10 +593,9 @@
     
       
         .myTextArea{
-            height: 30%;
+            height: 40%;
             width: 50vw;
             align-items: center;
-    
             margin-top: 1px;
         }
     
@@ -714,19 +612,18 @@
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
-            // width: 50vw;
             margin-top: 10%;
         
-            // @include btn-theme;
+        
            
         }
     
         .anonheader {
        
-            // padding-top: 8px;
+    
             margin-left: 4vw;
             @include btn-theme;
-            font-size: 0.75em;
+            font-size: 0.75rem;
             
         }
 
@@ -738,11 +635,7 @@
         }
     
      
-        // .fb-box{
-        //     height: 50vh;
-        //     width: 80%;
-        //     background-color: yellow;
-        // }
+      
 
         
         li.liststyle{
@@ -750,29 +643,20 @@
             display: flex;
             flex-direction: column;
              @include btn-theme;
-            list-style: none;
-            overflow-wrap: break-word;
-            margin-top: 10%;
-            box-shadow:
-            /* The top layer shadow */
-            0 -1px 1px rgba(0,0,0,0.15),
-            /* The second layer */
-            0 -10px 0 -5px #eee,
-            /* The second layer shadow */
-            0 -10px 1px -4px rgba(0,0,0,0.15),
-            /* The third layer */
-            0 -20px 0 -10px #eee,
-            /* The third layer shadow */
-            0 -20px 1px -9px rgba(0,0,0,0.15);
-            /* Padding for demo purposes */
-            // padding: 30px; //testing
-
+            margin: auto;
+            width: 80%;
+            margin-bottom: 5%;
+            font-size: 0.75rem;
+            padding: 2%;
+            
 }
         
             .catName{
-                width: 35vw;
+                @include border-theme;
+                width: 20%;
                 padding: 1px;
-                font-size: 0.75em;
+                font-size: 0.75rem;
+                margin-bottom: 10px;
                
             }
 
@@ -786,6 +670,14 @@
 }
 
 
+
+
+
+
+.anonheader{
+    
+    text-align: center;
+    }
 
 
 

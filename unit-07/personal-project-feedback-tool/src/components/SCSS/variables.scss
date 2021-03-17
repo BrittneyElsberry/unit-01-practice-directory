@@ -7,12 +7,6 @@
 $imgpath: 'src/components/MyFeedback/marker.jpeg';
 
 
-// @mixin background-image ($imgpath, $position: 0 0, $repeat: no-repeat) {
-// image: url($imgpath);
-// position: $position;
-// repeat: $repeat;
-// }
-
 
 $roboto-slab: 'Roboto Slab', sans-serif;
 $ubuntu: 'Ubuntu', sans-serif;
@@ -39,11 +33,11 @@ $ubuntu: 'Ubuntu', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 5%;
-  width: 50vw;
+  // margin-top: 5%;
+  font-size: 0.75rem;
   height: 50vh;
   list-style: none;
-  // padding: 10px;
+
   overflow-wrap: break-word;
   overflow: auto;
 
