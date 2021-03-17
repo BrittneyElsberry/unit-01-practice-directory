@@ -49,7 +49,12 @@
         .fbcategory{
             margin: 0;
         }
+        .dropDownMenu, .myTextArea, .anonheaderContainer{
+            margin: auto;
+     
+        }
 
+        
        
     
         .dropDownMenu{
@@ -57,7 +62,7 @@
             // margin-left: 4vw;
             margin-top: 10px;
             padding-top: 0;
-            width: 40vw;
+            width: 150px;
             height: 5vh;
             color: $color-grey;
         }
@@ -65,7 +70,7 @@
       
         .myTextArea{
             height: 20vh;
-            width: 40vw;
+            // width: 50%;
            
         }
     
@@ -82,24 +87,26 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            width: 30vw;
+            width: 150px;
             height: 10vh;
             margin-top: 10%;
+           
            
         }
     
         .anonheader {
        
-            padding: 8px;
+            // padding: 8px;
             @include btn-theme;
-            font-size: 0.75rem;
+            font-size: 0.5rem;
           
             
         }
         .mySubmitbtn{
             margin-top: 10px;
-            width: 30vw;
-            padding: 8px;
+            width:100px;
+            // padding: 8px;
+            font-size: 0.5rem;
         }
     
     
@@ -160,7 +167,7 @@
              @include btn-theme;
             padding: 2%;
             width: 80%;
-            height: 30vh;
+            height: 30%;
             margin-bottom: 5%;
         
         

@@ -186,14 +186,14 @@ return(
         datasets: [{
             label: 'Department Feedback by Category',
             data: [category1.length, category2.length, category3.length, category4.length],
-            backgroundColor: ['#9a8c98'],
+            backgroundColor: ['#9a8c98', '#9a8c98', '#9a8c98', '#9a8c98' ],
             borderWidth: 2
 
         },   
         {
             label: 'Manager Response Rate',
             data: [comment1.length, comment2.length, comment3.length, comment4.length],
-            backgroundColor: ['#4a4e69'],
+            backgroundColor: ['#4a4e69', '#4a4e69', '#4a4e69', '#4a4e69'],
             borderWidth: 2
 
         }
