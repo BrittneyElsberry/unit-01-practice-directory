@@ -29,6 +29,7 @@ module.exports = {
         const db = req.app.get('db')
         let category4 = 4
         const cat4 = await db.readchart([category4])
+        console.log(cat4, 'this is the data in the controller function for category4')
         return res.status(200).send(cat4)
 
     },

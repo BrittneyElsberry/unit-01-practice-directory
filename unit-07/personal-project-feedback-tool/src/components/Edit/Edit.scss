@@ -3,8 +3,8 @@
 
 .btn{
     @include btn-theme;
-    width: 10vw;
-    // margin-top: 30px; 
+    width: 60px;
+    font-size: 0.75rem;
 
     
 
@@ -27,15 +27,15 @@
 
     @media(min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
 
-        .btnContainer{
-            width:40vw;
+        // .btnContainer{
+        //     width:40vw;
             
-        }
+        // }
 
         .btn{
             margin-top: 10%;
-            width: 20vw;
-            font-size: 0.75em;
+            width: 50px;
+            font-size: 0.75rem;
         }
     }}
 
@@ -47,8 +47,9 @@
 
         .btn{
             margin-top: 10%;
-            width: 12vw;
-        }
+            width: 50px; //was 12
+            font-size: 0.75rem;
+         }
     }}
 
 @include breakpoints (laptop){
@@ -56,7 +57,9 @@
     @media(min-width: $breakpoint-tablet) and (max-width: $breakpoint-tablet){
 
         .btn{
-            width: 5vw;
+            // width: 8%;
+            width: 50px;
+            font-size: 0.75rem;
         }
     }}
 
@@ -65,8 +68,10 @@
     @media(min-width: $breakpoint-laptop) and (max-width: $breakpoint-desktop){
 
         .btn{
-            width: 5vw;
+            // width: 8%;
             margin-top: 5%;
+            width: 60px;
+            font-size: 0.75rem;
             
         }      
     }}
@@ -74,16 +79,14 @@
 
     .commentContainer {
         @include btn-theme;
-        padding: 20px;
-        margin: 20px
+        padding: 5px;
+        margin: 10px
     }
 
     .commentbtn{
         @include btn-theme;
     }
 
-    // .btn{
-    //     margin-top: 10%;
-    // }
+ 
 
 

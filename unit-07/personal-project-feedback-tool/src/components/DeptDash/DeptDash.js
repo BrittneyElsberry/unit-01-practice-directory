@@ -76,7 +76,7 @@ const DeptDash = (props)=>{
         .then( res=> {
             
         setComment2(res.data)
-        console.log(res.data, 'this is comment1 data. YOU WORKING OR WHAT?')
+        console.log(res.data, 'this is comment2 data. YOU WORKING OR WHAT?')
         })
         .catch(err=> console.log(err))
 
@@ -84,7 +84,7 @@ const DeptDash = (props)=>{
         .then( res=> {
             
         setComment3(res.data)
-        console.log(res.data, 'this is comment1 data. YOU WORKING OR WHAT?')
+        console.log(res.data, 'this is comment3 data. YOU WORKING OR WHAT?')
         })
         .catch(err=> console.log(err))
 
@@ -92,7 +92,7 @@ const DeptDash = (props)=>{
         .then( res=> {
             
         setComment4(res.data)
-        console.log(res.data, 'this is comment1 data. YOU WORKING OR WHAT?')
+        console.log(res.data, 'this is comment4 data. YOU WORKING OR WHAT?')
         })
         .catch(err=> console.log(err))
     
@@ -182,7 +182,7 @@ return(
                 }]
             }
         },
-        labels: ['Customer Experience', 'Internal Process', 'Leadership', 'Product'],
+        labels: ['Internal Process', 'Product', 'Leadership', 'Customer Experience'],
         datasets: [{
             label: 'Department Feedback by Category',
             data: [category1.length, category2.length, category3.length, category4.length],

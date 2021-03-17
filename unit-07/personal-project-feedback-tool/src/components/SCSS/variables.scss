@@ -31,17 +31,19 @@ $ubuntu: 'Ubuntu', sans-serif;
   box-shadow: 2px 2px 2px 2px $color-navy;
   background-color: $color-white;
   color: $color-grey;
-  padding: 3%;
+  padding: 10px;
  
 }
 
 @mixin list-style{
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 5%;
   width: 50vw;
   height: 50vh;
   list-style: none;
-  padding: 10px;
+  // padding: 10px;
   overflow-wrap: break-word;
   overflow: auto;
 
