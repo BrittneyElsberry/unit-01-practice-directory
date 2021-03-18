@@ -201,11 +201,19 @@
         .myTextArea, .anonheaderContainer, .dropDownMenu{
             margin-left: 2vw;
         }
+
+        .fbcategory{
+            display: flex;
+            flex-direction: column;
+            height: 50%;
+            background-color: chocolate;
+
+        }
      
         .myTextArea{
     
-            height: 20vh;
-            width: 20vw;
+            height: 30%;
+            width: 30%;
            
            
         }
@@ -398,6 +406,11 @@
       
     }
 
+    .fbcategory{
+        display: flex;
+        flex-direction: column;
+        background-color: chartreuse;
+    }
 
     .dropDownMenu{
         // margin: 30px;
@@ -416,8 +429,8 @@
  
     .myTextArea{
 
-        height: 20vh;
-        width: 20vw;       
+        height: 30%;
+        width: 20%;       
     }
 
     
@@ -450,7 +463,6 @@ font-size: .75rem;
 
 .mySubmitbtn{
     width: 10vw;
-    // margin-left: 30px;
     padding-bottom: 18px;
 }
 
