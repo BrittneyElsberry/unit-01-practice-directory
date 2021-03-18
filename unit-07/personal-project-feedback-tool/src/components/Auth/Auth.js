@@ -231,7 +231,7 @@ const [about, setAbout] = useState (false)
                                 <p className='labelText'>Password:</p><br></br> 
                                     
                                     <input 
-                                    type='text'
+                                    type='password'
                                     className='passInput'
                                     value={userInfo.password}
                                     onChange={(e)=>setUserInfo({...userInfo, password: e.target.value})}

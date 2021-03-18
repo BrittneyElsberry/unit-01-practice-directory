@@ -142,7 +142,7 @@ return(
         <option value='Product'>Product</option>
        
     </select>
-    </div>  
+   
    
     
     <textarea 
@@ -151,11 +151,12 @@ return(
     value={fbInfo.fb} 
     onChange={(e)=> setfbInfo({...fbInfo, fb: e.target.value})}>
     </textarea> 
+    </div>  
 
     <div className='anonheaderContainer'>
     <div className='anonheader'>
-    
     <label>Submit Anonymously?</label>
+   
 
     <input 
     className='checkbox'
@@ -163,8 +164,6 @@ return(
     checked ={isChecked}
     onChange={(e)=> {setIsChecked(e.target.checked)}}
     />
-    
-   
     </div>
         <button 
     
