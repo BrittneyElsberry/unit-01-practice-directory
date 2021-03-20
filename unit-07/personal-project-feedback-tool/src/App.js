@@ -1,4 +1,3 @@
-import './App.scss';
 import routes from './routes'
 import './reset.css'
 import Nav from './components/Nav/Nav'

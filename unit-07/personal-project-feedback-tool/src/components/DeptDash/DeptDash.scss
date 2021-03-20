@@ -1,40 +1,83 @@
 @import '/src/components/SCSS/variables.scss';
 
-// .welcome{
-//     color: $color-light-green;
 
-// }
+.deptDashContainer{
+  background: url('business-results.jpg') no-repeat center center fixed;
+        
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    height: 100vh;
+    width: 100vw;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
-
-@include breakpoints(phone){
-  @media(min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
-
-    // .deptDashContainer{
-    //   background: url('business-results.jpg') no-repeat center center fixed;
-            
-    //     background-position: 0 0;
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     height: 100vh;
-    //     width: 100vw;
-    //   }
+  .fiscalYearContainer{
+    @include border-theme;
 
   }
-}
+
+
+
+  option{
+   color: $color-grey;
+   font-family: $roboto-slab;
+  }
+
+  .qtrContainer{
+    width: 30%;
+  }
+
+  .chart {
+    background-color: $color-white;
+ 
+  }
+
+
+
+
 
 @include breakpoints(tablet){
   @media(min-width: $breakpoint-large-phone) and (max-width: $breakpoint-tablet){
 
-    // .deptDashContainer{
-    //   background: url('business-results.jpg') no-repeat center center fixed;
+    
+    .deptDashContainer{
+      background: url('business-results.jpg') no-repeat center center fixed;
             
-    //     background-position: 0 0;
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     height: 100vh;
-    //     width: 100vw;
-    //   }
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+    .qtrContainer{
+      width: 40%;
+    }
+
+    .fiscalYearContainer{
+      @include border-theme;
+      height: 10%;
+      font-size: 0.5rem;
+    }
+  
+
+    .chart {
+      // height: 80%;
+      // width: 80%;
+      // margin-top: 10%;
+      height: 60%;
+      width: 50%;
+      background-color: $color-white;
+ 
+    }
     
   }
 }
@@ -42,15 +85,34 @@
 @include breakpoints(laptop){
   @media(min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop){
 
-    // .deptDashContainer{
-    //   background: url('business-results.jpg') no-repeat center center fixed;
-            
-    //     background-position: 0 0;
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     height: 100vh;
-    //     width: 100vw;
-    //   }
+    option{
+      color: $color-grey;
+      font-family: $roboto-slab;
+     }
+ 
+ 
+     .chart {
+      height: 60%;
+      width: 40%;
+       margin-top: 10%;
+       background-color: $color-white;
+  
+     }
+
+
+
+   .fiscalYearContainer{
+     font-size: .70rem;
+     @include border-theme;
+     width: 10%;
+     height: 10%;
+
+    
+
+   }
+
+
+   
     
   }
 }
@@ -58,84 +120,90 @@
 @include breakpoints(desktop){
   @media(min-width: $breakpoint-laptop) and (max-width: $breakpoint-desktop){
 
-    .deptDashContainer{
-      
-      display:flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100vw;
-      height: 100vh;
-      overflow: scroll;
-      position: relative;
-            
-        // background-position: 0 0;
-        // background-repeat: no-repeat;
-        // background-size: cover;
-        // height: 100vh;
-        // width: 100vw;
 
-        &::before {
-          content: '';
-          background: url('business-results.jpg') no-repeat center center fixed;
-          
-          background-repeat: no-repeat;
-          background-size: cover;
-          position: absolute;
-          top: 0px;
-          right: 0px;
-          bottom: 0px;
-          left: 0px;
-          opacity: 0.25;
-          z-index: -4;
+  
+  
+  
+      option{
+       color: $color-grey;
+       font-family: $roboto-slab;
       }
+  
+  
+      .chart {
+        height: 60%;
+        width: 40%;
+        margin-top: 10%;
+        background-color: $color-white;
+        // margin: auto;
+      }
+
+
+
+    .fiscalYearContainer{
+      font-size: .70rem;
+      @include border-theme;
+      width: 10%;
+      height: 10%;
 
      
-      }
+
+    }
+
+ 
     
   }
 }
 
 
-.deptDashContainer{
-    background: url('business-results.jpg') no-repeat center center fixed;
-          
-      background-position: 0 0;
-      background-repeat: no-repeat;
-      background-size: cover;
-    
-      height: 100vh;
-      width: 100vw;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-    }
-
-    .fiscalYearContainer{
-      font-size: 1.0em;
-      @include border-theme;
-      width: 20%;
-      height: 20%;
-      margin-bottom: 10%;
-
-    }
+@include breakpoints(phone){
+  @media(min-width: $breakpoint-phone) and (max-width: $breakpoint-large-phone){
 
 
-
-    option{
-     color: $color-grey;
-     font-family: $roboto-slab;
-    }
+    .deptDashContainer{
+      background: url('business-results.jpg') no-repeat center center fixed;
+            
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+      
+       
+      }
 
     .qtrContainer{
       width: 40%;
     }
 
-    .chart {
-      height: 60vh;
-      width: 50vw;
-      margin-top: 10%;
-      background-color: $color-white;
-      // margin: auto;
+    .fiscalYearContainer{
+   
+      @include border-theme;
+      height: 5%;
+      // width: 10px;
+      
     }
+
+    .fiscalYearContainer, .chart{
+      margin-top: 10%;
+    }
+
+    .fiscalYear{
+      font-size: 0.75rem;
+    }
+  
+
+    .chart {
+      display: flex;
+      height: 70%;
+      width: 70%;
+      background-color: $color-white;
+ 
+    }
+
+  }
+}
+
+

@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express')
-    authCtrl = require('./controllers/authController'),
+    authCtrl = require('./controllers/authController')
     fbCtrl = require('./controllers/fbController')
     adminCtrl = require('./controllers/adminController')
     chartCtrl = require('./controllers/chartController')
@@ -9,7 +9,7 @@ const session = require('express-session')
 const app = express();
 // const bcrypt= require('bcryptjs');
 const nodemailer = require('nodemailer')
-
+const path = require('path')
 
 
 
@@ -45,6 +45,9 @@ app.use(session({
        })
    
 
+
+
+
 //User Auth endpoints
 
 app.post('/auth/register', authCtrl.register)
@@ -58,7 +61,7 @@ app.post('/logout', authCtrl.logout)
 // app.get('https://dummyapi.io/data/api/', userCtrl.getFB)
 
 
-//Feedback endpoints
+//Feedback endpoints---------------------------------
 
 app.get('/myfeedback/:user_id', fbCtrl.readFB)
 app.get('/mycomments/:feedback_id', fbCtrl.readComments)
@@ -68,7 +71,7 @@ app.put(`/myfeedback/:id`, fbCtrl.updateFB)
 app.delete(`/myfeedback/:id`, fbCtrl.deleteFB)
 app.post(`/confirmationemail/`, fbCtrl.confirmationEmail)
 
-//Admin team endpoints
+//Admin team endpoints--------------------------------------------------
 
 app.get(`/managerview/myteam`, adminCtrl.retrieveTeam)
 app.get(`/myteamfeedback/:user_id`, adminCtrl.retrieveIndividualFB) //change this to user_id
@@ -76,7 +79,7 @@ app.get(`/myteamfeedback/:user_id`, adminCtrl.retrieveIndividualFB) //change thi
 app.post(`/managercomment/`, adminCtrl.addComment)
 
 
-// Chart endpoint
+// Chart endpoints ---------------------------------------------------
 
 //category 
 
@@ -93,75 +96,12 @@ app.get(`/comment3`, chartCtrl.commentData3)
 app.get(`/comment4`, chartCtrl.commentData4)
 
 
-//Nodemailer -------------------------------------------------------
 
+//Website hosting
 
-// let transporter = nodemailer.createTransport({
+app.use(express.static(__dirname + '/../build'))
 
-//     service: 'gmail',
-//     auth: {
-//         user: process.env.EMAIL,
-//         pass: process.env.PASSWORD
-//     },
-//     sendmail: true
+app.get('*', (req, res)=> {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+})
 
-
-
-//     // host: 'smtp.mail.yahoo.com',
-//     // port: 465,
-//     // secure: false,
-//     // debug: false,
-//     // logger: true
-// })
-
-
-
-//Step 2
-// let mailOptions = {
-
-//     from: 'testnodemailerprojects@gmail.com',
-//     to: 'testnodemailerprojects@gmail.com',
-//     subject: '__ on your team submitted new feedback',
-//     text: 'IT WORKS'
-// }
-
-//Step 3
-
-
-// transporter.sendMail(mailOptions, function (err, data){
-//     if(err){
-//         console.log('Nodemailer error', err)
-//     }else {
-//         console.log('Email Sent!')
-//     }
-// } )
-
-
-//Step 4
-
-//disable gmail feature
-
-
-
- // const transporter = req.app.get('transporter')
-
-    // let mailOptions = {
-
-    //     from: 'testnodemailerprojects@gmail.com',
-    //     to: 'testnodemailerprojects@gmail.com',
-    //     subject: ` ${username} on your team submitted new feedback!`,
-
-    //     html: `
-
-    //     <h2>Testing this out</h2>
-    //     <p>${feedback}</p>
-    //     `
-    // }
-    
-//   let sending =  await transporter.sendMail(mailOptions, function (err, res){
-//     if(err){
-//         console.log('Nodemailer error', err)
-//     }else {
-//         res.status(200).send(console.log('Email Sent!', sending))
-//     }
-// } )

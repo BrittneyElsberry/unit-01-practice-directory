@@ -103,55 +103,6 @@ const DeptDash = (props)=>{
 
 
 
-//     const stackedBar = ()=> {
-//         setCatChartData({
-//         labels: ['Customer Experience', 'Internal Process', 'Leadership', 'Product'],
-//         datasets: [{
-//             label: 'Department Feedback by Category',
-//             data: [category1, category2, category3, category4],
-//             backgroundColor: ['#9a8c66'],
-//             borderWidth: 2
-
-//         }]
-//     })
-// }
-
-     
-
-
-
-    // const stackedBar2 = ()=>{
-    //     setResChartData({
-    //         labels: ['Customer Experience', 'Internal Process', 'Leadership', 'Product'],
-    //         datasets: [{
-    //             label: 'Department Feedback by Category',
-    //             data: [1, 2, 45, 7],
-    //             backgroundColor: ['#9a8c98'],
-    //             borderWidth: 2
-    
-    //         }]  
-
-    //     })
-    // }
-
-
-
-    // const stackedBar = new Chart(ctx, {
-    //     type: 'bar',
-    //     data: [category1, category2, category3, category4],
-    //     options: {
-    //         scales: {
-    //             xAxes: [{
-    //                 stacked: true
-    //             }],
-    //             yAxes: [{
-    //                 stacked: true
-    //             }]
-    //         }
-    //     }
-    // });
-
-
     console.log(category1, 'is the data correct in state?')
 
 return(
@@ -171,8 +122,14 @@ return(
     </div>
 
     <div className='chart'>
-       <Bar data={{
+       {/* <Bar height={'30%'}
+           width={'30%'}  */}
+
+           <Bar
+           data={{
+         
          options: {
+            maintainAspectRatio: false,
             scales: {
                 xAxes: [{
                     stacked: true
@@ -182,6 +139,7 @@ return(
                 }]
             }
         },
+
         labels: ['Internal Process', 'Product', 'Leadership', 'Customer Experience'],
         datasets: [{
             label: 'Department Feedback by Category',

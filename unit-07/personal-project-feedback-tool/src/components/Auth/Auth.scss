@@ -329,6 +329,9 @@
                     color: $color-grey;
                     @include border-theme;
                     margin: auto;
+                    height: 15%;
+                    padding: 2%;
+                    font-size: .80rem;
             
                 }
 
@@ -345,7 +348,8 @@
                     box-shadow: 4px 4px 4px $color-navy;
                     margin: auto;
                     margin-top: 5%;
-                    padding: 10%;
+                    padding: 4%;
+          
                
             
             
@@ -353,7 +357,8 @@
 
                     
                 .aboutus{
-                    width: 50vw;
+                    width: 30%;
+                    font-size: .80rem;
                 }
 
                 .border{
@@ -369,7 +374,7 @@
         
             
                 .authbtn, .aboutbtn {
-                width: 8%;
+                width: 4%;
                 }
 
                
@@ -393,7 +398,7 @@
                     justify-content: center;
                 }
 
-                .unInput, .authInputFieldContainer, .aboutus, .labelText, .aboutbtn, .authbtn, .increaseempl, .employeeEngagement, .smallregisterbtn, .smallloginbtn{
+                .unInput, .authInputFieldContainer, .labelText, .aboutbtn, .authbtn, .increaseempl, .smallregisterbtn, .smallloginbtn{
                     font-size: 0.75rem;
                 }
                 
